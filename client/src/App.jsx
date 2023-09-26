@@ -37,11 +37,11 @@ export function App(props) {
   function AppContextProvider(props) {
     return (
       <AuthenticationManager.Context.Provider value={{AuthenticationManager}} >
-      <AnalyticsManager.Provider.Context.Provider value={{analyticsManager}} >
+      <AnalyticsManager.Context.Provider value={{analyticsManager}} >
       <TestingContext.Provider value={{isTestingEnvironment}} >
         {props.children}
       </TestingContext.Provider>
-      </AnalyticsManager.Provider.Context.Provider>
+      </AnalyticsManager.Context.Provider>
       </AuthenticationManager.Context.Provider >
     )
   }
