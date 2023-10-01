@@ -1,5 +1,6 @@
 // Style Imports
 import './App.css';
+import "./libraries/Web-Legos/Layouts/wl.css";
 
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -13,6 +14,8 @@ import {LineButton} from "./libraries/Web-Legos/components/Buttons"
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
+import FooterCentered from './libraries/Web-Legos/Layouts/Footers/FooterCentered';
+import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -27,6 +30,8 @@ authenticationManager.initialize();
 /** Site AnalyticsManager */
 const analyticsManager = new AnalyticsManager(firebaseConfig)
 analyticsManager.initialize();
+
+const theme = createWLTheme();
 
 export function App(props) {
 
@@ -59,6 +64,7 @@ export function App(props) {
   // Return the app
   return (
     <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
+      <WLThemeProvider theme={theme}>
       <AppContextProvider>
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
@@ -72,10 +78,10 @@ export function App(props) {
                 {/** Place Routes Here */}
               </Routes>
             {/** Place Footer Here */}
-            <LineButton />
           </div>
         </Router>
       </AppContextProvider>
+      </WLThemeProvider>
     </div>
   );
 }
