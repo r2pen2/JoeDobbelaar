@@ -10,12 +10,15 @@ import { createContext } from 'react';
 
 import {LineButton} from "./libraries/Web-Legos/components/Buttons"
 
+import flower from "./libraries/Web-Legos/assets/images/glphs/rainbowLeaf.png";
+
 // API Imports
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import FooterCentered from './libraries/Web-Legos/Layouts/Footers/FooterCentered';
 import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
+import { GlyphSectionTwoItemsNoActions } from './libraries/Web-Legos/Layouts/Sections/GlyphSection';
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -69,10 +72,15 @@ export function App(props) {
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
           <div className="app-content">
-              <section className="d-flex flex-column align-items-center justify-content-center" style={{height: "100vh", width: "100vw"}}>
+            <GlyphSectionTwoItemsNoActions>
+              <GlyphSectionTwoItemsNoActions.Glyph imageSource={flower} />
+              <GlyphSectionTwoItemsNoActions.Left header="Left Section" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, accusamus provident dolor repellendus sit nesciunt officia voluptatum at, atque nulla voluptate quaerat cupiditate voluptatem. Aspernatur perspiciatis iste modi recusandae sapiente!" />
+              <GlyphSectionTwoItemsNoActions.Right header="Right Section" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, accusamus provident dolor repellendus sit nesciunt officia voluptatum at, atque nulla voluptate quaerat cupiditate voluptatem. Aspernatur perspiciatis iste modi recusandae sapiente!" />
+            </GlyphSectionTwoItemsNoActions>
+              {/* <section className="d-flex flex-column align-items-center justify-content-center" style={{height: "100vh", width: "100vw"}}>
                 <img src={powerBrick} alt="power-brick" data-testid="lego-brick" />
                 <Text h1 data-testid="title-text">BP-10700</Text>
-              </section>
+              </section> */}
             {/** Place Navigation Here */}
               <Routes>
                 {/** Place Routes Here */}
