@@ -14,6 +14,9 @@ import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Lego
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
 
+/** Context to keep track of current user */
+export const CurrentSignInContext = createContext();
+
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
 
@@ -32,6 +35,8 @@ const theme = createWLTheme();
 
 export function App(props) {
 
+  const [currentSignIn, setCurrentSignIn] = useState(null);
+
   /** Whether this is a testing environment */
   const isTestingEnvironment = props.isTestingEnvironment;
 
@@ -41,7 +46,9 @@ export function App(props) {
       <AuthenticationManager.Context.Provider value={{AuthenticationManager}} >
       <AnalyticsManager.Context.Provider value={{analyticsManager}} >
       <TestingContext.Provider value={{isTestingEnvironment}} >
+      <CurrentSignInContext.Provider value={{currentSignIn}} >
         {props.children}
+      </CurrentSignInContext.Provider>
       </TestingContext.Provider>
       </AnalyticsManager.Context.Provider>
       </AuthenticationManager.Context.Provider >
