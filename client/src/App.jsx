@@ -13,6 +13,7 @@ import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
+import LandingPage from './routes/LandingPage';
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -66,13 +67,9 @@ export function App(props) {
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
           <div className="app-content">
-              <section className="d-flex flex-column align-items-center justify-content-center" style={{height: "100vh", width: "100vw"}}>
-                <img src={powerBrick} alt="power-brick" data-testid="lego-brick" />
-                <Text h1 data-testid="title-text">BP-10700</Text>
-              </section>
             {/** Place Navigation Here */}
               <Routes>
-                {/** Place Routes Here */}
+                <Route path="*" element={<LandingPage />}/>
               </Routes>
             {/** Place Footer Here */}
           </div>
