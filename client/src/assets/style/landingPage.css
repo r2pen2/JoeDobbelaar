@@ -46,9 +46,21 @@
 }
 
 .card-top {
-  background: white;
+  background: var(--swan-white);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+
+.card-top h2 {
+  font-size: 1.25rem;
+}
+
+.card-top .img-container img {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  aspect-ratio: 1/1;
 }
 
 .card-bottom {

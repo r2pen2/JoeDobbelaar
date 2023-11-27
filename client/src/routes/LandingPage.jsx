@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import "../assets/style/landingPage.css";
 import { WLHeader, WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text";
 
-import { Text } from "@nextui-org/react"
+import { Progress, Text } from "@nextui-org/react"
 
 import btbLogo from "../assets/images/projects/btbLogo.png"
 import wlLogo from "../assets/images/projects/webLegosLogo.gif"
@@ -13,42 +13,73 @@ import { Button, Card, Spacer } from '@nextui-org/react';
 
 import { WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content';
 
+import pupsysImg from "../assets/images/projects/pupsysLogo.png";
+import wlImg from "../assets/images/projects/weblegosLogo.png";
+import { useEffect } from 'react';
+
 const projects = [
   {
     title: "PUPSys",
-    description1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
-    description2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
-    icon: null,
+    subtitle: "Singlehandedly building the computing infrastructure for Umass Chan’s PUPSys",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    image: pupsysImg,
+    firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
+    secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
   {
     title: "Web-Legos",
-    description1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
-    description2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
-    icon: null,
+    subtitle: "Building websites for individuals and businesses; clients can edit site content on their own by signing in with Google.",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    image: wlImg,
+    firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
+    secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
 
 ]
 
 export default function LandingPage() {
-  
-  const [currentProject, setCurrentProject] = useState(0)
 
+  const [slideProgress, setSlideProgress] = useState(0);
+  
   const Projects = () => {
 
     const ProjectCard = ({project}) => {
+
+
+      const CardBodyText = () => (
+        <WLTextV2 color="#8C8C8C" align="left">{project.description}</WLTextV2>
+      )
       
-      console.log(project)
+      const TextInline = () => (
+        <div className="container d-lg-block d-none" style={{padding: 0}}>
+          <div className="row d-flex flex-row align-items-center justify-content-center">
+            <div className="col-12">
+              <CardBodyText />
+            </div>
+          </div>
+        </div>
+      )
+    
+      const TextVertical = () => (
+        <div className="d-flex d-lg-none flex-column align-items-center justify-content-center"s>
+          <CardBodyText />
+        </div>
+      )
 
       const WhiteSection = () => (
-        <section id="psychotherapy" className="row w-100 card-top p-2">
-          <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start py-2">
-            <hgroup className="w-100 d-flex flex-column align-items-center align-items-md-start">
-              <h1>{project.title}</h1>
+        <section className="row w-100 card-top p-2">
+          <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start p-4">
+            <hgroup className="w-100 d-flex flex-column text-left p-0 mb-2">
+              <h1 className="text-center">{project.title}</h1>
               <h2>{project.subtitle}</h2>
             </hgroup>
+            <TextInline />
+            <TextVertical />
+            <Spacer y={1.25} />
+            <Button bordered color="gradient" className="w-100">Learn More</Button>
           </div>
-          <div className="col-12 col-lg-4 d-flex flex-column align-items-center justify-content-center">
-            {/* <img src={chair} alt="chair" className="chair" /> */}
+          <div className="img-container col-12 col-lg-4 d-flex flex-column align-items-center justify-content-center">
+            <img src={project.image} alt={project.title} />
           </div>
         </section>
       )
@@ -57,12 +88,16 @@ export default function LandingPage() {
         <div className="row w-100 card-bottom px-2" >
           <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
             <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
-              {/* <WLTextV2 color="#E6E6E6" firestoreId="social-worker-body" editable={userCanEditText} /> */}
+              <WLTextV2 color="#E6E6E6" >
+                {project.firstPointText}
+              </WLTextV2>
             </div>
           </div>
           <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
             <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
-              {/* <WLTextV2 color="#E6E6E6" firestoreId="gestalt-body" editable={userCanEditText}/> */}
+              <WLTextV2 color="#E6E6E6" >
+                {project.secondPointText}
+              </WLTextV2>
             </div>
           </div>
         </div>
@@ -82,7 +117,7 @@ export default function LandingPage() {
           My Projects
         </h1>
         <div className="container projects-container d-flex flex-column align-items-center justify-content-center">
-          <WLSlick>
+          <WLSlick autoPlay autoPlaySpeed={10000}>
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
