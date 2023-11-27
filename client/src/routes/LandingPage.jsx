@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
 import "../assets/style/landingPage.css";
-import { WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text";
+import { WLHeader, WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text";
+
+import { Text } from "@nextui-org/react"
 
 import btbLogo from "../assets/images/projects/btbLogo.png"
 import wlLogo from "../assets/images/projects/webLegosLogo.gif"
@@ -9,15 +11,20 @@ import ycdLogo from "../assets/images/projects/youCanDoItGardeningLogo.png"
 import nlLogo from "../assets/images/projects/nicoleLevinLogo.png"
 import { Button, Card, Spacer } from '@nextui-org/react';
 
-import greenBg from "../assets/images/projectBackgrounds/green.png"
+import { WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content';
 
 const projects = [
   {
-    title: "Project",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    title: "PUPSys",
+    description1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    description2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     icon: null,
-    backgroundImage: greenBg,
-    previewColor: "green"
+  },
+  {
+    title: "Web-Legos",
+    description1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    description2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    icon: null,
   },
 
 ]
@@ -28,78 +35,97 @@ export default function LandingPage() {
 
   const Projects = () => {
 
-    const SelectedProject = ({project}) => {
-      return (
-        <div className="col-8 h-100 px-3">
-          <div 
-            className="d-flex flex-column align-items-center justify-content-center br-1 h-100 w-100"
-          >
-            <WLHeaderV2>
-              {project.title}
-            </WLHeaderV2>
-            <WLTextV2>
-              {project.description}
-            </WLTextV2>
+    const ProjectCard = ({project}) => {
+      
+      console.log(project)
+
+      const WhiteSection = () => (
+        <section id="psychotherapy" className="row w-100 card-top p-2">
+          <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start py-2">
+            <hgroup className="w-100 d-flex flex-column align-items-center align-items-md-start">
+              <h1>{project.title}</h1>
+              <h2>{project.subtitle}</h2>
+            </hgroup>
           </div>
+          <div className="col-12 col-lg-4 d-flex flex-column align-items-center justify-content-center">
+            {/* <img src={chair} alt="chair" className="chair" /> */}
+          </div>
+        </section>
+      )
+    
+      const GraySection = () => (
+        <div className="row w-100 card-bottom px-2" >
+          <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+            <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
+              {/* <WLTextV2 color="#E6E6E6" firestoreId="social-worker-body" editable={userCanEditText} /> */}
+            </div>
+          </div>
+          <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+            <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
+              {/* <WLTextV2 color="#E6E6E6" firestoreId="gestalt-body" editable={userCanEditText}/> */}
+            </div>
+          </div>
+        </div>
+      )
+      
+      return (
+        <div className="container-fluid d-flex flex-column align-items-center justify-content-center project-card-container">
+          <WhiteSection />
+          <GraySection />
         </div>
       )
     }
 
     return (
       <section id="icons" className="icons-background">
-        <WLHeaderV2 style={{color: "white"}}>
+        <h1 className="header-gradient">
           My Projects
-        </WLHeaderV2>
+        </h1>
         <div className="container projects-container d-flex flex-column align-items-center justify-content-center">
-          <div className="row w-100" style={{height: "500px"}}>
-            <SelectedProject project={projects[currentProject]}/>
-            <div
-              className="col-4 h-100 px-3"
-              style={{
-              }}
-            >
-              {projects.map((project, index) => (
-                <Card
-                  key={index}
-                  isPressable
-                  isHoverable
-                  className="br-1 w-100 mb-3"
-                  style={{
-                    height: "80px",
-                    backgroundColor: project.previewColor
-                  }}
-                >
-                </Card>
-              ))}
-            </div>
-          </div>
+          <WLSlick>
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </WLSlick>
         </div>
       </section>
     )
   }
 
+  const baseParallaxMultipier = 0.02
+  const parallaxLayerMultiplier = 1.05
+
+  const [parallaxCoordinates, setParallaxCoordinates] = useState({x: window.screen.width/2, y: 850/2})
+
+  function handleMouseOver(e) {
+    setParallaxCoordinates({
+      x: (e.pageX - window.screen.width/2) * baseParallaxMultipier,
+      y: (e.pageY - 850/2) * baseParallaxMultipier
+    })
+  }
+
   return (
     <div id="landing-page">
-      <section id="splash" className="splash-page">
-        <WLHeaderV2 style={{
-            textGradient: "90deg, #DCD5B9 0%, #E6A245 100%",
-        }}>
-          Joe Dobbelaar
-        </WLHeaderV2>
-        <div className="red-line" />
-        <WLTextV2>
-          Web Developer
-        </WLTextV2>
-        <WLTextV2>
-          Software Engineer
-        </WLTextV2>
-        <WLTextV2>
-          Computer Science Student
-        </WLTextV2>
-        <Spacer y={1} />
-        <Button color="gradient" size="lg" >
-          View Projects
-        </Button>
+      <section id="splash" className="splash-page" >
+        <hgroup style={{zIndex: 10}} className="d-flex flex-column align-items-center">
+          <h1 className="header-gradient" style={{fontSize: "3rem"}}>
+            Joe Dobbelaar
+          </h1>
+          <div className="red-line" />
+          <Text style={{color: "#DCD5B9"}}>
+            Web Developer
+          </Text>
+          <Text style={{color: "#DCD5B9"}}>
+            Software Engineer
+          </Text>
+          <Text style={{color: "#DCD5B9"}}>
+            Musician
+          </Text>
+          <Spacer y={1} />
+          <Button color="gradient" size="lg" className="hover-scale">
+            View Projects
+          </Button>
+        </hgroup>
       </section>
       <Projects />
     </div>

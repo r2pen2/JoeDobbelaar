@@ -11,6 +11,56 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.project-selector {
+  background-position: center center;
+  background-size: fill;
+  background-repeat: no-repeat;
+}
+
+.project-green {
+  background-image: url("../images/projectBackgrounds/green.png")
+}
+
+.parallax-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.header-gradient {
+  background: -webkit-linear-gradient(90deg, #DCD5B9 0%, #E6A245 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-scale {
+  transition: all 0.5s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.card-top {
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-bottom {
+  background: #1e1e1e;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+.project-card-container {
+  border-radius: 20px;
+  max-width: 1200px;
 }
 
 .icons-background {
@@ -56,11 +106,6 @@
 .projects-container caption {
   width: 100%;
   text-align: center;
-}
-
-.projects-container h1 {
-  font-size: 1.25rem;
-  color: white;
 }
 
 .projects-container article {
