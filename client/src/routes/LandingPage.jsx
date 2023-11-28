@@ -28,7 +28,7 @@ const projects = [
   {
     title: "PUPSys",
     subtitle: "Singlehandedly building the computing infrastructure for Umass Chan’s PUPSys",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: pupsysImg,
     firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
     secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
@@ -36,8 +36,16 @@ const projects = [
   {
     title: "Web-Legos",
     subtitle: "Building websites for individuals and businesses; clients can edit site content on their own by signing in with Google.",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: wlImg,
+    firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
+    secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
+  },
+  {
+    title: "Citrus Financial",
+    subtitle: "Building websites for individuals and businesses; clients can edit site content on their own by signing in with Google.",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
+    image: citrusLogo,
     firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
     secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
@@ -164,6 +172,8 @@ export default function LandingPage() {
     )
   }
 
+  
+
   const Experience = () => {
     
     const ExperienceCard = ({e, last}) => {
@@ -227,11 +237,123 @@ export default function LandingPage() {
       <Swoosh flipX className="shadow-top" style={{position: "absolute", bottom: -1, left: 0}} color="#1E1E1E"/>
     </section>
   )
+  
+  const Projects2 = () => {
+
+    const ProjectPreview = ({project}) => {
+      return (
+        <article className="d-flex flex-column align-items-center justify-content-start w-100 h-100" style={{position: "relative",}}>
+          <div className="card-top br-1 p-3">
+            <WLTextV2 color="#8C8C8C" align="left">{project.description}</WLTextV2>
+          </div>
+          <Sparkles
+            color={"gold"}
+            count={5}
+            minSize={7}
+            maxSize={12}
+            fadeOutSpeed={5}
+            flicker={false}
+          />
+        </article>
+      )
+    }
+
+    const ProjectCard = ({project}) => {
+
+      const CardBodyText = () => (
+        <WLTextV2 color="#8C8C8C" align="left">{project.description}</WLTextV2>
+      )
+      
+      const TextInline = () => (
+        <div className="container d-lg-block d-none" style={{padding: 0}}>
+          <div className="row d-flex flex-row align-items-center justify-content-center">
+            <div className="col-12">
+              <CardBodyText />
+            </div>
+          </div>
+        </div>
+      )
+    
+      const TextVertical = () => (
+        <div className="d-flex d-lg-none flex-column align-items-center justify-content-center"s>
+          <CardBodyText />
+        </div>
+      )
+
+      const WhiteSection = () => (
+        <section className="row w-100 card-top p-2" style={{minHeight: "100%"}}>
+          <div className="col-12 col-lg-12 d-flex flex-column align-items-start justify-content-start p-4">
+            <hgroup className="w-100 d-flex flex-column text-left p-0 mb-2">
+              <h1 className="text-center">{project.title}</h1>
+              <h2 className="text-center">{project.subtitle}</h2>
+            </hgroup>
+            <TextInline />
+            <TextVertical />
+            <Spacer y={1.25} />
+            <Button bordered color="gradient" className="w-100">Learn More</Button>
+          </div>
+          {/* <div className="img-container col-12 col-lg-4 d-flex flex-column align-items-center justify-content-center">
+            <img src={project.image} alt={project.title} />
+          </div> */}
+        </section>
+      )
+    
+      const GraySection = () => (
+        <div className="row w-100 card-bottom px-2" >
+          <div className="col-12 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+            <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
+              <WLTextV2 color="#E6E6E6" >
+                {project.firstPointText}
+              </WLTextV2>
+            </div>
+          </div>
+          {/* <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+            <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
+              <WLTextV2 color="#E6E6E6" >
+                {project.secondPointText}
+              </WLTextV2>
+            </div>
+          </div> */}
+        </div>
+      )
+      
+      return (
+        <div className="container-fluid d-flex flex-column align-items-center justify-content-center project-card-container ">
+          <WhiteSection />
+          <GraySection />
+        </div>
+      )
+    }
+
+    return (
+      <section id="projects" className="icons-background py-5">
+        <Swoosh flipY className="shadow-top" style={{position: "absolute", top: -1, left: 0}} color="#1E1E1E"/>
+        <Spacer y={2} />
+        <h1 className="header-gradient projects-header">
+          Projects
+        </h1>
+        <Spacer y={1} />
+        <div className="container-fluid projects-container d-flex flex-column align-items-center justify-content-center">
+          <div className="row w-100">
+            <div className="col-12 col-xl-4 mb-5">
+              <ProjectCard project={projects[0]}/>    
+            </div>
+            <div className="col-12 col-xl-4 mb-5">
+              <ProjectCard project={projects[1]}/>    
+            </div>
+            <div className="col-12 col-xl-4 mb-5">
+              <ProjectCard project={projects[2]}/>    
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <div id="landing-page">
       <Splash />
-      <Projects />
+      <Projects2 />
       <Experience />
     </div>
   )
