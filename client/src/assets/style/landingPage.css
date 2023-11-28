@@ -1,5 +1,5 @@
 .splash-page {
-  min-height: 850px;
+  min-height: 100vh;
   width: 100vw;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -76,10 +76,8 @@
 }
 
 .icons-background {
-  min-height: 850px;
-  width: 100vw;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  height: 100%;
+  position: relative;
   background-image: url("../images/star.png");
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -99,6 +97,15 @@
   background: linear-gradient(90deg, #E87B4B, #C4401E);
 }
 
+
+.red-line.long {
+  max-width: 100%;
+  background: linear-gradient(90deg, #E87B4B, #C4401E);
+}
+
+.projects-header { font-size: 3rem; }
+@media (max-width: 576px) { .projects-header { font-size: 2rem; } }
+
 .splash-page p {
   font-size: 1.25rem;
   color: #4C4D4E;
@@ -113,6 +120,8 @@
 
 .projects-container {
   padding-top: 2rem;
+  height: 100%;
+  filter: drop-shadow(0px 0px 10px #00000088);
 }
 
 .projects-container caption {
@@ -130,27 +139,22 @@
   padding: 2rem;
 }
 
-/* Large Styles */
-@media (max-width: 992px) {
-  .splash-page {
-    min-height: 600px;
-  }
+.experience-container {
+  background: linear-gradient(#010C18, black);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Medium Styles */
-@media (max-width: 768px) {
-  .splash-page {
-    min-height: 500px;
-  }
-
-  .splash-page p {
-    font-size: 1rem;
-  }
+.experience-column {
+  max-width: 1400px;
 }
 
-/* Small Styles */
-@media (max-width: 576px) {
-  .splash-page {
-    min-height: 50vh;
-  }
+.experience-bottom {
+  border-bottom: 1px solid #F4FBFC88;
+}
+
+.experience-icon {
+  max-height: 75px;
+  max-width: 75px;
+  margin: 1rem;
 }

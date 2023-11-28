@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 
 import "../assets/style/landingPage.css";
+import Sparkles from 'react-sparkle'
+
 import { WLHeader, WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text";
 
 import { Progress, Text } from "@nextui-org/react"
 
-import btbLogo from "../assets/images/projects/btbLogo.png"
-import wlLogo from "../assets/images/projects/webLegosLogo.gif"
-import ycdLogo from "../assets/images/projects/youCanDoItGardeningLogo.png"
-import nlLogo from "../assets/images/projects/nicoleLevinLogo.png"
+import citrusLogo from "../assets/images/employers/citrusLogo.png"
+import sentacaLogo from "../assets/images/employers/sentacaLogo.png"
+import blueportLogo from "../assets/images/employers/blueportLogo.png"
+
 import { Button, Card, Spacer } from '@nextui-org/react';
 
-import { WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content';
+import { WLSlick } from '../libraries/Web-Legos/components/Content';
 
 import pupsysImg from "../assets/images/projects/pupsysLogo.png";
 import wlImg from "../assets/images/projects/weblegosLogo.png";
 import { useEffect } from 'react';
+
+import {Swoosh} from "../libraries/Web-Legos/components/Waves"
+
+import EmailIcon from '@mui/icons-material/Email';
+import { IconButton } from '@mui/material';
 
 const projects = [
   {
@@ -34,12 +41,39 @@ const projects = [
     firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
     secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
+]
 
+const experience = [
+  {
+    position: "Chief Technology Officer",
+    employer: "Citrus Financial",
+    terms: "Self-Employed",
+    startDate: "May 2022",
+    endDate: "Present",
+    description: "Working on an app aimed to revolutionize the way you track and split expenses amongst your friends, roommates, and more.",
+    icon: citrusLogo,
+  },
+  {
+    position: "Software Engineer Intern",
+    employer: "Sentaca, an IMB Company",
+    terms: "Internship",
+    startDate: "May 2022",
+    endDate: "Aug 2022",
+    description: "Worked full time over the summer of 2022 setting up VPCs and Kubernetes clusters on AWS.",
+    icon: sentacaLogo,
+  },
+  {
+    position: "Product Reliability Intern",
+    employer: "Blueport Commerce",
+    terms: "Internship",
+    startDate: "Jun 2021",
+    endDate: "Aug 2021",
+    description: "Worked full-time as a Product Reliability intern over the summer of 2021 writing and repairing automated tests, as well as gaining some SQL experience.",
+    icon: blueportLogo,
+  },
 ]
 
 export default function LandingPage() {
-
-  const [slideProgress, setSlideProgress] = useState(0);
   
   const Projects = () => {
 
@@ -112,10 +146,13 @@ export default function LandingPage() {
     }
 
     return (
-      <section id="icons" className="icons-background">
-        <h1 className="header-gradient">
-          My Projects
+      <section id="projects" className="icons-background py-5">
+        <Swoosh flipY className="shadow-top" style={{position: "absolute", top: -1, left: 0}} color="#1E1E1E"/>
+        <Spacer y={2} />
+        <h1 className="header-gradient projects-header">
+          Projects
         </h1>
+        <Spacer y={1} />
         <div className="container projects-container d-flex flex-column align-items-center justify-content-center">
           <WLSlick autoPlay autoPlaySpeed={10000}>
             {projects.map((project, index) => (
@@ -127,42 +164,75 @@ export default function LandingPage() {
     )
   }
 
-  const baseParallaxMultipier = 0.02
-  const parallaxLayerMultiplier = 1.05
+  const Experience = () => {
+    
+    const ExperienceCard = ({e, last}) => {
 
-  const [parallaxCoordinates, setParallaxCoordinates] = useState({x: window.screen.width/2, y: 850/2})
+      return (
+        <div className={"d-flex flex-row align-items-center justify-content-start py-3 w-100 " + (last ? "" : "experience-bottom")}>
+          <img src={e.icon} alt={e.employer} className="experience-icon"/>
+          <div className="d-flex flex-column align-items-start justify-content-start">
+            <Text b style={{color: '#F4FBFC'}}>{e.position}</Text>
+            <Text style={{color: '#F4FBFC', margin: 0}}>{e.employer} · {e.terms}</Text>
+            <Text style={{color: '#F4FBFC88', margin: 0}}>{e.startDate} - {e.endDate}</Text>
+            <Text style={{color: '#F4FBFC'}}>{e.description}</Text>
+          </div>
+        </div>
+      )
+    }
 
-  function handleMouseOver(e) {
-    setParallaxCoordinates({
-      x: (e.pageX - window.screen.width/2) * baseParallaxMultipier,
-      y: (e.pageY - 850/2) * baseParallaxMultipier
-    })
+    return (
+      <section className="d-flex flex-column align-items-center justify-content-start px-2 px-md-5 experience-container">
+        <div className="experience-column d-flex flex-column align-items-start justify-content-start px-5">
+          <h1 className="header-gradient projects-header w-100">
+            Employment
+          </h1>
+          <Spacer y={1} />
+          {experience.map((e, index) => <ExperienceCard key={index} e={e} last={index === experience.length - 1}/>)}
+        </div>
+        {/* <Text style={{position: "absolute", fontSize: "32rem", margin: 0, padding: 0, color: "#ffffff22"}}>Formal Experience</Text> */}
+      </section>
+    )
   }
+
+  const Splash = () => (
+    <section id="splash" className="splash-page" >
+      <Sparkles
+        color={"blue"}
+        count={15}
+        minSize={7}
+        maxSize={12}
+        fadeOutSpeed={5}
+        flicker={false}
+      />
+      <hgroup style={{zIndex: 10}} className="d-flex flex-column align-items-center">
+        <h1 className="header-gradient" style={{fontSize: "3rem"}}>
+          Joe Dobbelaar
+        </h1>
+        <div className="red-line" />
+        <Text style={{color: "#DCD5B9"}}>
+          Web Developer
+        </Text>
+        <Text style={{color: "#DCD5B9"}}>
+          Software Engineer
+        </Text>
+        <Text style={{color: "#DCD5B9"}}>
+          Musician
+        </Text>
+        <Spacer y={1} />
+        <Button color="gradient" size="lg" className="hover-scale">
+          Download Resume
+        </Button>
+      </hgroup>
+      <Swoosh flipX className="shadow-top" style={{position: "absolute", bottom: -1, left: 0}} color="#1E1E1E"/>
+    </section>
+  )
 
   return (
     <div id="landing-page">
-      <section id="splash" className="splash-page" >
-        <hgroup style={{zIndex: 10}} className="d-flex flex-column align-items-center">
-          <h1 className="header-gradient" style={{fontSize: "3rem"}}>
-            Joe Dobbelaar
-          </h1>
-          <div className="red-line" />
-          <Text style={{color: "#DCD5B9"}}>
-            Web Developer
-          </Text>
-          <Text style={{color: "#DCD5B9"}}>
-            Software Engineer
-          </Text>
-          <Text style={{color: "#DCD5B9"}}>
-            Musician
-          </Text>
-          <Spacer y={1} />
-          <Button color="gradient" size="lg" className="hover-scale">
-            View Projects
-          </Button>
-        </hgroup>
-      </section>
+      <Splash />
       <Projects />
+      <Experience />
     </div>
   )
 }
