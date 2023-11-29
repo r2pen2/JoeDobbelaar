@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0eefc59f.css",
-    "main.js": "/static/js/main.1ac2e95a.js",
+    "main.js": "/static/js/main.57b41c0b.js",
     "static/js/783.49405dd9.chunk.js": "/static/js/783.49405dd9.chunk.js",
     "static/media/green.png": "/static/media/green.05ef31f416f4ff0ea8e3.png",
     "static/media/star.png": "/static/media/star.1c176f5b622c820d65af.png",
@@ -10,20 +10,20 @@
     "static/media/splash.webp": "/static/media/splash.32b95d7f40447b67d53f.webp",
     "static/media/sentacaLogo.png": "/static/media/sentacaLogo.77f616a33e2244c662d6.png",
     "static/media/blueportLogo.png": "/static/media/blueportLogo.efbb01f06cfab47cdb12.png",
-    "static/media/pupsysLogo.png": "/static/media/pupsysLogo.5bfedd801ef0267309de.png",
     "static/media/citrusLogo.png": "/static/media/citrusLogo.ef1304e973e38be5b849.png",
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
+    "static/media/pupsysLogo.png": "/static/media/pupsysLogo.c330b85b947b30624c8b.png",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.0eefc59f.css.map": "/static/css/main.0eefc59f.css.map",
-    "main.1ac2e95a.js.map": "/static/js/main.1ac2e95a.js.map",
+    "main.57b41c0b.js.map": "/static/js/main.57b41c0b.js.map",
     "783.49405dd9.chunk.js.map": "/static/js/783.49405dd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0eefc59f.css",
-    "static/js/main.1ac2e95a.js"
+    "static/js/main.57b41c0b.js"
   ]
 }
