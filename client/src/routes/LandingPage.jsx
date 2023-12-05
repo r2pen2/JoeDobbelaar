@@ -16,6 +16,7 @@ import { Button, Card, Spacer } from '@nextui-org/react';
 import { WLSlick } from '../libraries/Web-Legos/components/Content';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+import githubLogo from "../assets/images/projects/github.svg";
 import pupsysImg from "../assets/images/projects/pupsysLogo.png";
 import wlImg from "../assets/images/projects/weblegosLogo.png";
 import { useEffect } from 'react';
@@ -31,10 +32,11 @@ const projectsMin = [
   {
     title: "PUPSys",
     id: "pupsys",
-    subtitle: "Singlehandedly building the computing infrastructure for Umass Chan’s PUPSys",
+    subtitle: "Singlehandedly building the computing infrastructure for Umass Chan's PUPSys: a system designed to predict and prevent pressure ulcers in hospital patients.",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: pupsysImg,
-    firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
+    githubLink: "www.google.com",
+    firstPointText: "PUPSys is a UMass Chan Medical School project in collaboration with WPI's engineering department.",
     secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
   {
@@ -183,7 +185,7 @@ const Projects = () => {
           <TextInline />
           <TextVertical />
           <Spacer y={1.25} />
-          <Button bordered color="gradient" className="w-100" onClick={() => window.location = `/work#${project.id}`}>Learn More</Button>
+          <Button bordered color="gradient" className="w-100" onClick={() => window.location = `/projects#${project.id}`}>Learn More</Button>
         </div>
         <div className="img-container col-12 col-lg-4 d-lg-flex d-none flex-column align-items-center justify-content-center">
           <img src={project.image} alt={project.title} />
@@ -193,20 +195,25 @@ const Projects = () => {
   
     const GraySection = () => (
       <div className="row w-100 card-bottom px-2" >
-        <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+        <div className="col-12 col-lg-8 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
           <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
             <WLTextV2 color="#E6E6E6" >
               {project.firstPointText}
             </WLTextV2>
           </div>
         </div>
-        <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-          <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
-            <WLTextV2 color="#E6E6E6" >
-              {project.secondPointText}
-            </WLTextV2>
+        <div className="col-12 col-lg-4 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+          <div className="px-4 d-flex flex-column align-items-center justify-content-center h-100 gap-2">
+            <Button className="text-left" bordered color="gradient">
+              View On Github
+            </Button>
           </div>
         </div>
+        {/* <div className="col-12 d-flex flex-row align-items-center justify-content-center py-4">
+        <Button bordered color="gradient" iconRight={<ChevronRightIcon style={{color:"#53585B"}}/>} onClick={() => window.location = "/projects"}>
+          See All Projects
+        </Button>
+        </div> */}
       </div>
     )
     
@@ -233,7 +240,7 @@ const Projects = () => {
         </WLSlick>
       </div>
       <div className="d-flex flex-row w-100 align-items-center justify-content-center px-2 py-4" style={{maxWidth: 1200}}>
-        <Button bordered color="gradient" iconRight={<ChevronRightIcon style={{color:"#53585B"}}/>} onClick={() => window.location = "/projects"}>
+        <Button bordered color="gradient" >
           See All Projects
         </Button>
       </div>
