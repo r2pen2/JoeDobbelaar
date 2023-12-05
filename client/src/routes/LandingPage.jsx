@@ -97,6 +97,16 @@ export default function LandingPage() {
   )
 }
 
+const TopNav = () => (
+  <nav style={{position: "absolute", top: 0, height: 80}} className="w-100 d-flex flex-row align-items-center justify-content-center gap-2">
+    <a href="/projects">Projects</a>
+    <a href="/#employment">Employment</a>
+    <a href="/sites">Sites</a>
+    <a href="/music">Music</a>
+    <a href="/other">Other</a>
+  </nav>
+)
+
 const Splash = () => (
   <section id="splash" className="splash-page" >
     <Sparkles
@@ -107,20 +117,28 @@ const Splash = () => (
       fadeOutSpeed={5}
       flicker={false}
     />
+    {/* <TopNav /> */}
     <hgroup style={{zIndex: 10}} className="d-flex flex-column align-items-center">
       <h1 className="header-gradient" style={{fontSize: "3rem"}}>
         Joe Dobbelaar
       </h1>
-      <div className="red-line" />
       <Text style={{color: "#DCD5B9"}}>
-        Web Developer
+        Web Developer • Software Engineer • Musician
       </Text>
-      <Text style={{color: "#DCD5B9"}}>
+      {/* <Text style={{color: "#DCD5B9"}}>
         Software Engineer
       </Text>
       <Text style={{color: "#DCD5B9"}}>
         Musician
-      </Text>
+      </Text> */}
+      <div className="red-line" />
+      <nav className="d-flex flex-column align-items-center justify-content-center container">
+        <Link css={{color:"#DCD5B9"}} href="/projects">Projects</Link>
+        <Link css={{color:"#DCD5B9"}} href="/#employment">Employment</Link>
+        <Link css={{color:"#DCD5B9"}} href="/sites">Sites</Link>
+        <Link css={{color:"#DCD5B9"}} href="/music">Music</Link>
+        <Link css={{color:"#DCD5B9"}} href="#contact">Contact</Link>
+      </nav>
       <Spacer y={1} />
       <Button color="gradient" size="lg" className="hover-scale">
         Download Resume
@@ -246,7 +264,7 @@ const Experience = () => {
   }
 
   return (
-    <section className="d-flex flex-column align-items-center justify-content-start px-2 px-md-5 experience-container">
+    <section className="d-flex flex-column align-items-center justify-content-start px-2 px-md-5 experience-container" id="employment">
       <div className="experience-column d-flex flex-column align-items-start justify-content-start px-5">
         <h1 className="header-gradient projects-header w-100">
           Employment
