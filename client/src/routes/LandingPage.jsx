@@ -122,7 +122,7 @@ const Splash = () => (
     {/* <TopNav /> */}
     <hgroup style={{zIndex: 10}} className="d-flex flex-column align-items-center">
       <h1 className="header-gradient" style={{fontSize: "3rem"}}>
-        Joe Dobbelaar
+        Joe Dobbelaar :)
       </h1>
       <Text style={{color: "#DCD5B9"}}>
         Web Developer • Software Engineer • Musician
