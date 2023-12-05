@@ -10,8 +10,12 @@ import { Link, Progress, Text } from "@nextui-org/react"
 import citrusLogo from "../assets/images/employers/citrusLogo.png"
 import sentacaLogo from "../assets/images/employers/sentacaLogo.png"
 import blueportLogo from "../assets/images/employers/blueportLogo.png"
+import empowLogo from "../assets/images/employers/empowLogo.png"
+import zaniacLogo from "../assets/images/employers/zaniacLogo.png"
 
 import { Button, Card, Spacer } from '@nextui-org/react';
+
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 import { WLSlick } from '../libraries/Web-Legos/components/Content';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -23,8 +27,7 @@ import { useEffect } from 'react';
 
 import {Swoosh} from "../libraries/Web-Legos/components/Waves"
 
-import EmailIcon from '@mui/icons-material/Email';
-import { IconButton } from '@mui/material';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -35,9 +38,8 @@ const projectsMin = [
     subtitle: "Singlehandedly building the computing infrastructure for Umass Chan's PUPSys: a system designed to predict and prevent pressure ulcers in hospital patients.",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: pupsysImg,
-    githubLink: "www.google.com",
+    githubLink: "https://github.com/pupsys/PUPSyS-Native",
     firstPointText: "PUPSys is a UMass Chan Medical School project in collaboration with WPI's engineering department.",
-    secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
   {
     title: "Web-Legos",
@@ -45,8 +47,8 @@ const projectsMin = [
     subtitle: "Building websites for individuals and businesses; clients can edit site content on their own by signing in with Google.",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: wlImg,
+    githubLink: "https://github.com/r2pen2/web-legos",
     firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
-    secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
   {
     title: "Citrus Financial",
@@ -54,8 +56,8 @@ const projectsMin = [
     subtitle: "Building websites for individuals and businesses; clients can edit site content on their own by signing in with Google.",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: citrusLogo,
+    githubLink: "https://github.com/r2pen2/CitrusNative",
     firstPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?",
-    secondPointText: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam atque harum pariatur sapiente hic blanditiis impedit itaque saepe, ducimus dignissimos quidem maiores. Nihil officia fugit tempora, ipsum esse modi reiciendis?"
   },
 ]
 
@@ -72,7 +74,7 @@ const experience = [
   {
     position: "Software Engineer Intern",
     employer: "Sentaca, an IMB Company",
-    terms: "Internship",
+    terms: "Full-Time",
     startDate: "May 2022",
     endDate: "Aug 2022",
     description: "Worked full time over the summer of 2022 setting up VPCs and Kubernetes clusters on AWS.",
@@ -81,11 +83,29 @@ const experience = [
   {
     position: "Product Reliability Intern",
     employer: "Blueport Commerce",
-    terms: "Internship",
+    terms: "Full-Time",
     startDate: "Jun 2021",
     endDate: "Aug 2021",
     description: "Worked full-time as a Product Reliability intern over the summer of 2021 writing and repairing automated tests, as well as gaining some SQL experience.",
     icon: blueportLogo,
+  },
+  {
+    position: "Lead Instructor & Healthcare Supervisor",
+    employer: "Empow Studios",
+    terms: "Part-Time",
+    startDate: "Apr 2018",
+    endDate: "Sep 2020",
+    description: "Worked as a Lead Instructor and Healthcare Supervisor for children grades 2-8 teaching Java, Python, game design, animation, architecture, 3D printing, and more.",
+    icon: empowLogo,
+  },
+  {
+    position: "Instructor",
+    employer: "Zaniac Learning",
+    terms: "Part-Time",
+    startDate: "Apr 2017",
+    endDate: "Feb 2018",
+    description: "Worked as an Instructor for children K-8 teaching STEM through 3D printing, coding, math tutoring, and more until their closing in February 2018.",
+    icon: zaniacLogo,
   },
 ]
 
@@ -135,7 +155,7 @@ const Splash = () => (
       </Text> */}
       <div className="red-line" />
       <nav className="d-flex flex-column align-items-center justify-content-center container">
-        <Link css={{color:"#DCD5B9"}} href="/projects">Projects</Link>
+        <Link css={{color:"#DCD5B9"}} href="/#projects">Projects</Link>
         <Link css={{color:"#DCD5B9"}} href="/#employment">Employment</Link>
         <Link css={{color:"#DCD5B9"}} href="/sites">Sites</Link>
         <Link css={{color:"#DCD5B9"}} href="/music">Music</Link>
@@ -195,18 +215,26 @@ const Projects = () => {
   
     const GraySection = () => (
       <div className="row w-100 card-bottom px-2" >
-        <div className="col-12 col-lg-8 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-          <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
-            <WLTextV2 color="#E6E6E6" >
+        <div className="col-12 col-lg-9 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+          <div className="line-right px-4 d-flex flex-column align-items-center h-100 w-100 gap-2">
+            <WLTextV2 color="#E6E6E6" align="left">
               {project.firstPointText}
             </WLTextV2>
           </div>
         </div>
-        <div className="col-12 col-lg-4 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+        <div className="col-12 col-lg-3 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0, position: "relative", minHeight: 90}}>
           <div className="px-4 d-flex flex-column align-items-center justify-content-center h-100 gap-2">
-            <Button className="text-left" bordered color="gradient">
-              View On Github
-            </Button>
+            <div className="github-reveal d-flex flex-row align-items-end gap-2 justify-content-end" onClick={() => window.open(project.githubLink, "_blank")} style={{position: "absolute", bottom: "-0.5rem", right: 0, cursor: "pointer"}}>
+              <img src={githubLogo} alt="github" />
+              <Sparkles
+                color={"#f1fbfc"}
+                count={5}
+                minSize={7}
+                maxSize={12}
+                fadeOutSpeed={5}
+                flicker={false}
+              />
+            </div>
           </div>
         </div>
         {/* <div className="col-12 d-flex flex-row align-items-center justify-content-center py-4">
@@ -218,7 +246,7 @@ const Projects = () => {
     )
     
     return (
-      <div className="container-fluid d-flex flex-column align-items-center justify-content-center project-card-container">
+      <div className="container-fluid d-flex flex-column align-items-center justify-content-start project-card-container">
         <WhiteSection />
         <GraySection />
       </div>
@@ -226,7 +254,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="icons-background py-5">
+    <section id="projects" className="icons-background py-5" style={{minHeight: "100vh"}}>
       <Swoosh flipY className="shadow-top" style={{position: "absolute", top: -1, left: 0}} color="#1E1E1E"/>
       <Spacer y={2} />
       <h1 className="header-gradient projects-header">
@@ -240,7 +268,7 @@ const Projects = () => {
         </WLSlick>
       </div>
       <div className="d-flex flex-row w-100 align-items-center justify-content-center px-2 py-4" style={{maxWidth: 1200}}>
-        <Button bordered color="gradient" >
+        <Button bordered color="gradient" iconRight={<ChevronRightIcon style={{color:"#11181C"}}/>} >
           See All Projects
         </Button>
       </div>
