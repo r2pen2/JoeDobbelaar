@@ -197,10 +197,10 @@ const Projects = () => {
 
     const WhiteSection = () => (
       <section className="row w-100 card-top p-2">
-        <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start p-4">
+        <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start px-md-4 px-2 py-2">
           <hgroup className="w-100 d-flex flex-column text-left p-0 mb-2">
-            <h1 className="text-center">{project.title}</h1>
-            <h2>{project.subtitle}</h2>
+            <h1 className="text-center project-title">{project.title}</h1>
+            {/* <h2>{project.subtitle}</h2> */}
           </hgroup>
           <TextInline />
           <TextVertical />
@@ -216,13 +216,13 @@ const Projects = () => {
     const GraySection = () => (
       <div className="row w-100 card-bottom px-2" >
         <div className="col-12 col-lg-9 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-          <div className="line-right px-4 d-flex flex-column align-items-center h-100 w-100 gap-2">
+          <div className="line-right px-md-4 px-2 d-flex flex-column align-items-center h-100 w-100 gap-2">
             <WLTextV2 color="#E6E6E6" align="left">
               {project.firstPointText}
             </WLTextV2>
           </div>
         </div>
-        <div className="col-12 col-lg-3 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0, position: "relative", minHeight: 90}}>
+        <div className="col-12 col-lg-3 py-3 d-none d-md-flex flex-column align-items-center justify-content-center" style={{padding: 0, position: "relative", minHeight: 90}}>
           <div className="px-4 d-flex flex-column align-items-center justify-content-center h-100 gap-2">
             <div className="github-reveal d-flex flex-row align-items-end gap-2 justify-content-end" onClick={() => window.open(project.githubLink, "_blank")} style={{position: "absolute", bottom: "-0.5rem", right: 0, cursor: "pointer"}}>
               <img src={githubLogo} alt="github" />
