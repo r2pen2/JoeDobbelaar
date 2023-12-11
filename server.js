@@ -60,7 +60,7 @@ app.get("/images/*", (req, res) => {
 })
 
 app.get("/resume", (req, res) => {
-    res.sendFile(__dirname + "static/JoeDobbelaarResume.pdf");
+    res.sendFile(__dirname + "/static/JoeDobbelaarResume.pdf");
 })
 
 
