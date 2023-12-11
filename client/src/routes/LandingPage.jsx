@@ -52,7 +52,7 @@ const projectsMin = [
   },
   {
     title: "Citrus Financial",
-    id: "citrus",
+    id: "citrus-native",
     subtitle: "Building websites for individuals and businesses; clients can edit site content on their own by signing in with Google.",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa ut necessitatibus rem, ea quo nulla doloribus non at, perspiciatis vitae, praesentium fugiat eos nesciunt inventore quos eveniet ab accusantium!",
     image: citrusLogo,
@@ -268,7 +268,7 @@ const Projects = () => {
         </WLSlick>
       </div>
       <div className="d-flex flex-row w-100 align-items-center justify-content-center px-2 py-4" style={{maxWidth: 1200}}>
-        <Button bordered color="gradient" iconRight={<ChevronRightIcon style={{color:"#11181C"}}/>} >
+        <Button bordered color="gradient" onClick={() => window.location = "/projects"} iconRight={<ChevronRightIcon style={{color:"#11181C"}}/>} >
           See All Projects
         </Button>
       </div>
@@ -283,8 +283,8 @@ const Experience = () => {
     return (
       <div className={"align-items-center justify-content-md-start justify-content-center py-3 w-100 d-flex flex-md-row flex-column " + (last ? "" : "experience-bottom")}>
         <img src={e.icon} alt={e.employer} className="experience-icon"/>
-        <div className="d-flex flex-column align-items-start justify-content-start text-start">
-          <div className="w-100 text-md-start text-center">
+        <div className="d-flex flex-column align-items-start justify-content-start text-center text-md-start">
+          <div className="w-100">
             <Text b style={{color: '#F4FBFC'}}>{e.position}</Text>
             <Text style={{color: '#F4FBFC', margin: 0}}>{e.employer} · {e.terms}</Text>
             <Text style={{color: '#F4FBFC88', margin: 0}}>{e.startDate} - {e.endDate}</Text>

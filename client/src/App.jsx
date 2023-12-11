@@ -17,6 +17,7 @@ import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Lego
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
 import LandingPage from './routes/LandingPage';
+import Projects from './routes/Projects';
 
 /** Context to keep track of current user */
 export const CurrentSignInContext = createContext();
@@ -80,6 +81,7 @@ export function App(props) {
             {/** Place Navigation Here */}
               <Routes>
                 <Route path="*" element={<LandingPage />}/>
+                <Route path="/projects" element={<Projects />}/>
               </Routes>
             {/** Place Footer Here */}
           </div>
