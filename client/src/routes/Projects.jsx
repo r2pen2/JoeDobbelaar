@@ -90,22 +90,22 @@ const medicalTrackerProject = {
 export default function Projects() {
   return (
     <div className="projects-page px-2 px-md-4 d-flex flex-column align-items-center">
-      <div className="container d-flex flex-column align-items-center justify-content-center">
+      <div className="container-fluid d-flex flex-column align-items-center justify-content-center w-100" style={{maxWidth: 1400}}>
 
         <Project 
           projectData={webLegosProject}
           imgOverride={
             <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
-                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{height: 150, width: "auto"}} alt="arboles-login" />
+                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-login" />
                 <Spacer y={0.5} />
-                <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{height: 150, width: "auto"}} alt="arboles-map" />
+                <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-map" />
               </div>
               <Spacer x={0.5} />
               <div className="d-flex flex-column">
-                <img src={btb} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.beyondthebelleducation.com/", "_blank")} style={{height: 150, width: "auto"}} alt="arboles-tree" />
+                <img src={btb} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.beyondthebelleducation.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-tree" />
                 <Spacer y={0.5} />
-                <img src={nicole} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.nicolelevin.org/", "_blank")} style={{height: 150, width: "auto"}} alt="arboles-detail" />
+                <img src={nicole} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.nicolelevin.org/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-detail" />
               </div>
             </div>
           }
@@ -124,16 +124,30 @@ export default function Projects() {
 
         <Project 
           projectData={arbolesProject}
-          imgOverride={
-            <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!arbolesProject.mirror ? "right" : "")}>
-              <img src={arbolesLogin} className="project-shadow" onClick={() => window.open(arbolesProject.link, "_blank")} style={{height: 350, width: "auto"}} alt="arboles-login" />
+          imgOverride={[
+            <div className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
+              <div className="d-flex flex-column">
+              <img src={arbolesLogin} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+                <Spacer y={0.5} />
+              <img src={arbolesMap} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              </div>
               <Spacer x={0.5} />
-              <img src={arbolesMap} className="project-shadow" onClick={() => window.open(arbolesProject.link, "_blank")} style={{height: 350, width: "auto"}} alt="arboles-map" />
+              <div className="d-flex flex-column">
+              <img src={arbolesTree} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+                <Spacer y={0.5} />
+              <img src={arbolesDetail} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+              </div>
+            </div>,
+            <div className={"project-img d-none d-md-flex flex-row " + (!arbolesProject.mirror ? "right" : "")}>
+              <img src={arbolesLogin} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
               <Spacer x={0.5} />
-              <img src={arbolesTree} className="project-shadow" onClick={() => window.open(arbolesProject.link, "_blank")} style={{height: 350, width: "auto"}} alt="arboles-tree" />
+              <img src={arbolesMap} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
               <Spacer x={0.5} />
-              <img src={arbolesDetail} className="project-shadow" onClick={() => window.open(arbolesProject.link, "_blank")} style={{height: 350, width: "auto"}} alt="arboles-detail" />
+              <img src={arbolesTree} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+              <Spacer x={0.5} />
+              <img src={arbolesDetail} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
             </div>
+          ]
           }
           textOverride={
             <p>
@@ -162,10 +176,11 @@ function Project({projectData, textOverride, imgOverride}) {
   return (
     <ProjectArticle projectId={projectData.id}>
       {projectData.mirror && <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} />}
-      <div className="d-flex flex-column align-items-center justify-content-center col-12 col-lg-6">
+      <div className="d-flex flex-column align-items-center justify-content-center col-12 col-xl-6">
         <ProjectArticle.Title timespan={projectData.timespan}>
           {projectData.title}
         </ProjectArticle.Title>
+        <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} vertical/>
         <ProjectArticle.Text>
           {textOverride ? textOverride : projectData.previewText}
         </ProjectArticle.Text>
@@ -194,9 +209,9 @@ class ProjectArticle extends React.Component {
       <h2 style={{color: "#EAE7DE"}} className="project-title text-center">{titleProps.children} — <span>{titleProps.timespan}</span></h2>
   )
 
-  static Image = ({src, right, link, override}) => (
-    <div className="col-lg-6 col-12">
-      {override ? override : <img src={src} onClick={() => window.open(link, "_blank")} className={"project-img project-shadow " + (right ? "right" : "")} alt="project-spotlight" style={{height: 350, width: "auto"}} />}
+  static Image = ({src, right, link, override, vertical}) => (
+    <div className={`col-12 col-xl-6 ${vertical ? "d-inline d-xl-none" : "d-none d-xl-inline"}`}>
+      {override ? override : <img src={src} onClick={() => window.open(link, "_blank")} className={"project-img project-shadow " + (right ? "right" : "")} alt="project-spotlight" style={{maxHeight: 350, width: "auto"}} />}
     </div>
   )
 

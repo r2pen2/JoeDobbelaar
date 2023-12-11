@@ -48,3 +48,24 @@
 .wl-screenshot:hover {
   border: 1px solid #ffffff88;
 }
+
+@media (max-width: 1200px) {
+  .project-img {
+    transform: perspective(1000px);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-img.right {
+    transform: perspective(1000px);
+  }
+
+  .project-img:hover {
+    transform: perspective(1000px) scale(1.05)
+  }
+  
+
+  .project-img.right:hover {
+    transform: perspective(1000px) scale(1.05)
+  }
+}
