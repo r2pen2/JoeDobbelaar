@@ -169,6 +169,7 @@ function Project({projectData, textOverride, imgOverride}) {
         <ProjectArticle.Text>
           {textOverride ? textOverride : projectData.previewText}
         </ProjectArticle.Text>
+        <Spacer y={0.5} />
         <ProjectArticle.VisitButton link={projectData.link} />
       </div>
       {!projectData.mirror && <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} right={true} />}
