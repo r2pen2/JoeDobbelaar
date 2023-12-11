@@ -97,15 +97,15 @@ export default function Projects() {
           imgOverride={
             <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
-                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-login" />
+                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="talk-about-dreams-screenshot" />
                 <Spacer y={0.5} />
-                <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-map" />
+                <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="you-can-do-it-gardening-screenshot" />
               </div>
               <Spacer x={0.5} />
               <div className="d-flex flex-column">
-                <img src={btb} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.beyondthebelleducation.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-tree" />
+                <img src={btb} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.beyondthebelleducation.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="beyond-the-bell-education-screenshot" />
                 <Spacer y={0.5} />
-                <img src={nicole} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.nicolelevin.org/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="arboles-detail" />
+                <img src={nicole} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.nicolelevin.org/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="nicole=levin-screenshot" />
               </div>
             </div>
           }

@@ -69,3 +69,14 @@
     transform: perspective(1000px) scale(1.05)
   }
 }
+
+article p {
+  font-weight: 500;
+}
+
+caption {
+  background-color: #00000088;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid #EEDDA722
+}
