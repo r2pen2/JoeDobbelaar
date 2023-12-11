@@ -177,7 +177,7 @@ const Splash = ({setSitesModalOpen}) => (
         <Link css={{color:"#DCD5B9"}} href="#contact">Contact</Link>
       </nav>
       <Spacer y={1} />
-      <Button color="gradient" size="lg" className="hover-scale">
+      <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")}>
         Download Resume
       </Button>
     </hgroup>
@@ -349,7 +349,7 @@ function SitesModal({open, setOpen}) {
     >
       <Modal.Header>
         <Text h3 size="$md" id="modal-title">
-          Select a website to open in a new tab
+          I build websites for people! Check it out :)
         </Text>
       </Modal.Header>
       <Modal.Body>
