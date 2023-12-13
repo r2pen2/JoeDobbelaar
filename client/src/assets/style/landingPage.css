@@ -125,7 +125,7 @@
 }
 
 .experience-container {
-  background: linear-gradient(#010C18, black);
+  /* background: linear-gradient(#010C18, black); */
   position: relative;
   overflow: hidden;
 }

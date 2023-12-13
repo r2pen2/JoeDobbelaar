@@ -81,7 +81,7 @@ export function App(props) {
             {/** Place Navigation Here */}
               <Routes>
                 <Route path="*" element={<LandingPage />}/>
-                <Route path="/projects" element={<Projects />}/>
+                {/* <Route path="/projects" element={<Projects />}/> */}
               </Routes>
             {/** Place Footer Here */}
           </div>

@@ -59,6 +59,10 @@ app.get("/images/*", (req, res) => {
     res.sendFile(__dirname + "static/" + req._parsedOriginalUrl.path);
 })
 
+app.get("/resume", (req, res) => {
+    res.sendFile(__dirname + "/static/JoeDobbelaarResume.pdf");
+})
+
 
 // // Allow post to /images, placing an image in the static folder
 // app.post("/images/*", (req, res) => {

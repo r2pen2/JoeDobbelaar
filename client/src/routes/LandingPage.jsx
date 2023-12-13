@@ -5,7 +5,11 @@ import Sparkles from 'react-sparkle'
 
 import { WLHeader, WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text";
 
-import { Link, Progress, Text } from "@nextui-org/react"
+import { Link, Modal, Progress, Text } from "@nextui-org/react"
+
+import LaunchIcon from '@mui/icons-material/Launch';
+
+import {CardModal} from "../libraries/Web-Legos/components/Modals"
 
 import citrusLogo from "../assets/images/employers/citrusLogo.png"
 import sentacaLogo from "../assets/images/employers/sentacaLogo.png"
@@ -17,19 +21,27 @@ import { Button, Card, Spacer } from '@nextui-org/react';
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
+import ycdIcon from "../assets/images/projects/youCanDoItGardeningLogo.png"
+
+import btbIcon from "../assets/images/projects/btbLogo.png"
+
 import { WLSlick } from '../libraries/Web-Legos/components/Content';
 import GitHubIcon from '@mui/icons-material/GitHub';
+
+import dreamsIcon from "../assets/images/projects/dreamsLogo.png"
+import nicoleIcon from "../assets/images/projects/nicoleLevinLogo.png"
 
 import githubLogo from "../assets/images/projects/github.svg";
 import pupsysImg from "../assets/images/projects/pupsysLogo.png";
 import wlImg from "../assets/images/projects/weblegosLogo.png";
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 import {Swoosh} from "../libraries/Web-Legos/components/Waves"
 
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
+// import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ProjectsPage from './Projects';
 
 const projectsMin = [
   {
@@ -110,11 +122,14 @@ const experience = [
 ]
 
 export default function LandingPage() { 
+
+  const [sitesModalOpen, setSitesModalOpen] = useState(false);
+
   return (
     <div id="landing-page">
-      <Splash />
+      <SitesModal open={sitesModalOpen} setOpen={setSitesModalOpen} />
+      <Splash setSitesModalOpen={setSitesModalOpen}/>
       <Projects />
-      <Experience />
     </div>
   )
 }
@@ -129,7 +144,7 @@ const TopNav = () => (
   </nav>
 )
 
-const Splash = () => (
+const Splash = ({setSitesModalOpen}) => (
   <section id="splash" className="splash-page" >
     <Sparkles
       color={"blue"}
@@ -157,12 +172,12 @@ const Splash = () => (
       <nav className="d-flex flex-column align-items-center justify-content-center container">
         <Link css={{color:"#DCD5B9"}} href="/#projects">Projects</Link>
         <Link css={{color:"#DCD5B9"}} href="/#employment">Employment</Link>
-        <Link css={{color:"#DCD5B9"}} href="/sites">Sites</Link>
+        <Link css={{color:"#DCD5B9"}} onClick={() => setSitesModalOpen(true)}>Sites</Link>
         <Link css={{color:"#DCD5B9"}} href="/music">Music</Link>
         <Link css={{color:"#DCD5B9"}} href="#contact">Contact</Link>
       </nav>
       <Spacer y={1} />
-      <Button color="gradient" size="lg" className="hover-scale">
+      <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")}>
         Download Resume
       </Button>
     </hgroup>
@@ -260,7 +275,10 @@ const Projects = () => {
       <h1 className="header-gradient projects-header">
         What I'm Working On
       </h1>
-      <div className="container projects-container d-flex flex-column align-items-center justify-content-center">
+      <ProjectsPage />
+      
+      <Experience />
+      {/* <div className="container projects-container d-flex flex-column align-items-center justify-content-center">
         <WLSlick autoPlay autoPlaySpeed={10000}>
           {projectsMin.map((project, index) => (
             <ProjectCard key={index} project={project} />
@@ -271,7 +289,7 @@ const Projects = () => {
         <Button bordered color="gradient" onClick={() => window.location = "/projects"} iconRight={<ChevronRightIcon style={{color:"#11181C"}}/>} >
           See All Projects
         </Button>
-      </div>
+      </div> */}
     </section>
   )
 }
@@ -311,3 +329,89 @@ const Experience = () => {
     </section>
   )
 }
+
+function SitesModal({open, setOpen}) {
+  return (
+    // <CardModal open={open} setOpen={setOpen}>
+    //   <CardModal.Item
+    //     icon={<img src={citrusLogo} alt="citrus-logo" />}
+    //     title="Beyond The Bell Education"
+    //     subtitle="Educational enrichment, social skills and executive functioning groups, academic tutoring, and advocacy and consulting for families and schools."
+    //     href="https://www.beyondthebelleducation.com"
+    //   />
+    // </CardModal>
+    <Modal
+      closeButton
+      className="mx-2"
+      open={open}
+      blur
+      onClose={() => setOpen(false)}
+    >
+      <Modal.Header>
+        <Text h3 size="$md" id="modal-title">
+          I build websites for people! Check it out :)
+        </Text>
+      </Modal.Header>
+      <Modal.Body>
+        <div className="d-flex flex-column">
+          {sites.map((site, i) => (
+                      <div className="mt-2" key={i}>
+                      <Card 
+                        isHoverable 
+                        isPressable
+                        variant="bordered" 
+                        onPress={() => window.open(site.href, "_blank")}
+                        css={{
+                          flex: 1,
+                        }}
+                      >
+                        <Card.Body>
+                          <div className="d-flex flex-row align-items-center justify-content-space-between">
+                            {site.icon}
+                            <div className="d-flex flex-column align-items-start justify-content-center w-100">
+                              <Text b>
+                                {site.title}
+                              </Text>
+                            </div>
+                            <LaunchIcon />
+                          </div>
+                        </Card.Body>
+                      </Card>
+                    </div>
+          ))}
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <div className="d-flex flex-row align-items-center justify-content-center w-100">
+          <Button auto flat color="error" onPress={() => setOpen(false)} >
+              Close
+          </Button>
+        </div>
+      </Modal.Footer>
+    </Modal>
+  )
+}
+
+
+const sites = [
+  {
+    title: "Beyond The Bell Education",
+    href: "https://www.beyondthebelleducation.com/",
+    icon: <img src={btbIcon} alt="btb-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
+    title: "You Can Do It Gardening",
+    href: "https://www.youcandoitgardening.com/",
+    icon: <img src={ycdIcon} alt="ycd-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
+    title: "Nicole Levin",
+    href: "https://www.nicolelevin.org/",
+    icon: <img src={nicoleIcon} alt="nicole-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
+    title: "Talk About Dreams",
+    href: "https://www.dreams.joed.dev/",
+    icon: <img src={dreamsIcon} alt="dreams-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+]
