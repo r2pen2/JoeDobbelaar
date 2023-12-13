@@ -29,12 +29,12 @@ export const TestingContext = createContext();
 const permissions = new WLPermissionsConfig();
 
 /** Site AuthenticationManager */
-const authenticationManager = new AuthenticationManager(firebaseConfig, permissions);
-authenticationManager.initialize();
+// const authenticationManager = new AuthenticationManager(firebaseConfig, permissions);
+// authenticationManager.initialize();
 
 /** Site AnalyticsManager */
-const analyticsManager = new AnalyticsManager(firebaseConfig)
-analyticsManager.initialize();
+// const analyticsManager = new AnalyticsManager(firebaseConfig)
+// analyticsManager.initialize();
 
 const theme = createWLTheme();
 
