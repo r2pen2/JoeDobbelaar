@@ -48,15 +48,15 @@ export function App(props) {
   /** Provider for all app contexts */
   function AppContextProvider(props) {
     return (
-      <AuthenticationManager.Context.Provider value={{authenticationManager}} >
-      <AnalyticsManager.Context.Provider value={{analyticsManager}} >
+      // <AuthenticationManager.Context.Provider value={{authenticationManager}} >
+      // <AnalyticsManager.Context.Provider value={{analyticsManager}} >
       <TestingContext.Provider value={{isTestingEnvironment}} >
       <CurrentSignInContext.Provider value={{currentSignIn}} >
         {props.children}
       </CurrentSignInContext.Provider>
       </TestingContext.Provider>
-      </AnalyticsManager.Context.Provider>
-      </AuthenticationManager.Context.Provider >
+      // </AnalyticsManager.Context.Provider>
+      // </AuthenticationManager.Context.Provider >
     )
   }
 
