@@ -1,6 +1,6 @@
 import React from 'react';
 import "../assets/style/projects.css";
-import { Button, Link, Spacer } from '@nextui-org/react';
+import { Button, Divider, Link, Spacer } from '@nextui-org/react';
 
 // WL Images
 import nicole from "../assets/images/projects/web-legos/nicoleScreenshot.png";
@@ -80,7 +80,7 @@ const citrusReactProject = {
 const medicalTrackerProject = {
   title: "Medical Tracker",
   link: medicalTrackingLink,
-  previewText: "I worked with a team of software engineering students to build an application for employees at Brigham and Women's Hospital to better track the status and location of medical equipment. I mainly worked on the front-end, developing a native desktop application with JavaFX. My roles on the team were Assistand Lead Software Engineer and Scrum Master.",
+  previewText: "I worked with a team of software engineering students to build an application for employees at Brigham and Women's Hospital to better track the status and location of medical equipment. I mainly worked on the front-end, developing a native desktop application with JavaFX. My roles on the team were Assistant Lead Software Engineer and Scrum Master.",
   timespan: "2022",
   id: "medical-tracking",
   img: medicalTrackingPreview,
@@ -110,7 +110,7 @@ export default function Projects() {
             </div>
           }
         />
-
+        <ProjectLine />
         <Project 
           projectData={cirtusProject} 
           textOverride={
@@ -119,9 +119,9 @@ export default function Projects() {
             </p>
           }
         />
-
+        <ProjectLine />
         <Project projectData={studentSuccessProject} />
-
+        <ProjectLine />
         <Project 
           projectData={arbolesProject}
           imgOverride={[
@@ -151,11 +151,11 @@ export default function Projects() {
           }
           textOverride={
             <p>
-              <Link href="https://www.arbolesmagicos.org">Árboles Magicos</Link> is a nonprofit organization aimed at promoting cultural appreciation for the beauty of nature through the use of flowering trees. During the first few months of 2023, I travelled with a team of students to San Jose, where we re-wrote their <Link href="https://www.arbolesmagicos.org/ojeadores/">Ojeadores</Link> app in DOTNet MAUI. The new app is centered around a collaborative map, where anyone can identify a tree and place a public pin.
+              <Link href="https://www.arbolesmagicos.org">Árboles Magicos</Link> is a nonprofit organization aimed at promoting cultural appreciation for the beauty of nature through the use of flowering trees. During the first few months of 2023, I travelled with a team of students to Costa Rica, where we re-wrote their <Link href="https://www.arbolesmagicos.org/ojeadores/">Ojeadores</Link> app in DOTNet MAUI. The new app is centered around a collaborative map, where anyone can identify a tree and place a public pin.
             </p>
           }
         />
-          
+        <ProjectLine />
         <Project 
           projectData={citrusReactProject} 
           textOverride={
@@ -164,15 +164,15 @@ export default function Projects() {
             </p>
           }
         />
-
-        <Project projectData={medicalTrackerProject} />
+        <ProjectLine />
+        <Project projectData={medicalTrackerProject} last />
 
       </div>
     </div>
   )
 }
 
-function Project({projectData, textOverride, imgOverride}) {
+function Project({projectData, textOverride, imgOverride, last}) {
   return (
     <ProjectArticle projectId={projectData.id}>
       {projectData.mirror && <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} />}
@@ -223,3 +223,5 @@ class ProjectArticle extends React.Component {
     )
   }
 }
+
+const ProjectLine = () => <div className="project-line" />

@@ -80,7 +80,7 @@ const experience = [
     terms: "Self-Employed",
     startDate: "May 2022",
     endDate: "Present",
-    description: "Working on an app aimed to revolutionize the way you track and split expenses amongst your friends, roommates, and more.",
+    description: "Working on an app aiming to revolutionize the way you track and split expenses amongst your friends, roommates, and more.",
     icon: citrusLogo,
   },
   {
@@ -98,7 +98,7 @@ const experience = [
     terms: "Full-Time",
     startDate: "Jun 2021",
     endDate: "Aug 2021",
-    description: "Worked full-time as a Product Reliability intern over the summer of 2021 writing and repairing automated tests, as well as gaining some SQL experience.",
+    description: "Worked full-time over the summer of 2021, writing and repairing automated tests, as well as gaining some SQL experience.",
     icon: blueportLogo,
   },
   {
@@ -107,7 +107,7 @@ const experience = [
     terms: "Part-Time",
     startDate: "Apr 2018",
     endDate: "Sep 2020",
-    description: "Worked as a Lead Instructor and Healthcare Supervisor for children grades 2-8 teaching Java, Python, game design, animation, architecture, 3D printing, and more.",
+    description: "Taught Java, Python, game design, animation, architecture, 3D printing, and more to children grades 2-8.",
     icon: empowLogo,
   },
   {
@@ -116,7 +116,7 @@ const experience = [
     terms: "Part-Time",
     startDate: "Apr 2017",
     endDate: "Feb 2018",
-    description: "Worked as an Instructor for children K-8 teaching STEM through 3D printing, coding, math tutoring, and more until their closing in February 2018.",
+    description: "Taught STEM through 3D printing, coding, math tutoring, and more to children K-8, until their closing in February 2018.",
     icon: zaniacLogo,
   },
 ]
