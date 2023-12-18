@@ -21,16 +21,16 @@ import citrusV3Preview from "../assets/images/projects/citrusReact.png"
 
 const citrusV3Link = "https://github.com/r2pen2/Citrus-V3"
 const medicalTrackingLink = "https://github.com/CS3733-C22-Team-E/MedicalTracking";
-const studentSuccessLink = "https://studentsuccesshandbook.wpi.edu/";
+const studentSuccessLink = "https://github.com/wpivis/StudentSuccess";
 const cirtusNativeLink = "https://github.com/r2pen2/CitrusNative"
-const arbolesLink = "https://github.com/r2pen2/Arboles_Maui";
+const arbolesLink = "https://github.com/r2pen2/Arboles-Maui-Mirror";
 const webLegosLink = "https://github.com/r2pen2/web-legos";
 
 const webLegosProject = {
   title: "Web-Legos",
   link: webLegosLink,
   // img: "",
-  previewText: `Most recently, I've been building websites for individuals and small businesses. To work more efficiently, I've created a vast library of custom assets that I call "Web Legos". The big selling point is that clients never have to contact me for small updates: they are instead able to sign-in with Google and change / add text, images, and custom objects from the site itself.`,
+  previewText: `Lately, my focus has been on crafting websites for individuals and small businesses. To streamline this process, I've developed a comprehensive suite of custom assets, aptly named 'Web Legos'. A key advantage for my clients is the autonomy it offers: they can sign in using Google and independently modify text, images, and custom objects directly on their website, eliminating the need to contact me for minor updates.`,
   timespan: "2023",
   id: "web-legos",
   mirror: false
@@ -40,7 +40,7 @@ const cirtusProject = {
   title: "Citrus Native",
   link: cirtusNativeLink,
   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaGLPq3kuCV1EnActxgqMWIhNwZ_g3d5-Et1OIJqTShg&s",
-  // previewText: "Built a mobile-friendly website for incoming freshmen at WPI to access their resources. The Student Success Handbook is designed to ensure that all students, including those from diverse backgrounds, can access and benefit from campus resources.",
+  // previewText: "",
   timespan: "2023",
   id: "citrus-native",
   mirror: true
@@ -50,7 +50,7 @@ const studentSuccessProject = {
   title: "WPI Student Success Handbook",
   link: studentSuccessLink,
   img: ssPreview,
-  previewText: `The Student Success Handbook is a mobile-first website for incoming freshmen at WPI to access their resources. It is designed to ensure that all students, including those from diverse backgrounds, can access and benefit from campus resources.`,
+  // previewText: "",
   timespan: "2023",
   id: "student-success",
   mirror: false
@@ -59,7 +59,7 @@ const studentSuccessProject = {
 const arbolesProject = {
   title: "Árboles Magicos",
   link: arbolesLink,
-  // img: arbolesPreview,
+  // img: null,
   previewText: `Árboles Magicos is a nonprofit organization aimed at promoting cultural appreciation for the beauty of nature through the use of flowering trees. During the first few months of 2023, I travelled with a team of students to San Jose, where we re-wrote their "Ojeadores" app.`,
   timespan: "2023",
   id: "arboles-magicos",
@@ -70,7 +70,7 @@ const arbolesProject = {
 const citrusReactProject = {
   title: "Citrus V3",
   link: citrusV3Link,
-  // previewText: "This is the third iteration of Citrus Financial and, as it was one of my first real projects, one of the most bloated React apps ever conceived. There's so much going on here.",
+  // previewText: "",
   timespan: "2022",
   id: "citrus-v3",
   img: citrusV3Preview,
@@ -80,7 +80,7 @@ const citrusReactProject = {
 const medicalTrackerProject = {
   title: "Medical Tracker",
   link: medicalTrackingLink,
-  previewText: "I worked with a team of software engineering students to build an application for employees at Brigham and Women's Hospital to better track the status and location of medical equipment. I mainly worked on the front-end, developing a native desktop application with JavaFX. My roles on the team were Assistant Lead Software Engineer and Scrum Master.",
+  previewText: "Together with a team of software engineering students, we developed an application to enhance equipment tracking at Brigham and Women's Hospital. My primary focus was crafting the front-end, creating a native desktop application using JavaFX. In this project, I contributed as the Assistant Lead Software Engineer and Scrum Master, playing a pivotal role in both development and team coordination.",
   timespan: "2022",
   id: "medical-tracking",
   img: medicalTrackingPreview,
@@ -115,12 +115,19 @@ export default function Projects() {
           projectData={cirtusProject} 
           textOverride={
             <p>
-              My mobile development magnum opus: Citrus Native is the latest version of Citrus Financial: an app in React Native to allow for easy, trust based expense splitting and bookkeeping. There were several iterations: a Django version, <Link href="#citrus-v3">two React web apps</Link>, and finally a React Native mobile application.
+              Citrus Native, my mobile development magnum opus, is the latest version of Citrus Financial. This React Native app aims to revolutionize expense splitting and bookkeeping with its straight-forward and trust-based approach. Its journey includes several iterations: starting from a Django version, evolving through <Link href="#citrus-v3">two React web applications</Link>, and culminating in this React Native mobile app.
             </p>
           }
         />
         <ProjectLine />
-        <Project projectData={studentSuccessProject} />
+        <Project 
+          projectData={studentSuccessProject}
+          textOverride={
+            <p>
+              The <Link href="https://studentsuccesshandbook.wpi.edu/" target="_blank" isExternal>Student Success Handbook</Link> is a mobile-optimized website crafted for WPI's incoming freshmen. It's an essential guide to campus resources, tailored to support students from all walks of life. This platform ensures that every new student, regardless of their background, can easily navigate and utilize the wealth of resources available at WPI.
+            </p>
+          }  
+        />
         <ProjectLine />
         <Project 
           projectData={arbolesProject}
@@ -151,7 +158,7 @@ export default function Projects() {
           }
           textOverride={
             <p>
-              <Link href="https://www.arbolesmagicos.org">Árboles Magicos</Link> is a nonprofit organization aimed at promoting cultural appreciation for the beauty of nature through the use of flowering trees. During the first few months of 2023, I travelled with a team of students to Costa Rica, where we re-wrote their <Link href="https://www.arbolesmagicos.org/ojeadores/">Ojeadores</Link> app in DOTNet MAUI. The new app is centered around a collaborative map, where anyone can identify a tree and place a public pin.
+              In the first few months of 2023, I traveled to Costa Rica with a team of students to collaborate with <Link href="https://www.arbolesmagicos.org/" target="_blank" isExternal>Árboles Magicos</Link>, a nonprofit promoting cultural appreciation of nature through flowering trees. We focused on redeveloping their <Link href="https://www.arbolesmagicos.org/ojeadores/" target="_blank" isExternal>Ojeadores</Link> app in DOTNet MAUI. The new version showcases a collaborative map feature, allowing users to identify trees and place public pins.
             </p>
           }
         />
@@ -160,7 +167,7 @@ export default function Projects() {
           projectData={citrusReactProject} 
           textOverride={
             <p>
-              This is the third iteration of <Link href="#citrus-native">Citrus Financial</Link> and, as it was one of my first real projects, one of the most bloated React apps ever conceived. There's so much going on here. At one point, this was a fully functional proof of concept. It doesn't differ much from <Link href="https://github.com/r2pen2/Citrus-React" target="_blank" >version 2</Link>, and I very quickly decided to shift my attention towards making a React Native mobile app for Citrus instead of creating a fourth iteration of the web app.
+              This third iteration of <Link href="#citrus-native">Citrus Financial</Link> represents a key early project in my portfolio. As a comprehensive React app, it served as a valuable learning experience. It closely resembles <Link href="https://github.com/r2pen2/Citrus-React" target="_blank" isExternal>version 2</Link>, and the insights gained led me to focus on developing a React Native mobile app for Citrus, marking a significant evolution in my coding journey.
             </p>
           }
         />
@@ -202,7 +209,7 @@ class ProjectArticle extends React.Component {
   )
 
   static VisitButton = ({link}) => (
-    <Button color="gradient" bordered onClick={() => window.open(link, "_blank")}>View Github</Button>
+    <Button color="gradient" bordered onClick={() => window.open(link, "_blank")}>View GitHub</Button>
   )
 
   static Title = (titleProps) => (
