@@ -37,8 +37,17 @@ const experience = [
     terms: "Self-Employed",
     startDate: "May 2022",
     endDate: "Present",
-    description: "Working on an app aiming to revolutionize the way you track and split expenses amongst your friends, roommates, and more.",
+    description: "Started a company with some friends around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
     icon: citrusLogo,
+  },
+  {
+    position: "Software Engineer",
+    employer: "UMass Chan Medical School",
+    terms: "Contract Worker",
+    startDate: "April 2023",
+    endDate: "Present",
+    description: "Single-handedly building the computing infrastructure for UMass Chan’s PUPSys: a system for preventing pressure ulcers in hospital patients. Ensuring HIPAA compliant database.",
+    icon: pupsysImg,
   },
   {
     position: "Software Engineer Intern",
@@ -46,7 +55,7 @@ const experience = [
     terms: "Full-Time",
     startDate: "May 2022",
     endDate: "Aug 2022",
-    description: "Worked full-time over the summer of 2022 setting up VPCs and Kubernetes clusters on AWS.",
+    description: "Created virtual machines and networks using AWS CloudFormation. Learned to build Kubernetes clusters. Laid foundation for the migration of a monolithic software to a cloud-based microservices architecture. Hands-on experience with AWS cloud computing technologies and design principles.",
     icon: sentacaLogo,
   },
   {
@@ -55,7 +64,7 @@ const experience = [
     terms: "Full-Time",
     startDate: "Jun 2021",
     endDate: "Aug 2021",
-    description: "Worked full-time over the summer of 2021, writing and repairing automated tests, as well as gaining some SQL experience.",
+    description: "Wrote and repaired automated tests in C#, ensuring that all code in production was bug-free. Gained some SQL experience. Became familiar with Agile Scrum methodology, code documentation best practices, and other aspects of team development.",
     icon: blueportLogo,
   },
   {
@@ -64,7 +73,7 @@ const experience = [
     terms: "Part-Time",
     startDate: "Apr 2018",
     endDate: "Sep 2020",
-    description: "Taught Java, Python, game design, animation, architecture, 3D printing, and more to children grades 2-8.",
+    description: "Worked as a Lead Instructor and Healthcare Supervisor for children grades 2-8 teaching Java, Python, game design, animation, 3D printing, and more. Was the only instructor for the “Python Advanced Team,” a class on program design concepts like team planning, git usage, and code documentation.",
     icon: empowLogo,
   },
   {
@@ -90,16 +99,6 @@ export default function LandingPage() {
     </div>
   )
 }
-
-const TopNav = () => (
-  <nav style={{position: "absolute", top: 0, height: 80}} className="w-100 d-flex flex-row align-items-center justify-content-center gap-2">
-    <a href="/projects">Projects</a>
-    <a href="/#employment">Employment</a>
-    <a href="/sites">Sites</a>
-    <a href="/music">Music</a>
-    <a href="/other">Other</a>
-  </nav>
-)
 
 const Splash = ({setSitesModalOpen}) => (
   <section id="splash" className="splash-page" >
