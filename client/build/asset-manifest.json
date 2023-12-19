@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4e477aa8.css",
-    "main.js": "/static/js/main.a1997048.js",
+    "main.js": "/static/js/main.8fdcfe5f.js",
     "static/media/ycdScreenshot.png": "/static/media/ycdScreenshot.3a326882ae23fa79683b.png",
     "static/media/nicoleScreenshot.png": "/static/media/nicoleScreenshot.e4537b79d395f684e7e4.png",
     "static/media/btbScreenshot.png": "/static/media/btbScreenshot.944ea77497e5e0ddd1e1.png",
@@ -28,13 +28,13 @@
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
     "static/media/zaniacLogo.png": "/static/media/zaniacLogo.4d87a84078cf6f74dda3.png",
     "static/media/arbolesLoginScreen.jpg": "/static/media/arbolesLoginScreen.8f69a05a01861b3c6bcb.jpg",
-    "static/media/pupsysLogo.png": "/static/media/pupsysLogo.c330b85b947b30624c8b.png",
+    "static/media/pupsysLogo.png": "/static/media/pupsysLogo.daec3efd9feed0ecb551.png",
     "index.html": "/index.html",
     "main.4e477aa8.css.map": "/static/css/main.4e477aa8.css.map",
-    "main.a1997048.js.map": "/static/js/main.a1997048.js.map"
+    "main.8fdcfe5f.js.map": "/static/js/main.8fdcfe5f.js.map"
   },
   "entrypoints": [
     "static/css/main.4e477aa8.css",
-    "static/js/main.a1997048.js"
+    "static/js/main.8fdcfe5f.js"
   ]
 }
