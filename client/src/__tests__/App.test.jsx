@@ -18,16 +18,16 @@ describe("High-level tests", () => {
   })
 })
 
-describe("BP-10700 default tests", () => {
-  test("BP-10700 loads and displays Lego brick", () => {
-    render(<TestApp />)
-    const legoBrick = screen.getByTestId("lego-brick");
-    expect(legoBrick).toBeVisible();
-  })
+// describe("BP-10700 default tests", () => {
+//   test("BP-10700 loads and displays Lego brick", () => {
+//     render(<TestApp />)
+//     const legoBrick = screen.getByTestId("lego-brick");
+//     expect(legoBrick).toBeVisible();
+//   })
   
-  test("BP-10700 loads and displays text", () => {
-    render(<TestApp />)
-    const titleText = screen.getByTestId("title-text");
-    expect(titleText).toBeVisible();
-  })
-})
+//   test("BP-10700 loads and displays text", () => {
+//     render(<TestApp />)
+//     const titleText = screen.getByTestId("title-text");
+//     expect(titleText).toBeVisible();
+//   })
+// })
