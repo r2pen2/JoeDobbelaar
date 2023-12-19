@@ -80,7 +80,7 @@ const citrusReactProject = {
 const medicalTrackerProject = {
   title: "Medical Tracker",
   link: medicalTrackingLink,
-  previewText: "Together with a team of software engineering students, we developed an application to enhance equipment tracking at Brigham and Women's Hospital. My primary focus was crafting the front-end, creating a native desktop application using JavaFX. In this project, I contributed as the Assistant Lead Software Engineer and Scrum Master, playing a pivotal role in both development and team coordination.",
+  previewText: "In this project, a team of software engineering students developed an application to enhance equipment tracking at Brigham and Women's Hospital. My primary focus was crafting the front-end, creating a native desktop application using JavaFX. I contributed as the Assistant Lead Software Engineer and Scrum Master, playing a pivotal role in both development and team coordination.",
   timespan: "2022",
   id: "medical-tracking",
   img: medicalTrackingPreview,
@@ -115,7 +115,7 @@ export default function Projects() {
           projectData={cirtusProject} 
           textOverride={
             <p>
-              Citrus Native, my mobile development magnum opus, is the latest version of Citrus Financial. This React Native app aims to revolutionize expense splitting and bookkeeping with its straight-forward and trust-based approach. Its journey includes several iterations: starting from a Django version, evolving through <Link href="#citrus-v3">two React web applications</Link>, and culminating in this React Native mobile app.
+              Citrus Native, my mobile development magnum opus, is the latest version of Citrus Financial. This React Native app aims to revolutionize expense splitting and bookkeeping with its straightforward and trust-based approach. Its journey includes several iterations: starting from a Django version, evolving through <Link href="#citrus-v3">two React web applications</Link>, and culminating in this React Native mobile app.
             </p>
           }
         />
@@ -167,7 +167,7 @@ export default function Projects() {
           projectData={citrusReactProject} 
           textOverride={
             <p>
-              This third iteration of <Link href="#citrus-native">Citrus Financial</Link> represents a key early project in my portfolio. As a comprehensive React app, it served as a valuable learning experience. It closely resembles <Link href="https://github.com/r2pen2/Citrus-React" target="_blank" isExternal>version 2</Link>, and the insights gained led me to focus on developing a React Native mobile app for Citrus, marking a significant evolution in my coding journey.
+              This third iteration of <Link href="#citrus-native">Citrus Financial</Link> represents a key early project in my portfolio. As a comprehensive React app, it served as a valuable learning experience. The insights gained led me to focus on developing a React Native mobile app for Citrus, marking a significant evolution in my coding journey.
             </p>
           }
         />

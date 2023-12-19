@@ -46,7 +46,7 @@ const experience = [
     terms: "Full-Time",
     startDate: "May 2022",
     endDate: "Aug 2022",
-    description: "Worked full time over the summer of 2022 setting up VPCs and Kubernetes clusters on AWS.",
+    description: "Worked full-time over the summer of 2022 setting up VPCs and Kubernetes clusters on AWS.",
     icon: sentacaLogo,
   },
   {
