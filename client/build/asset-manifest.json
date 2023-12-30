@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e477aa8.css",
-    "main.js": "/static/js/main.8fdcfe5f.js",
+    "main.css": "/static/css/main.7a1f36b1.css",
+    "main.js": "/static/js/main.964cb4c4.js",
     "static/media/ycdScreenshot.png": "/static/media/ycdScreenshot.3a326882ae23fa79683b.png",
     "static/media/nicoleScreenshot.png": "/static/media/nicoleScreenshot.e4537b79d395f684e7e4.png",
     "static/media/btbScreenshot.png": "/static/media/btbScreenshot.944ea77497e5e0ddd1e1.png",
@@ -30,11 +30,11 @@
     "static/media/arbolesLoginScreen.jpg": "/static/media/arbolesLoginScreen.8f69a05a01861b3c6bcb.jpg",
     "static/media/pupsysLogo.png": "/static/media/pupsysLogo.daec3efd9feed0ecb551.png",
     "index.html": "/index.html",
-    "main.4e477aa8.css.map": "/static/css/main.4e477aa8.css.map",
-    "main.8fdcfe5f.js.map": "/static/js/main.8fdcfe5f.js.map"
+    "main.7a1f36b1.css.map": "/static/css/main.7a1f36b1.css.map",
+    "main.964cb4c4.js.map": "/static/js/main.964cb4c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e477aa8.css",
-    "static/js/main.8fdcfe5f.js"
+    "static/css/main.7a1f36b1.css",
+    "static/js/main.964cb4c4.js"
   ]
 }
