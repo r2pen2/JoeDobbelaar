@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.7a1f36b1.css",
-    "main.js": "/static/js/main.964cb4c4.js",
-    "static/media/ycdScreenshot.png": "/static/media/ycdScreenshot.3a326882ae23fa79683b.png",
-    "static/media/nicoleScreenshot.png": "/static/media/nicoleScreenshot.e4537b79d395f684e7e4.png",
-    "static/media/btbScreenshot.png": "/static/media/btbScreenshot.944ea77497e5e0ddd1e1.png",
-    "static/media/dreamsScreenshot.png": "/static/media/dreamsScreenshot.0efea3c706720ddab854.png",
+    "main.js": "/static/js/main.97e7e6a3.js",
     "static/media/citrusReact.png": "/static/media/citrusReact.23b577b75d01b9082b63.png",
     "static/media/green.png": "/static/media/green.05ef31f416f4ff0ea8e3.png",
     "static/media/star.png": "/static/media/star.1c176f5b622c820d65af.png",
     "static/media/medicalTracking.png": "/static/media/medicalTracking.92712401f988c6de507d.png",
     "static/media/power-brick.gif": "/static/media/power-brick.e4a20717c79c08149a40.gif",
     "static/media/weblegosLogo.png": "/static/media/weblegosLogo.3ff17b8a6a24b457e893.png",
+    "static/media/ycdScreenshot.png": "/static/media/ycdScreenshot.d151e5a744216cbb7d33.png",
     "static/media/splash.webp": "/static/media/splash.32b95d7f40447b67d53f.webp",
+    "static/media/dreamsScreenshot.png": "/static/media/dreamsScreenshot.9941acf986bc5c04fbe5.png",
     "static/media/ssPreview.png": "/static/media/ssPreview.f281936acc55d6de072b.png",
+    "static/media/nicoleScreenshot.png": "/static/media/nicoleScreenshot.d85ccccbe9a36707125f.png",
     "static/media/sentacaLogo.png": "/static/media/sentacaLogo.77f616a33e2244c662d6.png",
+    "static/media/btbScreenshot.png": "/static/media/btbScreenshot.ca1f8ec4ae546891110d.png",
     "static/media/blueportLogo.png": "/static/media/blueportLogo.efbb01f06cfab47cdb12.png",
     "static/media/arbolesDetail.png": "/static/media/arbolesDetail.c2eb48f57432a2b450c1.png",
     "static/media/empowLogo.png": "/static/media/empowLogo.beecdf0b6769033fa521.png",
@@ -31,10 +31,10 @@
     "static/media/pupsysLogo.png": "/static/media/pupsysLogo.daec3efd9feed0ecb551.png",
     "index.html": "/index.html",
     "main.7a1f36b1.css.map": "/static/css/main.7a1f36b1.css.map",
-    "main.964cb4c4.js.map": "/static/js/main.964cb4c4.js.map"
+    "main.97e7e6a3.js.map": "/static/js/main.97e7e6a3.js.map"
   },
   "entrypoints": [
     "static/css/main.7a1f36b1.css",
-    "static/js/main.964cb4c4.js"
+    "static/js/main.97e7e6a3.js"
   ]
 }
