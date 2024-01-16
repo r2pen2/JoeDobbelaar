@@ -128,25 +128,25 @@ export default function Projects() {
           imgOverride={[
             <div className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
-              <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+              <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
                 <Spacer y={0.5} />
-              <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
               </div>
               <Spacer x={0.5} />
               <div className="d-flex flex-column">
-              <img src={citrusGroup} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+              <img src={citrusGroup} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
                 <Spacer y={0.5} />
-              <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+              <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
               </div>
             </div>,
-            <div className={"project-img d-none d-md-flex flex-row " + (!arbolesProject.mirror ? "right" : "")}>
-              <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+            <div className={"project-img d-none d-md-flex flex-row " + (!cirtusProject.mirror ? "right" : "")}>
+              <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
               <Spacer x={0.5} />
-              <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
               <Spacer x={0.5} />
-              <img src={citrusGroup} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+              <img src={citrusGroup} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
               <Spacer x={0.5} />
-              <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+              <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
             </div>
           ]}
         />
