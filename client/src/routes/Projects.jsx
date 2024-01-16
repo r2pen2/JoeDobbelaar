@@ -14,6 +14,12 @@ import arbolesDetail from "../assets/images/projects/arboles/arbolesDetail.png";
 import arbolesMap from "../assets/images/projects/arboles/arbolesMap.jpg";
 import arbolesTree from "../assets/images/projects/arboles/arbolesTree.jpg";
 
+// Citrus Images
+import citrusGroup from "../assets/images/projects/citrus-native/citrus-group.jpg";
+import citrusNew from "../assets/images/projects/citrus-native/citrus-new.jpg";
+import citrusPeople from "../assets/images/projects/citrus-native/citrus-people.jpg";
+import citrusTransaction from "../assets/images/projects/citrus-native/citrus-transaction.jpg";
+
 // Small Pics
 import ssPreview from "../assets/images/projects/ssPreview.png";
 import medicalTrackingPreview from "../assets/images/projects/medicalTracking.png"
@@ -40,7 +46,7 @@ const webLegosProject = {
 const cirtusProject = {
   title: "Citrus Native",
   link: cirtusNativeLink,
-  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaGLPq3kuCV1EnActxgqMWIhNwZ_g3d5-Et1OIJqTShg&s",
+  // img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaGLPq3kuCV1EnActxgqMWIhNwZ_g3d5-Et1OIJqTShg&s",
   // previewText: "",
   timespan: "2023",
   id: "citrus-native",
@@ -119,6 +125,30 @@ export default function Projects() {
               Citrus Native, my mobile development magnum opus, is the latest version of Citrus Financial. This React Native app aims to revolutionize expense splitting and bookkeeping with its straightforward and trust-based approach. Its journey includes several iterations: starting from a Django version, evolving through <Link href="#citrus-v3">two React web applications</Link>, and culminating in this React Native mobile app.
             </p>
           }
+          imgOverride={[
+            <div className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
+              <div className="d-flex flex-column">
+              <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+                <Spacer y={0.5} />
+              <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              </div>
+              <Spacer x={0.5} />
+              <div className="d-flex flex-column">
+              <img src={citrusGroup} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+                <Spacer y={0.5} />
+              <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+              </div>
+            </div>,
+            <div className={"project-img d-none d-md-flex flex-row " + (!arbolesProject.mirror ? "right" : "")}>
+              <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+              <Spacer x={0.5} />
+              <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              <Spacer x={0.5} />
+              <img src={citrusGroup} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+              <Spacer x={0.5} />
+              <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+            </div>
+          ]}
         />
         <ProjectLine />
         <Project 
