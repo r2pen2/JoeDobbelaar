@@ -759,7 +759,7 @@ const sites = [
 
 function Footer() {
   return (
-    <footer className="px-5 py-2 d-flex flex-column align-items-center justify-content-center" id="contact">
+    <footer className="p-5 d-flex flex-column align-items-center justify-content-center" id="contact">
       <WLHeaderV2 size="$4xl" color="white" align="left" className="d-none d-md-inline">Joe Dobbelaar</WLHeaderV2>
       <WLHeaderV2 size="$4xl" color="white" align="center" className="d-inline d-md-none">Joe Dobbelaar</WLHeaderV2>
       <div className="d-flex flex-md-row flex-column gap-2 align-items-center align-items-md-start justify-content-center justify-content-md-start w-100">
