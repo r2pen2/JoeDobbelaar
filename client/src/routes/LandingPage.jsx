@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 import "../assets/style/landingPage.css";
 import Sparkles from 'react-sparkle'
 
-import { WLHeader, WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text";
-
-import { Link, Modal, Progress, Text, Tooltip } from "@nextui-org/react"
+import { Link, Modal, Text, Tooltip } from "@nextui-org/react"
 
 import LaunchIcon from '@mui/icons-material/Launch';
 import citrusLogo from "../assets/images/employers/citrusLogo.png"
@@ -24,9 +22,9 @@ import dreamsIcon from "../assets/images/projects/dreamsLogo.png"
 import nicoleIcon from "../assets/images/projects/nicoleLevinLogo.png"
 
 import pupsysImg from "../assets/images/projects/pupsysLogo.png";
-import wlImg from "../assets/images/projects/weblegosLogo.png";
 
 import {Swoosh} from "../libraries/Web-Legos/components/Waves"
+import {WLHeaderV2} from "../libraries/Web-Legos/components/Text"
 
 import ProjectsPage from './Projects';
 
@@ -45,8 +43,8 @@ const experience = [
     employer: "UMass Chan Medical School",
     terms: "Contract Worker",
     startDate: "April 2023",
-    endDate: "Present",
-    description: "Single-handedly building the computing infrastructure for UMass Chan’s PUPSys: a system for preventing pressure ulcers in hospital patients. Ensuring HIPAA compliant database.",
+    endDate: "September 2023",
+    description: "Single-handedly built the computing infrastructure for UMass Chan's PUPSys: a system for preventing pressure ulcers in hospital patients. Ensuring HIPAA compliant database.",
     icon: pupsysImg,
   },
   {
@@ -97,6 +95,7 @@ export default function LandingPage() {
       <Splash setSitesModalOpen={setSitesModalOpen}/>
       <Skills />
       <Projects />
+      <Footer />
     </div>
   )
 }
@@ -138,7 +137,7 @@ const Splash = ({setSitesModalOpen}) => (
 const Projects = () => {
 
   return (
-    <section id="projects" className="icons-background py-5" style={{minHeight: "100vh"}}>
+    <section id="projects" className="icons-background pt-5" style={{minHeight: "100vh"}}>
       <Swoosh flipY className="shadow-top" style={{position: "absolute", top: -1, left: 0}} color="#1E1E1E"/>
       <Spacer y={2} />
       <h1 className="header-gradient projects-header">
@@ -147,6 +146,7 @@ const Projects = () => {
       <ProjectsPage />
       
       <Experience />
+      <Swoosh color="#1e1e1e" flipX/>
     </section>
   )
 }
@@ -756,3 +756,25 @@ const sites = [
     icon: <img src={dreamsIcon} alt="dreams-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
   },
 ]
+
+function Footer() {
+  return (
+    <footer className="px-5 py-2 d-flex flex-column align-items-center justify-content-center" id="contact">
+      <WLHeaderV2 size="$4xl" color="white" align="left" className="d-none d-md-inline">Joe Dobbelaar</WLHeaderV2>
+      <WLHeaderV2 size="$4xl" color="white" align="center" className="d-inline d-md-none">Joe Dobbelaar</WLHeaderV2>
+      <div className="d-flex flex-md-row flex-column gap-2 align-items-center align-items-md-start justify-content-center justify-content-md-start w-100">
+        <Link href="https://www.joed.dev">
+          <Text color="#8C8C8C" css={{textDecoration:"underline"}}>www.joed.dev</Text>
+        </Link>
+        <Text color="#8C8C8C" className="d-none d-md-inline">・</Text>
+        <Link href="mailto:hire@joed.dev">
+          <Text color="#8C8C8C" css={{textDecoration:"underline"}}>hire@joed.dev</Text>
+        </Link>
+        <Text color="#8C8C8C" className="d-none d-md-inline">・</Text>
+        <Link href="callto:7818799058">
+          <Text color="#8C8C8C" css={{textDecoration:"underline"}}>(781) 879-9058</Text>
+        </Link>
+      </div>
+    </footer>
+  )
+}

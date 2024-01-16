@@ -1,6 +1,6 @@
 import React from 'react';
 import "../assets/style/projects.css";
-import { Button, Divider, Link, Spacer } from '@nextui-org/react';
+import { Button, Link, Spacer } from '@nextui-org/react';
 
 // WL Images
 import nicole from "../assets/images/projects/web-legos/nicoleScreenshot.png";
@@ -19,6 +19,7 @@ import ssPreview from "../assets/images/projects/ssPreview.png";
 import medicalTrackingPreview from "../assets/images/projects/medicalTracking.png"
 import citrusV3Preview from "../assets/images/projects/citrusReact.png"
 
+// Web Links
 const citrusV3Link = "https://github.com/r2pen2/Citrus-V3"
 const medicalTrackingLink = "https://github.com/CS3733-C22-Team-E/MedicalTracking";
 const studentSuccessLink = "https://github.com/wpivis/StudentSuccess";
