@@ -143,7 +143,7 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
         Download Resume
       </Button>
       <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + 500); setPrintable(true)}} onMouseLeave={() => setPrintable(false)}>
-        <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-1">
+        <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
           Printable Version
         </Text>
       </Link>
