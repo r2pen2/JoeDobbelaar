@@ -93,14 +93,17 @@ export default function LandingPage() {
 
   const [confettiLeft, setConfettiLeft] = useState(0);
 
+  const [printable, setPrintable] = useState(false);
+
   return (
     <div id="landing-page">
       <Confetti
         recycle={false}
         numberOfPieces={confettiLeft}
+        colors={printable ? ["#000000", "#gggggg", "#efefef", "#aaaaaa", "#333333", "#ffffff"] : undefined}
       />
       <SitesModal open={sitesModalOpen} setOpen={setSitesModalOpen} />
-      <Splash setSitesModalOpen={setSitesModalOpen} setConfettiLeft={setConfettiLeft} confettiLeft={confettiLeft}/>
+      <Splash setSitesModalOpen={setSitesModalOpen} setConfettiLeft={setConfettiLeft} confettiLeft={confettiLeft} setPrintable={setPrintable} printable={printable} />
       <Skills />
       <Projects />
       <Footer />
@@ -108,10 +111,10 @@ export default function LandingPage() {
   )
 }
 
-const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft}) => {
+const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable, printable}) => {
 
   return (
-  <section id="splash" className="splash-page" >
+  <section id="splash" className={printable ? "splash-page printable" : "splash-page"} >
     <Sparkles
       color={"blue"}
       count={15}
@@ -139,6 +142,11 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft}) => {
       <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setConfettiLeft(confettiLeft + 500)}}>
         Download Resume
       </Button>
+      <Link href="/resume?light=true" onMouseEnter={() => {setConfettiLeft(confettiLeft + 500); setPrintable(true)}} onMouseLeave={() => setPrintable(false)}>
+        <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-1">
+          Printable Version
+        </Text>
+      </Link>
     </hgroup>
     <Swoosh flipX className="shadow-top" style={{position: "absolute", bottom: -1, left: 0, zIndex: 2}} color="#1E1E1E"/>
   </section>
