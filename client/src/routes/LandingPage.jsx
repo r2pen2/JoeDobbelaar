@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import "../assets/style/landingPage.css";
 import Sparkles from 'react-sparkle'
+
+import Confetti from "react-confetti";
 
 import { Link, Modal, Text, Tooltip } from "@nextui-org/react"
 
@@ -89,10 +91,16 @@ export default function LandingPage() {
 
   const [sitesModalOpen, setSitesModalOpen] = useState(false);
 
+  const [confettiLeft, setConfettiLeft] = useState(0);
+
   return (
     <div id="landing-page">
+      <Confetti
+        recycle={false}
+        numberOfPieces={confettiLeft}
+      />
       <SitesModal open={sitesModalOpen} setOpen={setSitesModalOpen} />
-      <Splash setSitesModalOpen={setSitesModalOpen}/>
+      <Splash setSitesModalOpen={setSitesModalOpen} setConfettiLeft={setConfettiLeft} confettiLeft={confettiLeft}/>
       <Skills />
       <Projects />
       <Footer />
@@ -100,7 +108,9 @@ export default function LandingPage() {
   )
 }
 
-const Splash = ({setSitesModalOpen}) => (
+const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft}) => {
+
+  return (
   <section id="splash" className="splash-page" >
     <Sparkles
       color={"blue"}
@@ -126,13 +136,13 @@ const Splash = ({setSitesModalOpen}) => (
         <Link css={{color:"#DCD5B9"}} href="#contact">Contact</Link>
       </nav>
       <Spacer y={1} />
-      <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")}>
+      <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setConfettiLeft(confettiLeft + 500)}}>
         Download Resume
       </Button>
     </hgroup>
-    <Swoosh flipX className="shadow-top" style={{position: "absolute", bottom: -1, left: 0}} color="#1E1E1E"/>
+    <Swoosh flipX className="shadow-top" style={{position: "absolute", bottom: -1, left: 0, zIndex: 2}} color="#1E1E1E"/>
   </section>
-)
+)}
 
 const Projects = () => {
 
