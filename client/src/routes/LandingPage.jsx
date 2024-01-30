@@ -142,7 +142,7 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
       <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setConfettiLeft(confettiLeft + 500)}}>
         Download Resume
       </Button>
-      <Link href="/resume?light=true" onMouseEnter={() => {setConfettiLeft(confettiLeft + 500); setPrintable(true)}} onMouseLeave={() => setPrintable(false)}>
+      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + 500); setPrintable(true)}} onMouseLeave={() => setPrintable(false)}>
         <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-1">
           Printable Version
         </Text>
