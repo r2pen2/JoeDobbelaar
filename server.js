@@ -66,7 +66,7 @@ app.get("/resume", (req, res) => {
     if (light) {
         res.sendFile(__dirname + "/static/JoeDobbelaarResumeLight.pdf");
     } else {
-        res.sendFile(__dirname + "/static/JoeDobbelaarResumeLight.pdf");
+        res.sendFile(__dirname + "/static/JoeDobbelaarResume.pdf");
     }
 })
 
