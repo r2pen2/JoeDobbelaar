@@ -95,15 +95,17 @@ export default function LandingPage() {
 
   const [printable, setPrintable] = useState(false);
 
+  const [grayscaleGlitter, setGrayscaleGlitter] = useState(false);
+
   return (
     <div id="landing-page">
       <Confetti
         recycle={false}
         numberOfPieces={confettiLeft}
-        colors={printable ? ["#000000", "#gggggg", "#efefef", "#aaaaaa", "#333333", "#ffffff"] : undefined}
+        colors={grayscaleGlitter ? ["#000000", "#gggggg", "#efefef", "#aaaaaa", "#333333", "#ffffff"] : undefined}
       />
       <SitesModal open={sitesModalOpen} setOpen={setSitesModalOpen} />
-      <Splash setSitesModalOpen={setSitesModalOpen} setConfettiLeft={setConfettiLeft} confettiLeft={confettiLeft} setPrintable={setPrintable} printable={printable} />
+      <Splash setSitesModalOpen={setSitesModalOpen} setConfettiLeft={setConfettiLeft} confettiLeft={confettiLeft} setPrintable={setPrintable} printable={printable} setGrayscaleGlitter={setGrayscaleGlitter}/>
       <Skills />
       <Projects />
       <Footer />
@@ -111,7 +113,9 @@ export default function LandingPage() {
   )
 }
 
-const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable, printable}) => {
+const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable, printable, setGrayscaleGlitter}) => {
+
+  const dConfetti = 300;
 
   return (
   <section id="splash" className={printable ? "splash-page printable" : "splash-page"} >
@@ -139,10 +143,10 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
         <Link css={{color:"#DCD5B9"}} href="#contact">Contact</Link>
       </nav>
       <Spacer y={1} />
-      <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setConfettiLeft(confettiLeft + 500)}}>
+      <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setGrayscaleGlitter(false); setConfettiLeft(confettiLeft + dConfetti)}}>
         Download Resume
       </Button>
-      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + 500); setPrintable(true)}} onMouseLeave={() => setPrintable(false)}>
+      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)}>
         <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
           Printable Version
         </Text>
