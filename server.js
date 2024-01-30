@@ -60,7 +60,14 @@ app.get("/images/*", (req, res) => {
 })
 
 app.get("/resume", (req, res) => {
-    res.sendFile(__dirname + "/static/JoeDobbelaarResume.pdf");
+
+    const light = req.query["light"] === "true" ? true : false;
+
+    if (light) {
+        res.sendFile(__dirname + "/static/JoeDobbelaarResumeLight.pdf");
+    } else {
+        res.sendFile(__dirname + "/static/JoeDobbelaarResumeLight.pdf");
+    }
 })
 
 
