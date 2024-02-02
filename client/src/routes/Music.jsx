@@ -41,15 +41,15 @@ export default function Music() {
             <div className="album-header">
               <img src={albumArt} alt="album-art" />
               <div className="album-text">
-                <Text>Album</Text>
-                <Text h1>Joe Dobbelaar</Text>
+                <Text color="white">Album</Text>
+                <Text h1 color="white">Joe Dobbelaar</Text>
                 <span>
                   <img src={albumArt} alt="Joe Dobbelaar" />
                   <a href="http://www.youtube.com/r2pen2/" target="_blank" rel="noreferrer">
-                    <Text b>Joe Dobbelaar</Text>
+                    <Text b color="white">Joe Dobbelaar</Text>
                   </a>
-                  <Text className="dot">2001</Text>
-                  <Text className="dot">{songCount} songs, {mins} min {secs} sec</Text>
+                  <Text className="dot" color="white">2001</Text>
+                  <Text className="dot" color="white">{songCount} songs, {mins} min {secs} sec</Text>
                 </span>
               </div>
             </div>
