@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.da5e21b0.css",
+    "main.css": "/static/css/main.58806750.css",
     "main.js": "/static/js/main.2ec98fa5.js",
     "static/media/citrusReact.png": "/static/media/citrusReact.23b577b75d01b9082b63.png",
     "static/media/green.png": "/static/media/green.05ef31f416f4ff0ea8e3.png",
@@ -34,11 +34,11 @@
     "static/media/pupsysLogo.png": "/static/media/pupsysLogo.daec3efd9feed0ecb551.png",
     "static/media/jd.svg": "/static/media/jd.9b277c0a2fd141819d72c20d609c8a09.svg",
     "index.html": "/index.html",
-    "main.da5e21b0.css.map": "/static/css/main.da5e21b0.css.map",
+    "main.58806750.css.map": "/static/css/main.58806750.css.map",
     "main.2ec98fa5.js.map": "/static/js/main.2ec98fa5.js.map"
   },
   "entrypoints": [
-    "static/css/main.da5e21b0.css",
+    "static/css/main.58806750.css",
     "static/js/main.2ec98fa5.js"
   ]
 }
