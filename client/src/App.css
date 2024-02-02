@@ -9,3 +9,11 @@
 .app-content {
   width: 100vw;
 }
+
+.App *::selection {
+  background: #ffffff22; /* WebKit/Blink Browsers */
+}
+
+.App *::-moz-selection {
+  background: #ffffff22; /* Gecko Browsers */
+}
