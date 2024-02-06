@@ -5,6 +5,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 import albumArt from "../assets/images/jd.svg"
 
@@ -133,15 +134,20 @@ export default function Music() {
 
   function SongItem({song}) {
     return (
-      <div className="song-item d-flex flex-row align-items-center justify-content-between px-5 py-1" style={{width: "90%"}} onClick={() => window.open(song.link, "_blank")}>
-        <Text color="#a7a7a7" size="$xl" className="m-0" style={{width: songOrderWidth}}>{song.order}</Text>
-        <div className="d-flex flex-column align-items-start w-100 text-left">
-          <Text color="white" size="$xl" className="m-0">{song.title}</Text>
+      <div className="song-item d-flex flex-row align-items-center justify-content-between px-5 py-1" style={{width: "90%", maxWidth:"90%"}} onClick={() => window.open(song.link, "_blank")}>
+        <div className="song-order-container">
+          <Text color="#a7a7a7" className="m-0 song-order" style={{width: songOrderWidth}}>{song.order}</Text>
+          <PlayArrowIcon style={{color: "#ffffff"}} />
+        </div>
+        <div className="song-text-container">
+          <Text color="white" className="m-0">{song.title}</Text>
           <a href={song.artistHref} target="_blank" rel="noreferrer">
             <Text color="#a7a7a7" className="m-0">{song.artist}</Text>
           </a>
         </div>
-        <Text color="#a7a7a7">{song.duration}</Text>
+        <div className="song-duration-container">        
+          <Text color="#a7a7a7">{song.duration}</Text>
+        </div>
       </div>
     )
   }
@@ -201,8 +207,10 @@ export default function Music() {
           </div>
           <div className="album-content">
               <div className="content-header px-5">
-                <div className="text-left" style={{width: songOrderWidth}}><Text color="#a7a7a7" size="$xl">#</Text></div>
-                <div className="text-left w-100"><Text color="#a7a7a7" size="$xl">Title</Text></div>
+                <div className="song-order-container">                
+                  <div style={{width: songOrderWidth}}><Text color="#a7a7a7" size="$lg">#</Text></div>
+                </div>
+                <div className="text-left w-100"><Text color="#a7a7a7">Title</Text></div>
                 <div className=""><AccessTimeOutlinedIcon style={{color: "#a7a7a7"}} /></div>
               </div>
               <Divider style={{backgroundColor: "#a7a7a733", width: "90%"}} height={1} />
