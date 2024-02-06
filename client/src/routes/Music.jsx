@@ -6,102 +6,23 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import albumArt from "../assets/images/jd.svg"
 
 import "../assets/style/music.css"
 import { IconButton } from '@mui/material';
 
-const songCount = 12;
+import {albums, songs} from "../api/data/songs"
+
 const mins = 10;
 const secs = 30;
-
-const songs = [
-  {
-    order: 1,
-    title: "Hereafter",
-    artist: "Architects",
-    duration: "4:14",
-    link: "https://www.youtube.com/watch?v=nmlRsOEfer4&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/3ZztVuWxHzNpl0THurTFCv"
-  },
-  {
-    order: 2,
-    title: "I Used To Have A Best Friend (But Then He Gave Me An STD)",
-    artist: "Asking Alexandria",
-    duration: "4:06",
-    link: "https://www.youtube.com/watch?v=rDxN3VlAYnM&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/1caBfBEapzw8z2Qz9q0OaQ"
-  },
-  {
-    order: 3,
-    title: "Yule Shoot Your Eye Out",
-    artist: "Fall Out Boy",
-    duration: "3:28",
-    link: "https://www.youtube.com/watch?v=SWqz49SEqnk&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/4UXqAaa6dQYAk18Lv7PEgX"
-  },
-  {
-    order: 4,
-    title: "We Only Come Out At Night",
-    artist: "Motionless In White",
-    duration: "3:15",
-    link: "https://www.youtube.com/watch?v=-mSvvenM0J4&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/6MwPCCR936cYfM1dLsGVnl"
-  },
-  {
-    order: 5,
-    title: "Guillotine IV (The Final Chapter)", 
-    artist: "Falling In Reverse",
-    duration: "3:38",
-    link: "https://www.youtube.com/watch?v=nb_kyA3mjIg&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/2CmaKO2zEGJ1NWpS1yfVGz"
-  },
-  {
-    order: 6,
-    title: "Sambuka", 
-    artist: "Pierce The Veil",
-    duration: "2:28",
-    link: "https://www.youtube.com/watch?v=2Fd2uMSa8gw&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv"
-  },
-  {
-    order: 7,
-    title: "A Boy Brushed Red Living In Black And White", 
-    artist: "Underoath",
-    duration: "4:29",
-    link: "https://www.youtube.com/watch?v=I2UQ19dPCdY&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/3GzWhE2xadJiW8MqRKIVSK"
-  },
-  {
-    order: 8,
-    title: "I Was Once, Possibly, Maybe, Perhaps A Cowboy King", 
-    artist: "Asking Alexandria",
-    duration: "3:41",
-    link: "https://www.youtube.com/watch?v=ShTEkM-EFiw&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/1caBfBEapzw8z2Qz9q0OaQ"
-  },
-  {
-    order: 9,
-    title: "Bloodmeat", 
-    artist: "Protest The Hero",
-    duration: "3:56",
-    link: "https://www.youtube.com/watch?v=oHe6E4KW_HE&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/6z3BjfmgvDUIHaJ0UPTtrQ"
-  },
-  {
-    order: 10,
-    title: "With Ears To See And Eyes To Hear", 
-    artist: "Sleeping With Sirens",
-    duration: "3:59",
-    link: "https://www.youtube.com/watch?v=RAi7v9rzAwQ&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/3N8Hy6xQnQv1F1XCiyGQqA"
-  },
-]
 
 const songOrderWidth = 20;
 
 export default function Music() {
+
+  const [currentAlbum, setCurrentAlbum] = useState(null)
   
   const [videoPlayerOpen, setViewPlayerOpen] = useState(false)
 
@@ -134,19 +55,24 @@ export default function Music() {
 
   function SongItem({song}) {
     return (
-      <div className="song-item d-flex flex-row align-items-center justify-content-between px-5 py-1" style={{width: "90%", maxWidth:"90%"}} onClick={() => window.open(song.link, "_blank")}>
-        <div className="song-order-container">
-          <Text color="#a7a7a7" className="m-0 song-order" style={{width: songOrderWidth}}>{song.order}</Text>
-          <PlayArrowIcon style={{color: "#ffffff"}} />
+      <div className={`song-item d-flex flex-row align-items-center justify-content-between px-5 py-1 ${(!currentAlbum || (currentAlbum && song.link)) ? "playable" : "unplayable"}`} style={{width: "90%", maxWidth:"90%"}} onClick={() => {if (!song.link) {return;} window.open(song.link, "_blank")}}>
+        <div className="d-flex flex-row" style={{gap: "1rem"}}>
+          <div className="song-order-container">
+            <Text color="#a7a7a7" className={"m-0 song-order"} style={{width: songOrderWidth}}>{song.order}</Text>
+            <PlayArrowIcon style={{color: "#ffffff"}} className="play-icon" />
+          </div>
+          <div className="song-text-container">
+            <Text color="white" className="m-0">{song.title}</Text>
+            <a href={currentAlbum ? currentAlbum.artistHref : song.artistHref} target="_blank" rel="noreferrer">
+              <Text color="#a7a7a7" className="m-0">{currentAlbum ? currentAlbum.artist : song.artist}</Text>
+            </a>
+          </div>
         </div>
-        <div className="song-text-container">
-          <Text color="white" className="m-0">{song.title}</Text>
-          <a href={song.artistHref} target="_blank" rel="noreferrer">
-            <Text color="#a7a7a7" className="m-0">{song.artist}</Text>
-          </a>
-        </div>
-        <div className="song-duration-container">        
-          <Text color="#a7a7a7">{song.duration}</Text>
+        <div className="d-flex flex-row align-items-center" style={{gap: "2rem"}}>
+          {song.link && <FavoriteIcon fontSize='small' style={{color: "#1ED760"}} />}
+          <div className="song-duration-container">        
+            <Text color="#a7a7a7">{song.duration}</Text>
+          </div>
         </div>
       </div>
     )
@@ -154,8 +80,32 @@ export default function Music() {
   
   const [tipModalOpen, setTipModalOpen] = useState(true);
 
+  function AlbumSelection({album}) {
+    return (
+      <div className="d-flex flex-row align-items-center album-selection" onClick={() => {setCurrentAlbum(album)}}>
+        <img src={album.albumCover} alt="album-cover" />
+        <div className="text-left">
+          <Text className={`album-selection-title ${currentAlbum ? (currentAlbum.title === album.title ? "selected" : "") : ""}`}>{album.title}</Text>
+          <Text color="#a7a7a7">Album • {album.artist}</Text>
+        </div>
+      </div>
+    )
+  }
+
+  function getTimeDisplay() {
+    if (currentAlbum) {
+      if (currentAlbum.hours) {
+        return `${currentAlbum ? currentAlbum.songs.length : songs.length} songs, ${currentAlbum.hours} hr ${currentAlbum.mins} min`
+      }
+      return `${currentAlbum ? currentAlbum.songs.length : songs.length} songs, ${currentAlbum ? currentAlbum.mins : mins} min ${currentAlbum ? currentAlbum.secs : secs} sec`
+    }
+    return `${currentAlbum ? currentAlbum.songs.length : songs.length} songs, ${currentAlbum ? currentAlbum.mins : mins} min ${currentAlbum ? currentAlbum.secs : secs} sec`
+  }
+  
   return (
-    <div className="spotify-container" onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}>
+    <div className="spotify-container" onMouseUp={handleMouseUp} onMouseMove={handleMouseMove} style={{
+      "--album-theme-color": currentAlbum ? currentAlbum.themeColor : "#ee4747"
+    }}>
       <Modal open={tipModalOpen} onClose={() => setTipModalOpen(false)} closeButton>
         <Modal.Header>
           <Text h1>Hey, there!</Text>
@@ -172,7 +122,7 @@ export default function Music() {
       <div className="d-flex flex-column align-items-center justify-content-center spotify-sidebar" style={{ width: sidebarWidth }}>
         <div className="right-resizer" onMouseDown={handleRightResizeMouseDown} />
         <div className="tab-selector spotify-bg-light w-100 p-relative">
-          <div className="tab-item">
+          <div className="tab-item" onClick={() => setCurrentAlbum(null)}>
             <HomeOutlinedIcon />
             <Text>Home</Text>
           </div>
@@ -182,7 +132,7 @@ export default function Music() {
           </div>
         </div>
         <div className="recents-selector spotify-bg-light w-100">
-
+          {albums.map((a, i) => <AlbumSelection key={i} album={a} />)}
         </div>
       </div>
       <div className="album-container">
@@ -191,17 +141,17 @@ export default function Music() {
         </IconButton>
         <div className="album">
           <div className="album-header">
-            <img src={albumArt} alt="album-art" />
+            <img src={currentAlbum ? currentAlbum.albumCover : albumArt} alt="album-art" />
             <div className="album-text">
-              <Text color="white">Album</Text>
-              <Text h1 color="white">Joe Dobbelaar</Text>
+              <Text color="white">{currentAlbum ? "Album" : "Artist"}</Text>
+              <Text h1 color="white">{currentAlbum ? currentAlbum.title : "Joe Dobbelaar"}</Text>
               <span>
-                <img src={albumArt} alt="Joe Dobbelaar" />
-                <a href="http://www.youtube.com/r2pen2/" target="_blank" rel="noreferrer">
-                  <Text b color="white">Joe Dobbelaar</Text>
+                <img src={currentAlbum ? currentAlbum.albumCover : albumArt} alt="Joe Dobbelaar" />
+                <a href={currentAlbum ? currentAlbum.artistHref : "http://www.youtube.com/r2pen2/"} target="_blank" rel="noreferrer">
+                  <Text b color="white">{currentAlbum ? currentAlbum.artist : "Joe Dobbelaar"}</Text>
                 </a>
-                <Text className="dot" color="white">2001</Text>
-                <Text className="dot" color="white">{songCount} songs, {mins} min {secs} sec</Text>
+                <Text className="dot" color="white">{currentAlbum ? currentAlbum.year : 2001}</Text>
+                <Text className="dot" color="white">{getTimeDisplay()}</Text>
               </span>
             </div>
           </div>
@@ -214,7 +164,8 @@ export default function Music() {
                 <div className=""><AccessTimeOutlinedIcon style={{color: "#a7a7a7"}} /></div>
               </div>
               <Divider style={{backgroundColor: "#a7a7a733", width: "90%"}} height={1} />
-            { songs.map((s, i) => <SongItem key={i} song={s}/>) }
+            { !currentAlbum && songs.map((s, i) => <SongItem key={i} song={s}/>) }
+            { currentAlbum && currentAlbum.songs.map((s, i) => <SongItem key={i} song={s}/>) }
           </div>
         </div>
       </div>
