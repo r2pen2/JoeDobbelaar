@@ -5,8 +5,6 @@ import Sparkles from 'react-sparkle'
 
 import Confetti from "react-confetti";
 
-import { isOnMobile } from "../libraries/Web-Legos/api/device"
-
 import { Link, Modal, Text, Tooltip } from "@nextui-org/react"
 
 import LaunchIcon from '@mui/icons-material/Launch';
@@ -119,11 +117,11 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
 
   const dConfetti = 300;
 
-  function reloadIfOnMobile() {
-    if (isOnMobile()) {
-      window.location.reload();
-    }
-  }
+  // function reloadIfOnMobile() {
+  //   if (isOnMobile()) {
+  //     window.location.reload();
+  //   }
+  // }
 
   return (
   <section id="splash" className={printable ? "splash-page printable" : "splash-page"} >
@@ -154,7 +152,7 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
       <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setGrayscaleGlitter(false); setConfettiLeft(confettiLeft + dConfetti)}}>
         Download Resume
       </Button>
-      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onPress={reloadIfOnMobile}>
+      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onPress={window.location.reload}>
         <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
           Printable Version
         </Text>
