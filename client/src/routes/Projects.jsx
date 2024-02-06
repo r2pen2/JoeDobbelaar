@@ -126,7 +126,7 @@ export default function Projects() {
             </p>
           }
           imgOverride={[
-            <div className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
+            <div key="citrus-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
               <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
                 <Spacer y={0.5} />
@@ -139,7 +139,7 @@ export default function Projects() {
               <img src={citrusTransaction} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
               </div>
             </div>,
-            <div className={"project-img d-none d-md-flex flex-row " + (!cirtusProject.mirror ? "right" : "")}>
+            <div key="citrus-images-2" className={"project-img d-none d-md-flex flex-row " + (!cirtusProject.mirror ? "right" : "")}>
               <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
               <Spacer x={0.5} />
               <img src={citrusNew} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
@@ -163,7 +163,7 @@ export default function Projects() {
         <Project 
           projectData={arbolesProject}
           imgOverride={[
-            <div className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
+            <div key="arboles-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
               <img src={arbolesLogin} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
                 <Spacer y={0.5} />
@@ -176,7 +176,7 @@ export default function Projects() {
               <img src={arbolesDetail} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
               </div>
             </div>,
-            <div className={"project-img d-none d-md-flex flex-row " + (!arbolesProject.mirror ? "right" : "")}>
+            <div key="arboles-images-2" className={"project-img d-none d-md-flex flex-row " + (!arbolesProject.mirror ? "right" : "")}>
               <img src={arbolesLogin} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
               <Spacer x={0.5} />
               <img src={arbolesMap} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
@@ -219,7 +219,7 @@ function Project({projectData, textOverride, imgOverride, last}) {
           {projectData.title}
         </ProjectArticle.Title>
         <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} vertical/>
-        <ProjectArticle.Text>
+        <ProjectArticle.Text override={textOverride}>
           {textOverride ? textOverride : projectData.previewText}
         </ProjectArticle.Text>
         <Spacer y={0.5} />
@@ -232,11 +232,11 @@ function Project({projectData, textOverride, imgOverride, last}) {
 
 class ProjectArticle extends React.Component {
   static Text = (textProps) => (
-    <caption className="text-center">
+    <div className="text-center">
       <p className="project-text-primary" style={{color: "#EAE7DE", maxWidth: 500}}>
-        {textProps.children}
+        {textProps.override ? textProps.children.props.children : textProps.children}
       </p>
-    </caption>
+    </div>
   )
 
   static VisitButton = ({link}) => (
