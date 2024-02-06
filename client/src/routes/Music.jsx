@@ -200,7 +200,7 @@ export default function Music() {
             </div>
           </div>
           <div className="album-content">
-              <div className="content-header">
+              <div className="content-header px-5">
                 <div className="text-left" style={{width: songOrderWidth}}><Text color="#a7a7a7" size="$xl">#</Text></div>
                 <div className="text-left w-100"><Text color="#a7a7a7" size="$xl">Title</Text></div>
                 <div className=""><AccessTimeOutlinedIcon style={{color: "#a7a7a7"}} /></div>
