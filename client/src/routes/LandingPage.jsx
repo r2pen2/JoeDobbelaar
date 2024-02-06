@@ -152,11 +152,13 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
       <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setGrayscaleGlitter(false); setConfettiLeft(confettiLeft + dConfetti)}}>
         Download Resume
       </Button>
-      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onPress={() => setPrintable(false)}>
-        <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
-          Printable Version
-        </Text>
-      </Link>
+      <div onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onClick={() => setPrintable(false)}>
+        <Link href="/resume?light=true" target='_blank'>
+          <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
+            Printable Version
+          </Text>
+        </Link>
+      </div>
     </hgroup>
     <Swoosh flipX className="shadow-top" style={{position: "absolute", bottom: -1, left: 0, zIndex: 2}} color="#1E1E1E"/>
   </section>
