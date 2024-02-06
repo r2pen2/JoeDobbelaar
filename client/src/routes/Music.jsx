@@ -132,6 +132,13 @@ export default function Music() {
           </div>
         </div>
         <div className="recents-selector spotify-bg-light w-100">
+          <div className="d-flex flex-row align-items-center album-selection" onClick={() => {setCurrentAlbum(null)}}>
+            <img src={albumArt} alt="album-cover" style={{backgroundColor: "black"}} />
+            <div className="text-left">
+              <Text className={`album-selection-title ${!currentAlbum ? "selected" : ""}`}>Joe Dobbelaar</Text>
+              <Text color="#a7a7a7">Artist • Joe Dobbelaar</Text>
+            </div>
+          </div>
           {albums.map((a, i) => <AlbumSelection key={i} album={a} />)}
         </div>
       </div>

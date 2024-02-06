@@ -142,7 +142,7 @@
   max-width: 250px;
   max-height: 250px;
   background-color: #000000;
-  padding: 1rem !important;
+  /* padding: 1rem !important; */
 }
 
 .album-header img:hover { transform: scale(1.1); }
@@ -195,7 +195,7 @@
   border-radius: 50%;
   margin-right: 0.5rem !important;
   cursor: default;
-  padding: 0.125rem !important;
+  /* padding: 0.125rem !important; */
 }
 
 .album-text span img:hover {
@@ -304,10 +304,15 @@
 }
 
 .album-selection {
-  gap: 1rem;
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+  gap: 0.5rem;
   cursor: pointer;
   width: 100%;
+  overflow-x: hidden;
   border-radius: 0.125rem;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .album-selection:hover {
@@ -316,13 +321,14 @@
 
 .album-selection p {
   margin: 0;
-  text-wrap: nowrap;
 }
 
 .album-selection img {
   aspect-ratio: 1/1;
+  border-radius: 0;
   height: 52px;
   width: 52px;
+  min-width: 52px;
 }
 
 .album-selection-title {
