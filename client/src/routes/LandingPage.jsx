@@ -16,7 +16,7 @@ import zaniacLogo from "../assets/images/employers/zaniacLogo.png"
 
 import { Button, Card, Spacer } from '@nextui-org/react';
 
-import {isOnMobile} from "../libraries/Web-Legos/api/device.ts"
+import {isOnSafari} from "../libraries/Web-Legos/api/device.ts"
 
 import ycdIcon from "../assets/images/projects/youCanDoItGardeningLogo.png"
 
@@ -119,12 +119,6 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
 
   const dConfetti = 300;
 
-  // function reloadIfOnMobile() {
-  //   if (isOnMobile()) {
-  //     window.location.reload();
-  //   }
-  // }
-
   return (
   <section id="splash" className={printable ? "splash-page printable" : "splash-page"} >
     <Sparkles
@@ -154,7 +148,7 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
       <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setGrayscaleGlitter(false); setConfettiLeft(confettiLeft + dConfetti)}}>
         Download Resume
       </Button>
-      <div onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(isOnMobile && true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onClick={() => setPrintable(false)}>
+      <div onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(isOnSafari() && true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onClick={() => setPrintable(false)}>
         <Link href="/resume?light=true" target='_blank'>
           <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
             Printable Version
