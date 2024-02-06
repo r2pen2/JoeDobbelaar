@@ -5,6 +5,8 @@ import Sparkles from 'react-sparkle'
 
 import Confetti from "react-confetti";
 
+import { isOnMobile } from "../libraries/Web-Legos/api/device"
+
 import { Link, Modal, Text, Tooltip } from "@nextui-org/react"
 
 import LaunchIcon from '@mui/icons-material/Launch';
@@ -97,18 +99,6 @@ export default function LandingPage() {
 
   const [grayscaleGlitter, setGrayscaleGlitter] = useState(false);
 
-  // Make sure that, if we're coming from a back-button press, we relaod the page
-
-  function markPageDirty() {
-    var dirty_bit = document.getElementById('page_is_dirty');
-    if (dirty_bit.value === '1') {
-      console.log("Reloading page to clear dirty bit");
-      window.location.reload();
-      return;
-    }
-    dirty_bit.value = '1';
-  }
-
   return (
     <div id="landing-page">
       <Confetti
@@ -121,9 +111,6 @@ export default function LandingPage() {
       <Skills />
       <Projects />
       <Footer />
-      <form name="ignore_me" onLoad={markPageDirty}>
-        <input type="hidden" id="page_is_dirty" name="page_is_dirty" value="0" />
-      </form>
     </div>
   )
 }
@@ -131,6 +118,12 @@ export default function LandingPage() {
 const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable, printable, setGrayscaleGlitter}) => {
 
   const dConfetti = 300;
+
+  function reloadIfOnMobile() {
+    if (isOnMobile()) {
+      window.location.reload();
+    }
+  }
 
   return (
   <section id="splash" className={printable ? "splash-page printable" : "splash-page"} >
@@ -161,7 +154,7 @@ const Splash = ({setSitesModalOpen, setConfettiLeft, confettiLeft, setPrintable,
       <Button color="gradient" size="lg" className="hover-scale" onClick={() => window.open("/resume", "_blank")} onMouseEnter={() => {setGrayscaleGlitter(false); setConfettiLeft(confettiLeft + dConfetti)}}>
         Download Resume
       </Button>
-      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)}>
+      <Link href="/resume?light=true" target='_blank' onMouseEnter={() => {setConfettiLeft(confettiLeft + dConfetti); setPrintable(true); setGrayscaleGlitter(true)}} onMouseLeave={() => setPrintable(false)} onPress={reloadIfOnMobile}>
         <Text style={{fontSize:"1rem", color:"#ffffff66"}} className="mt-2">
           Printable Version
         </Text>
