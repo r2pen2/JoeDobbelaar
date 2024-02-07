@@ -1,3 +1,9 @@
+function setNewOrder(song, newOrder) {
+  const newSong = {...song}
+  newSong.order = newOrder
+  return newSong
+}
+
 export const songs = [
   {
     order: 1,
@@ -165,12 +171,7 @@ const holyHell = {
       duration: "3:45",
       link: null,
     },
-    {
-      order: 2,
-      title: "Hereafter",
-      duration: "4:15",
-      link: "https://www.youtube.com/watch?v=nmlRsOEfer4&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 11], 2),
     {
       order: 3,
       title: "Mortal After All",
@@ -292,24 +293,14 @@ const standUpAndScream = {
       duration: "4:39",
       link: null,
     },
-    {
-      order: 10,
-      title: "I Used To Have A Best Friend (But Then He Gave Me An STD)",
-      duration: "4:05",
-      link: "https://www.youtube.com/watch?v=rDxN3VlAYnM&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 10], 10),
     {
       order: 11,
       title: "A Prophecy",
       duration: "3:33",
       link: null,
     },
-    {
-      order: 12,
-      title: "I Was Once, Possibly, Maybe, Perhaps A Cowboy King",
-      duration: "3:41",
-      link: "https://www.youtube.com/watch?v=ShTEkM-EFiw&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 4], 12),
     {
       order: 13,
       title: "When Everyday's The Weekend",
@@ -426,12 +417,7 @@ const believersNeverDie = {
       duration: "3:36",
       link: null,
     },
-    {
-      order: 17,
-      title: "Yule Shoot Your Eye Out",
-      duration: "3:41",
-      link: "https://www.youtube.com/watch?v=SWqz49SEqnk&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 9], 17),
     {
       order: 18,
       title: "Growing Up",
@@ -458,12 +444,7 @@ const creatures = {
       duration: "3:54",
       link: null,
     },
-    {
-      order: 2,
-      title: "We Only Come Out At Night",
-      duration: "3:23",
-      link: "https://www.youtube.com/watch?v=-mSvvenM0J4&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 8], 2),
     {
       order: 3,
       title: "London In Terror",
@@ -562,12 +543,7 @@ const justLikeYou = {
       duration: "3:32",
       link: null,
     },
-    {
-      order: 5,
-      title: "Guillotine IV (The Final Chapter)",
-      duration: "3:35",
-      link: "https://www.youtube.com/watch?v=nb_kyA3mjIg&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 7], 5),
     {
       order: 6,
       title: "Stay Away",
@@ -690,12 +666,7 @@ const misadventures = {
       duration: "4:44",
       link: null,
     },
-    {
-      order: 10,
-      title: "Sambuka",
-      duration: "2:36",
-      link: "https://www.youtube.com/watch?v=2Fd2uMSa8gw&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 6], 10),
     {
       order: 11,
       title: "Song For Isabelle",
@@ -722,12 +693,7 @@ const theyreOnlyChasingSafety = {
       duration: "3:04",
       link: null,
     },
-    {
-      order: 2,
-      title: "A Boy Brushed Red Living In Black And White",
-      duration: "4:28",
-      link: "https://www.youtube.com/watch?v=I2UQ19dPCdY&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 5], 2),
     {
       order: 3,
       title: "The Impact Of Reason",
@@ -796,12 +762,7 @@ const fortress = {
   themeColor: "#994B7A",
   albumCover: "https://i.scdn.co/image/ab67616d00001e02f284f4455c0a4e28cba9f7bc",
   songs: [
-    {
-      order: 1,
-      title: "Bloodmeat",
-      duration: "3:54",
-      link: "https://www.youtube.com/watch?v=oHe6E4KW_HE&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 3], 1),
     {
       order: 2,
       title: "The Dissentience",
@@ -912,12 +873,7 @@ const withEarsToSeeAndEyesToHear = {
       duration: "2:14",
       link: null,
     },
-    {
-      order: 7,
-      title: "With Ears To See, And Eyes To Hear",
-      duration: "3:43",
-      link: "https://www.youtube.com/watch?v=RAi7v9rzAwQ&ab_channel=JoeDobbelaar",
-    },
+    setNewOrder(songs[songs.length - 2], 7),
     {
       order: 8,
       title: "In Case Of Emergency, Dial 411",

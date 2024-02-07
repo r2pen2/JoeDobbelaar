@@ -70,7 +70,7 @@ export default function Music() {
           </div>
         </div>
         <div className="d-flex flex-row align-items-center text-right" style={{gap: "2rem"}}>
-          <Text color="#a7a7a7">{song.releaseDate}</Text>
+          <Text color="#a7a7a7" style={{margin: 0}}>{song.releaseDate}</Text>
           {song.link && <FavoriteIcon fontSize='small' style={{color: "#1ED760"}} />}
           <div className="song-duration-container">        
             <Text color="#a7a7a7">{song.duration}</Text>
