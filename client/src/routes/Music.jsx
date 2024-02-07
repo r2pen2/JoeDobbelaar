@@ -7,13 +7,14 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import HourglassEmptyOutlinedIcon from '@mui/icons-material/HourglassEmptyOutlined';
 
 import albumArt from "../assets/images/jd.svg"
 
 import "../assets/style/music.css"
 import { IconButton } from '@mui/material';
 
-import {albums, songs} from "../api/data/songs"
+import {albums, songs, oldSongs} from "../api/data/songs"
 
 const mins = 10;
 const secs = 30;
@@ -68,7 +69,8 @@ export default function Music() {
             </a>
           </div>
         </div>
-        <div className="d-flex flex-row align-items-center" style={{gap: "2rem"}}>
+        <div className="d-flex flex-row align-items-center text-right" style={{gap: "2rem"}}>
+          <Text color="#a7a7a7">{song.releaseDate}</Text>
           {song.link && <FavoriteIcon fontSize='small' style={{color: "#1ED760"}} />}
           <div className="song-duration-container">        
             <Text color="#a7a7a7">{song.duration}</Text>
@@ -95,13 +97,23 @@ export default function Music() {
   function getTimeDisplay() {
     if (currentAlbum) {
       if (currentAlbum.hours) {
-        return `${currentAlbum ? currentAlbum.songs.length : songs.length} songs, ${currentAlbum.hours} hr ${currentAlbum.mins} min`
+        return `${currentAlbum.songs.length} songs, ${currentAlbum.hours} hr ${currentAlbum.mins} min`
       }
-      return `${currentAlbum ? currentAlbum.songs.length : songs.length} songs, ${currentAlbum ? currentAlbum.mins : mins} min ${currentAlbum ? currentAlbum.secs : secs} sec`
+      return `${currentAlbum.songs.length} songs, ${currentAlbum ? currentAlbum.mins : mins} min ${currentAlbum ? currentAlbum.secs : secs} sec`
     }
-    return `${currentAlbum ? currentAlbum.songs.length : songs.length} songs, ${currentAlbum ? currentAlbum.mins : mins} min ${currentAlbum ? currentAlbum.secs : secs} sec`
+    return `${currentAlbum ? currentAlbum.songs.length : songs.length + oldSongs.length} songs, ${currentAlbum ? currentAlbum.mins : mins} min ${currentAlbum ? currentAlbum.secs : secs} sec`
   }
   
+  function OldCoversDivider() {
+    if (currentAlbum) { return; }
+    return (
+      <div className="d-flex flex-row align-items-center justify-content-start px-5 py-3" style={{width:"90%"}}>
+        <HourglassEmptyOutlinedIcon style={{color: "#a7a7a7", marginRight: "0.5rem"}} />
+        <Text color="#a7a7a7" b className="m-0">Awaiting Re-Make</Text>
+      </div>
+    )
+  }
+
   return (
     <div className="spotify-container" onMouseUp={handleMouseUp} onMouseMove={handleMouseMove} style={{
       "--album-theme-color": currentAlbum ? currentAlbum.themeColor : "#ee4747"
@@ -163,16 +175,27 @@ export default function Music() {
             </div>
           </div>
           <div className="album-content">
-              <div className="content-header px-5">
-                <div className="song-order-container">                
-                  <div style={{width: songOrderWidth}}><Text color="#a7a7a7" size="$lg">#</Text></div>
-                </div>
-                <div className="text-left w-100"><Text color="#a7a7a7">Title</Text></div>
-                <div className=""><AccessTimeOutlinedIcon style={{color: "#a7a7a7"}} /></div>
+            <div className="album-controls">
+              <IconButton className="p-2 play-button" style={{backgroundColor: "#1ed760"}}>
+                <PlayArrowIcon style={{color: "black"}} fontSize='large' />
+              </IconButton>
+            </div>
+            <div className="content-header px-5">
+              <div className="song-order-container">                
+                <div style={{width: songOrderWidth}}><Text color="#a7a7a7" size="$lg">#</Text></div>
               </div>
-              <Divider style={{backgroundColor: "#a7a7a733", width: "90%"}} height={1} />
+              <div className="text-left w-100"><Text color="#a7a7a7">Title</Text></div>
+              <div className="d-flex flex-row align-items-center justify-content-end w-100" style={{gap:"2rem"}}>              
+                <Text color="#a7a7a7">Release Date</Text>
+                <FavoriteIcon fontSize='small' style={{color: "transparent"}} />
+                <AccessTimeOutlinedIcon style={{color: "#a7a7a7"}} />
+              </div>
+            </div>
+            <Divider style={{backgroundColor: "#a7a7a733", width: "90%"}} height={1} />
             { !currentAlbum && songs.map((s, i) => <SongItem key={i} song={s}/>) }
             { currentAlbum && currentAlbum.songs.map((s, i) => <SongItem key={i} song={s}/>) }
+            <OldCoversDivider />
+            { !currentAlbum && oldSongs.map((s, i) => <SongItem key={i} song={s}/>) }
           </div>
         </div>
       </div>

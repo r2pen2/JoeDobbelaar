@@ -5,7 +5,8 @@ export const songs = [
     artist: "Architects",
     duration: "4:14",
     link: "https://www.youtube.com/watch?v=nmlRsOEfer4&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/3ZztVuWxHzNpl0THurTFCv"
+    artistHref: "https://open.spotify.com/artist/3ZztVuWxHzNpl0THurTFCv",
+    releaseDate: "Jan 23, 2024",
   },
   {
     order: 2,
@@ -13,7 +14,8 @@ export const songs = [
     artist: "Asking Alexandria",
     duration: "4:06",
     link: "https://www.youtube.com/watch?v=rDxN3VlAYnM&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/1caBfBEapzw8z2Qz9q0OaQ"
+    artistHref: "https://open.spotify.com/artist/1caBfBEapzw8z2Qz9q0OaQ",
+    releaseDate: "Jan 8, 2024",
   },
   {
     order: 3,
@@ -21,7 +23,8 @@ export const songs = [
     artist: "Fall Out Boy",
     duration: "3:28",
     link: "https://www.youtube.com/watch?v=SWqz49SEqnk&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/4UXqAaa6dQYAk18Lv7PEgX"
+    artistHref: "https://open.spotify.com/artist/4UXqAaa6dQYAk18Lv7PEgX",
+    releaseDate: "Dec 24, 2023",
   },
   {
     order: 4,
@@ -29,7 +32,8 @@ export const songs = [
     artist: "Motionless In White",
     duration: "3:15",
     link: "https://www.youtube.com/watch?v=-mSvvenM0J4&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/6MwPCCR936cYfM1dLsGVnl"
+    artistHref: "https://open.spotify.com/artist/6MwPCCR936cYfM1dLsGVnl",
+    releaseDate: "Dec 23, 2023",
   },
   {
     order: 5,
@@ -37,7 +41,8 @@ export const songs = [
     artist: "Falling In Reverse",
     duration: "3:38",
     link: "https://www.youtube.com/watch?v=nb_kyA3mjIg&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/2CmaKO2zEGJ1NWpS1yfVGz"
+    artistHref: "https://open.spotify.com/artist/2CmaKO2zEGJ1NWpS1yfVGz",
+    releaseDate: "Dec 22, 2023",
   },
   {
     order: 6,
@@ -45,7 +50,8 @@ export const songs = [
     artist: "Pierce The Veil",
     duration: "2:28",
     link: "https://www.youtube.com/watch?v=2Fd2uMSa8gw&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv"
+    artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
+    releaseDate: "Nov 21, 2023",
   },
   {
     order: 7,
@@ -53,7 +59,8 @@ export const songs = [
     artist: "Underoath",
     duration: "4:29",
     link: "https://www.youtube.com/watch?v=I2UQ19dPCdY&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/3GzWhE2xadJiW8MqRKIVSK"
+    artistHref: "https://open.spotify.com/artist/3GzWhE2xadJiW8MqRKIVSK",
+    releaseDate: "Aug 16, 2023",
   },
   {
     order: 8,
@@ -61,7 +68,8 @@ export const songs = [
     artist: "Asking Alexandria",
     duration: "3:41",
     link: "https://www.youtube.com/watch?v=ShTEkM-EFiw&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/1caBfBEapzw8z2Qz9q0OaQ"
+    artistHref: "https://open.spotify.com/artist/1caBfBEapzw8z2Qz9q0OaQ",
+    releaseDate: "Aug 14, 2023",
   },
   {
     order: 9,
@@ -69,7 +77,8 @@ export const songs = [
     artist: "Protest The Hero",
     duration: "3:56",
     link: "https://www.youtube.com/watch?v=oHe6E4KW_HE&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/6z3BjfmgvDUIHaJ0UPTtrQ"
+    artistHref: "https://open.spotify.com/artist/6z3BjfmgvDUIHaJ0UPTtrQ",
+    releaseDate: "Jul 25, 2023",
   },
   {
     order: 10,
@@ -77,9 +86,68 @@ export const songs = [
     artist: "Sleeping With Sirens",
     duration: "3:59",
     link: "https://www.youtube.com/watch?v=RAi7v9rzAwQ&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/3N8Hy6xQnQv1F1XCiyGQqA"
+    artistHref: "https://open.spotify.com/artist/3N8Hy6xQnQv1F1XCiyGQqA",
+    releaseDate: "Sep 19, 2022",
+  },
+  {
+    order: 11,
+    title: "I Didn't Understand",
+    artist: "Elliott Smith",
+    duration: "2:16",
+    link: "https://www.youtube.com/watch?v=G_9SRA5NR00&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/2ApaG60P4r0yhBoDCGD8YG",
+    releaseDate: "Jan 17, 2022",
   },
 ]
+
+export const oldSongs = [
+  {
+    order: songs.length + 1,
+    title: "Southern Constillations / The Boy Who Could Fly",
+    artist: "Pierce The Veil",
+    duration: "5:56",
+    link: "https://www.youtube.com/watch?v=HIgDgmK3QkU&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
+    releaseDate: "May 23, 2022",
+  },
+  {
+    order: songs.length + 2,
+    title: "Battery",
+    artist: "Metallica",
+    duration: "3:22",
+    link: "https://www.youtube.com/watch?v=S3ddqwffn0k&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+    releaseDate: "Apr 17, 2022",
+  },
+  {
+    order: songs.length + 3,
+    title: "Hold On Till May",
+    artist: "Pierce The Veil",
+    duration: "4:21",
+    link: "https://www.youtube.com/watch?v=IWHBxUOqMG4&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
+    releaseDate: "Apr 15, 2022",
+  },
+  {
+    order: songs.length + 4,
+    title: "Blindfolds Aside",
+    artist: "Protest the Hero",
+    duration: "1:42",
+    link: "https://www.youtube.com/watch?v=8uKNAJyefNQ&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/6z3BjfmgvDUIHaJ0UPTtrQ",
+    releaseDate: "Jan 17, 2022",
+  },
+  {
+    order: songs.length + 5,
+    title: "The New National Anthem",
+    artist: "Pierce The Veil",
+    duration: "3:56",
+    link: "https://www.youtube.com/watch?v=-E6pjMWXpVE&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
+    releaseDate: "Jan 17, 2022",
+  },
+]
+
 
 const holyHell = {
   title: "Holy Hell",

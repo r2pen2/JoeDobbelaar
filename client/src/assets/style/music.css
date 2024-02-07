@@ -118,7 +118,7 @@
   align-items: start;
   overflow-x: hidden;
   justify-content: start;
-  background: linear-gradient(180deg, var(--album-theme-color) 0%, 20%, #121212 100%); 
+  background: linear-gradient(180deg, var(--album-theme-color) 0%, 20%, #121212 40rem); 
 }
 
 .album-header {
@@ -337,4 +337,22 @@
 
 .album-selection-title.selected {
   color: #1ED760 !important;
+}
+
+.album-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  padding-top: 1rem !important;
+}
+
+.play-button {
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+.play-button:hover {
+  transform: scale(1.05);
 }
