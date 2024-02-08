@@ -8,13 +8,14 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import HourglassEmptyOutlinedIcon from '@mui/icons-material/HourglassEmptyOutlined';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 import albumArt from "../assets/images/jd.svg"
 
 import "../assets/style/music.css"
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 
-import {albums, songs, oldSongs} from "../api/data/songs"
+import {albums, songs, demoSongs, oldSongs} from "../api/data/songs"
 
 const mins = 10;
 const secs = 30;
@@ -55,6 +56,19 @@ export default function Music() {
   };
 
   function SongItem({song}) {
+
+    function getSongIcon() {
+      if (!song.link) {return; }
+      const iconStyle = {color: "#1ED760", marginRight: "0.5rem"};
+      if (song.demo) {
+        return <Tooltip title="This hasn't been published yet."><QuestionMarkIcon style={iconStyle} /></Tooltip>;
+      }
+      if (song.old) {
+        return <Tooltip title="I plan on re-recording this."><HourglassEmptyOutlinedIcon style={iconStyle} /></Tooltip>;
+      }
+      return <FavoriteIcon fontSize='small' style={iconStyle} />;
+    }
+
     return (
       <div className={`song-item d-flex flex-row align-items-center justify-content-between px-5 py-1 ${(!currentAlbum || (currentAlbum && song.link)) ? "playable" : "unplayable"}`} style={{width: "90%", maxWidth:"90%"}} onClick={() => {if (!song.link) {return;} window.open(song.link, "_blank")}}>
         <div className="d-flex flex-row" style={{gap: "1rem"}}>
@@ -71,7 +85,7 @@ export default function Music() {
         </div>
         <div className="d-flex flex-row align-items-center text-right" style={{gap: "2rem"}}>
           <Text color="#a7a7a7" style={{margin: 0}}>{song.releaseDate}</Text>
-          {song.link && <FavoriteIcon fontSize='small' style={{color: "#1ED760"}} />}
+          {getSongIcon()}
           <div className="song-duration-container">        
             <Text color="#a7a7a7">{song.duration}</Text>
           </div>
@@ -110,6 +124,16 @@ export default function Music() {
       <div className="d-flex flex-row align-items-center justify-content-start px-5 py-3" style={{width:"90%"}}>
         <HourglassEmptyOutlinedIcon style={{color: "#a7a7a7", marginRight: "0.5rem"}} />
         <Text color="#a7a7a7" b className="m-0">Awaiting Re-Make</Text>
+      </div>
+    )
+  }
+  
+  function DemoCoversDivider() {
+    if (currentAlbum) { return; }
+    return (
+      <div className="d-flex flex-row align-items-center justify-content-start px-5 py-3" style={{width:"90%"}}>
+        <QuestionMarkIcon style={{color: "#a7a7a7", marginRight: "0.5rem"}} />
+        <Text color="#a7a7a7" b className="m-0">Demos</Text>
       </div>
     )
   }
@@ -194,6 +218,8 @@ export default function Music() {
             <Divider style={{backgroundColor: "#a7a7a733", width: "90%"}} height={1} />
             { !currentAlbum && songs.map((s, i) => <SongItem key={i} song={s}/>) }
             { currentAlbum && currentAlbum.songs.map((s, i) => <SongItem key={i} song={s}/>) }
+            <DemoCoversDivider />
+            { !currentAlbum && demoSongs.map((s, i) => <SongItem key={i} song={s}/>) }
             <OldCoversDivider />
             { !currentAlbum && oldSongs.map((s, i) => <SongItem key={i} song={s}/>) }
           </div>

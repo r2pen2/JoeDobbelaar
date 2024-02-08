@@ -106,54 +106,133 @@ export const songs = [
   },
 ]
 
-export const oldSongs = [
+export const demoSongs = [
   {
     order: songs.length + 1,
+    title: "Field Sobriety Practice",
+    artist: "The Callous Daoboys",
+    duration: "5:56",
+    link: "https://www.youtube.com/watch?v=ZWYJ02iAm7A&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
+    releaseDate: "Feb 2, 2024",
+    demo: true,
+  },
+]
+
+export const oldSongs = [
+  {
+    order: songs.length + demoSongs.length + 1,
     title: "Southern Constillations / The Boy Who Could Fly",
     artist: "Pierce The Veil",
     duration: "5:56",
     link: "https://www.youtube.com/watch?v=HIgDgmK3QkU&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
     releaseDate: "May 23, 2022",
+    old: true,
   },
   {
-    order: songs.length + 2,
+    order: songs.length + demoSongs.length + 2,
     title: "Battery",
     artist: "Metallica",
     duration: "3:22",
     link: "https://www.youtube.com/watch?v=S3ddqwffn0k&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
     releaseDate: "Apr 17, 2022",
+    old: true,
   },
   {
-    order: songs.length + 3,
+    order: songs.length + demoSongs.length + 3,
     title: "Hold On Till May",
     artist: "Pierce The Veil",
     duration: "4:21",
     link: "https://www.youtube.com/watch?v=IWHBxUOqMG4&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
     releaseDate: "Apr 15, 2022",
+    old: true,
   },
   {
-    order: songs.length + 4,
+    order: songs.length + demoSongs.length + 4,
     title: "Blindfolds Aside",
     artist: "Protest the Hero",
     duration: "1:42",
     link: "https://www.youtube.com/watch?v=8uKNAJyefNQ&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/6z3BjfmgvDUIHaJ0UPTtrQ",
     releaseDate: "Jan 17, 2022",
+    old: true,
   },
   {
-    order: songs.length + 5,
+    order: songs.length + demoSongs.length + 5,
     title: "The New National Anthem",
     artist: "Pierce The Veil",
     duration: "3:56",
     link: "https://www.youtube.com/watch?v=-E6pjMWXpVE&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv",
     releaseDate: "Jan 17, 2022",
+    old: true,
   },
 ]
 
+const celebrityTherapist = {
+  title: "Celebrity Therapist",
+  artist: "The Callous Daoboys",
+  artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
+  year: 2018,
+  mins: 42,
+  secs: 41,
+  themeColor: "#C76262",
+  albumCover: "https://i.scdn.co/image/ab67616d00001e0254bec9052ee6bbcc2d86553f",
+  songs: [
+    {
+      order: 1,
+      title: "Violent Astrology",
+      duration: "4:43",
+      link: null,
+    },
+    {
+      order: 2,
+      title: "A Brief Article Regarding Time Loops",
+      duration: "3:17",
+      link: null,
+    },
+    {
+      order: 3,
+      title: "Beautifl Dude Missile",
+      duration: "2:52",
+      link: null,
+    },
+    {
+      order: 4,
+      title: "Title Track",
+      duration: "6:36",
+      link: null,
+    },
+    setNewOrder(demoSongs[demoSongs.length - 1], 5),
+    {
+      order: 5,
+      title: "Field Sobriety Practice",
+      duration: "4:08",
+      link: null,
+    },
+    {
+      order: 6,
+      title: "The Elephant Man In The Room",
+      duration: "4:16",
+      link: null,
+    },
+    {
+      order: 7,
+      title: "What Is Delicious? Who Swarms?",
+      duration: "3:16",
+      link: null,
+    },
+    {
+      order: 8,
+      title: "Star Baby",
+      duration: "5:37",
+      link: null,
+    },
+  ]
+}
 
 const holyHell = {
   title: "Holy Hell",
@@ -902,6 +981,7 @@ const withEarsToSeeAndEyesToHear = {
 }
 
 export const albums = [
+  celebrityTherapist,
   holyHell,
   standUpAndScream,
   believersNeverDie,
