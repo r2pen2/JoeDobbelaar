@@ -176,9 +176,9 @@ const celebrityTherapist = {
   title: "Celebrity Therapist",
   artist: "The Callous Daoboys",
   artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
-  year: 2018,
-  mins: 42,
-  secs: 41,
+  year: 2022,
+  mins: 36,
+  secs: 37,
   themeColor: "#C76262",
   albumCover: "https://i.scdn.co/image/ab67616d00001e0254bec9052ee6bbcc2d86553f",
   songs: [
