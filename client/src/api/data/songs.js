@@ -7,6 +7,16 @@ function setNewOrder(song, newOrder) {
 export const songs = [
   {
     order: 1,
+    title: "Field Sobriety Practice",
+    artist: "The Callous Daoboys",
+    duration: "5:56",
+    link: "https://www.youtube.com/watch?v=ZWYJ02iAm7A&ab_channel=JoeDobbelaar",
+    artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
+    releaseDate: "Feb 2, 2024",
+    demo: true,
+  },
+  {
+    order: 2,
     title: "Hereafter",
     artist: "Architects",
     duration: "4:14",
@@ -15,7 +25,7 @@ export const songs = [
     releaseDate: "Jan 23, 2024",
   },
   {
-    order: 2,
+    order: 3,
     title: "I Used To Have A Best Friend (But Then He Gave Me An STD)",
     artist: "Asking Alexandria",
     duration: "4:06",
@@ -24,7 +34,7 @@ export const songs = [
     releaseDate: "Jan 8, 2024",
   },
   {
-    order: 3,
+    order: 4,
     title: "Yule Shoot Your Eye Out",
     artist: "Fall Out Boy",
     duration: "3:28",
@@ -33,7 +43,7 @@ export const songs = [
     releaseDate: "Dec 24, 2023",
   },
   {
-    order: 4,
+    order: 5,
     title: "We Only Come Out At Night",
     artist: "Motionless In White",
     duration: "3:15",
@@ -42,7 +52,7 @@ export const songs = [
     releaseDate: "Dec 23, 2023",
   },
   {
-    order: 5,
+    order: 6,
     title: "Guillotine IV (The Final Chapter)", 
     artist: "Falling In Reverse",
     duration: "3:38",
@@ -51,7 +61,7 @@ export const songs = [
     releaseDate: "Dec 22, 2023",
   },
   {
-    order: 6,
+    order: 7,
     title: "Sambuka", 
     artist: "Pierce The Veil",
     duration: "2:28",
@@ -60,7 +70,7 @@ export const songs = [
     releaseDate: "Nov 21, 2023",
   },
   {
-    order: 7,
+    order: 8,
     title: "A Boy Brushed Red Living In Black And White", 
     artist: "Underoath",
     duration: "4:29",
@@ -69,7 +79,7 @@ export const songs = [
     releaseDate: "Aug 16, 2023",
   },
   {
-    order: 8,
+    order: 9,
     title: "I Was Once, Possibly, Maybe, Perhaps A Cowboy King", 
     artist: "Asking Alexandria",
     duration: "3:41",
@@ -78,7 +88,7 @@ export const songs = [
     releaseDate: "Aug 14, 2023",
   },
   {
-    order: 9,
+    order: 10,
     title: "Bloodmeat", 
     artist: "Protest The Hero",
     duration: "3:56",
@@ -87,7 +97,7 @@ export const songs = [
     releaseDate: "Jul 25, 2023",
   },
   {
-    order: 10,
+    order: 11,
     title: "With Ears To See And Eyes To Hear", 
     artist: "Sleeping With Sirens",
     duration: "3:59",
@@ -96,7 +106,7 @@ export const songs = [
     releaseDate: "Sep 19, 2022",
   },
   {
-    order: 11,
+    order: 12,
     title: "I Didn't Understand",
     artist: "Elliott Smith",
     duration: "2:16",
@@ -107,16 +117,6 @@ export const songs = [
 ]
 
 export const demoSongs = [
-  {
-    order: songs.length + 1,
-    title: "Field Sobriety Practice",
-    artist: "The Callous Daoboys",
-    duration: "5:56",
-    link: "https://www.youtube.com/watch?v=ZWYJ02iAm7A&ab_channel=JoeDobbelaar",
-    artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
-    releaseDate: "Feb 2, 2024",
-    demo: true,
-  },
 ]
 
 export const oldSongs = [
@@ -206,7 +206,7 @@ const celebrityTherapist = {
       duration: "6:36",
       link: null,
     },
-    setNewOrder(demoSongs[demoSongs.length - 1], 5),
+    setNewOrder(songs[songs.length - 12], 5),
     {
       order: 5,
       title: "Field Sobriety Practice",
