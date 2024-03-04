@@ -112,21 +112,30 @@ export default function Projects() {
 
         <Project 
           projectData={dvlProject}
-          imgOverride={
-            <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!dvlProject.mirror ? "right" : "")}>
+          imgOverride={[
+            <div key="dvl-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!dvlProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
-                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="talk-about-dreams-screenshot" />
+              <img src={dvlLogin} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-login" />
                 <Spacer y={0.5} />
-                <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="you-can-do-it-gardening-screenshot" />
+              <img src={dvlDashboard} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-dashboard" />
               </div>
               <Spacer x={0.5} />
               <div className="d-flex flex-column">
-                <img src={btb} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.beyondthebelleducation.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="beyond-the-bell-education-screenshot" />
+              <img src={dvlQ1} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-q1" />
                 <Spacer y={0.5} />
-                <img src={nicole} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.nicolelevin.org/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="nicole=levin-screenshot" />
+              <img src={dvlQ2} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-q2" />
               </div>
+            </div>,
+            <div key="dvl-images-2" className={"project-img d-none d-md-flex flex-row " + (!dvlProject.mirror ? "right" : "")}>
+              <img src={dvlLogin} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-login" />
+              <Spacer x={0.5} />
+              <img src={dvlDashboard} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-dashboard" />
+              <Spacer x={0.5} />
+              <img src={dvlQ1} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-q1" />
+              <Spacer x={0.5} />
+              <img src={dvlQ2} className="project-shadow arboles-img" onClick={() => window.open(dvlProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="dvl-q2" />
             </div>
-          }
+          ]}
         />
         <ProjectLine />
 
@@ -157,7 +166,7 @@ export default function Projects() {
             </p>
           }
           imgOverride={[
-            <div key="citrus-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
+            <div key="citrus-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!cirtusProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
               <img src={citrusPeople} className="project-shadow arboles-img" onClick={() => window.open(cirtusProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
                 <Spacer y={0.5} />
@@ -194,7 +203,7 @@ export default function Projects() {
         <Project 
           projectData={arbolesProject}
           imgOverride={[
-            <div key="arboles-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
+            <div key="arboles-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!arbolesProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
               <img src={arbolesLogin} className="project-shadow arboles-img" onClick={() => window.open(arbolesProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
                 <Spacer y={0.5} />
