@@ -32,13 +32,24 @@ const studentSuccessLink = "https://github.com/wpivis/StudentSuccess";
 const cirtusNativeLink = "https://github.com/r2pen2/CitrusNative"
 const arbolesLink = "https://github.com/r2pen2/Arboles-Maui-Mirror";
 const webLegosLink = "https://github.com/r2pen2/web-legos";
+const dvlLink = "https://dvl-demo.joed.dev/";
+
+const dvlProject = {
+  title: "Data Visualization Literacy App",
+  link: dvlLink,
+  // img: "",
+  previewText: `My senior capstone project at WPI is a web application designed to assess and teach data visualization literacy. The app is built using React Native, and we aim to create a mobile platform that will allow anyone to understand the importance of data visualization and how to effectively communicate data. The app is currently in development.`,
+  timespan: "2023 & 2024",
+  id: "dvl",
+  mirror: true
+}
 
 const webLegosProject = {
   title: "Web-Legos",
   link: webLegosLink,
   // img: "",
   previewText: `Lately, my focus has been on crafting websites for individuals and small businesses. To streamline this process, I've developed a comprehensive suite of custom assets, aptly named 'Web Legos'. A key advantage for my clients is the autonomy it offers: they can sign in using Google and independently modify text, images, and custom objects directly on their website, eliminating the need to contact me for minor updates.`,
-  timespan: "2023",
+  timespan: "2023 & 2024",
   id: "web-legos",
   mirror: false
 }
@@ -98,6 +109,26 @@ export default function Projects() {
   return (
     <div className="projects-page px-2 px-md-4 d-flex flex-column align-items-center">
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center w-100" style={{maxWidth: 1400}}>
+
+        <Project 
+          projectData={dvlProject}
+          imgOverride={
+            <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!dvlProject.mirror ? "right" : "")}>
+              <div className="d-flex flex-column">
+                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="talk-about-dreams-screenshot" />
+                <Spacer y={0.5} />
+                <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="you-can-do-it-gardening-screenshot" />
+              </div>
+              <Spacer x={0.5} />
+              <div className="d-flex flex-column">
+                <img src={btb} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.beyondthebelleducation.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="beyond-the-bell-education-screenshot" />
+                <Spacer y={0.5} />
+                <img src={nicole} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.nicolelevin.org/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="nicole=levin-screenshot" />
+              </div>
+            </div>
+          }
+        />
+        <ProjectLine />
 
         <Project 
           projectData={webLegosProject}
