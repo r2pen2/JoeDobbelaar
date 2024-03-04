@@ -13,7 +13,6 @@ export const songs = [
     link: "https://www.youtube.com/watch?v=ZWYJ02iAm7A&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
     releaseDate: "Feb 2, 2024",
-    demo: true,
   },
   {
     order: 2,
