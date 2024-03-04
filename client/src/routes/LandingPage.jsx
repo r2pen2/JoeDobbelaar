@@ -32,15 +32,27 @@ import {WLHeaderV2} from "../libraries/Web-Legos/components/Text"
 
 import ProjectsPage from './Projects';
 
+import jdLogo from "../assets/images/jd.png";
+import WPILogo from "../assets/images/employers/WPILogo.png";
+
 const experience = [
   {
-    position: "Chief Technology Officer",
-    employer: "Citrus Financial",
-    terms: "Self-Employed",
-    startDate: "May 2022",
+    position: "Software Engineer",
+    employer: "WPI Data Visualization Lab",
+    terms: "Part-Time",
+    startDate: "February 2024",
     endDate: "Present",
-    description: "Started a company with some friends around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
-    icon: citrusLogo,
+    description: "Working on the reVISit platform, a web-based toolkit for creating and conducting data visualization experiments.",
+    icon: WPILogo,
+  },
+  {
+    position: "Web Developer",
+    employer: "Self-Employed",
+    terms: "Contract Worker",
+    startDate: "November 2022",
+    endDate: "Present",
+    description: "Building websites for individuals and businesses. Clients can edit site content on their own when signed in with Google.",
+    icon: jdLogo,
   },
   {
     position: "Software Engineer",
@@ -50,6 +62,15 @@ const experience = [
     endDate: "September 2023",
     description: "Single-handedly built the computing infrastructure for UMass Chan's PUPSys: a system for preventing pressure ulcers in hospital patients. Ensuring HIPAA compliant database.",
     icon: pupsysImg,
+  },
+  {
+    position: "Chief Technology Officer",
+    employer: "Citrus Financial",
+    terms: "Self-Employed",
+    startDate: "May 2022",
+    endDate: "April 2023",
+    description: "Started a company with some friends around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
+    icon: citrusLogo,
   },
   {
     position: "Software Engineer Intern",

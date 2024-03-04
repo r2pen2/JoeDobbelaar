@@ -20,6 +20,12 @@ import citrusNew from "../assets/images/projects/citrus-native/citrus-new.jpg";
 import citrusPeople from "../assets/images/projects/citrus-native/citrus-people.jpg";
 import citrusTransaction from "../assets/images/projects/citrus-native/citrus-transaction.jpg";
 
+// DVL Images
+import dvlLogin from "../assets/images/projects/dvl/login.png";
+import dvlDashboard from "../assets/images/projects/dvl/dashboard.png";
+import dvlQ1 from "../assets/images/projects/dvl/q1.png";
+import dvlQ2 from "../assets/images/projects/dvl/q2.png";
+
 // Small Pics
 import ssPreview from "../assets/images/projects/ssPreview.png";
 import medicalTrackingPreview from "../assets/images/projects/medicalTracking.png"
@@ -112,6 +118,7 @@ export default function Projects() {
 
         <Project 
           projectData={dvlProject}
+          buttonOverride={"View Demo"}
           imgOverride={[
             <div key="dvl-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!dvlProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
@@ -250,7 +257,7 @@ export default function Projects() {
   )
 }
 
-function Project({projectData, textOverride, imgOverride, last}) {
+function Project({projectData, textOverride, imgOverride, last, buttonOverride}) {
   return (
     <ProjectArticle projectId={projectData.id}>
       {projectData.mirror && <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} />}
@@ -263,7 +270,7 @@ function Project({projectData, textOverride, imgOverride, last}) {
           {textOverride ? textOverride : projectData.previewText}
         </ProjectArticle.Text>
         <Spacer y={0.5} />
-        <ProjectArticle.VisitButton link={projectData.link} />
+        <ProjectArticle.VisitButton link={projectData.link} textOverride={buttonOverride} />
       </div>
       {!projectData.mirror && <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} right={true} />}
     </ProjectArticle>
@@ -279,8 +286,8 @@ class ProjectArticle extends React.Component {
     </div>
   )
 
-  static VisitButton = ({link}) => (
-    <Button color="gradient" bordered onClick={() => window.open(link, "_blank")}>View GitHub</Button>
+  static VisitButton = ({link, textOverride}) => (
+    <Button color="gradient" bordered onClick={() => window.open(link, "_blank")}>{textOverride ? textOverride : "View GitHub"}</Button>
   )
 
   static Title = (titleProps) => (

@@ -1,20 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.0810b161.css",
-    "main.js": "/static/js/main.9f9a2ab0.js",
+    "main.js": "/static/js/main.223d954c.js",
     "static/media/citrusReact.png": "/static/media/citrusReact.23b577b75d01b9082b63.png",
     "static/media/green.png": "/static/media/green.05ef31f416f4ff0ea8e3.png",
     "static/media/star.png": "/static/media/star.1c176f5b622c820d65af.png",
     "static/media/medicalTracking.png": "/static/media/medicalTracking.92712401f988c6de507d.png",
     "static/media/power-brick.gif": "/static/media/power-brick.e4a20717c79c08149a40.gif",
+    "static/media/WPILogo.png": "/static/media/WPILogo.bf57eb9a1b3542be4aba.png",
     "static/media/ycdScreenshot.png": "/static/media/ycdScreenshot.d151e5a744216cbb7d33.png",
+    "static/media/q2.png": "/static/media/q2.72b0504fb00fed42200f.png",
     "static/media/splash.webp": "/static/media/splash.32b95d7f40447b67d53f.webp",
+    "static/media/dashboard.png": "/static/media/dashboard.1a1694261f62c3b03a58.png",
     "static/media/dreamsScreenshot.png": "/static/media/dreamsScreenshot.9941acf986bc5c04fbe5.png",
     "static/media/ssPreview.png": "/static/media/ssPreview.f281936acc55d6de072b.png",
     "static/media/nicoleScreenshot.png": "/static/media/nicoleScreenshot.d85ccccbe9a36707125f.png",
     "static/media/sentacaLogo.png": "/static/media/sentacaLogo.77f616a33e2244c662d6.png",
+    "static/media/q1.png": "/static/media/q1.43a8bb6b613fc33f106d.png",
     "static/media/btbScreenshot.png": "/static/media/btbScreenshot.ca1f8ec4ae546891110d.png",
+    "static/media/login.png": "/static/media/login.fabee0b46e5eebfbd74a.png",
     "static/media/blueportLogo.png": "/static/media/blueportLogo.efbb01f06cfab47cdb12.png",
+    "static/media/jd.png": "/static/media/jd.763a50f9a633d044a226.png",
     "static/media/citrus-group.jpg": "/static/media/citrus-group.473ead6bd950c5086603.jpg",
     "static/media/arbolesDetail.png": "/static/media/arbolesDetail.c2eb48f57432a2b450c1.png",
     "static/media/citrus-transaction.jpg": "/static/media/citrus-transaction.86597383094f5dd51c53.jpg",
@@ -35,10 +41,10 @@
     "static/media/jd.svg": "/static/media/jd.9b277c0a2fd141819d72c20d609c8a09.svg",
     "index.html": "/index.html",
     "main.0810b161.css.map": "/static/css/main.0810b161.css.map",
-    "main.9f9a2ab0.js.map": "/static/js/main.9f9a2ab0.js.map"
+    "main.223d954c.js.map": "/static/js/main.223d954c.js.map"
   },
   "entrypoints": [
     "static/css/main.0810b161.css",
-    "static/js/main.9f9a2ab0.js"
+    "static/js/main.223d954c.js"
   ]
 }
