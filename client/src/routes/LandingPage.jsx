@@ -51,7 +51,7 @@ const experience = [
     terms: "Contract Worker",
     startDate: "November 2022",
     endDate: "Present",
-    description: "Building websites for individuals and businesses. Clients can edit site content on their own when signed in with Google.",
+    description: "Building websites for individuals and businesses using “Web-Legos,” a set of full-stack JavaScript libraries that I've developed to ensure security, accessibility, and rapid iteration. Clients can edit site content on their own when signed in with Google.",
     icon: jdLogo,
   },
   {

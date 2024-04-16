@@ -70,6 +70,10 @@ app.get("/resume", (req, res) => {
     }
 })
 
+app.post("/ping", (req, res) => {
+    console.log("Ping received");
+    res.send("Pong!");
+}
 
 // // Allow post to /images, placing an image in the static folder
 // app.post("/images/*", (req, res) => {

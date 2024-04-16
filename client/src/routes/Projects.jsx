@@ -54,7 +54,7 @@ const webLegosProject = {
   title: "Web-Legos",
   link: webLegosLink,
   // img: "",
-  previewText: `Lately, my focus has been on crafting websites for individuals and small businesses. To streamline this process, I've developed a comprehensive suite of custom assets, aptly named 'Web Legos'. A key advantage for my clients is the autonomy it offers: they can sign in using Google and independently modify text, images, and custom objects directly on their website, eliminating the need to contact me for minor updates.`,
+  previewText: `Lately, my focus has been on crafting websites for individuals and small businesses. To streamline this process, I've developed a comprehensive suite of custom assets, aptly named 'Web Legos,' that ensures security, accessibility, and rapid iteration. A key advantage for my clients is the autonomy it offers: they can sign in using Google and independently modify text, images, and custom objects directly on their website, eliminating the need to contact me for minor updates.`,
   timespan: "2023 & 2024",
   id: "web-legos",
   mirror: false
