@@ -12,13 +12,13 @@ import { Text } from '@nextui-org/react';
 import { createContext } from 'react';
 
 // API Imports
-import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
 import LandingPage from './routes/LandingPage';
 import Projects from './routes/Projects';
 import Music from './routes/Music.jsx';
+import Payments from './routes/Payments.jsx';
 
 /** Context to keep track of current user */
 export const CurrentSignInContext = createContext();
@@ -28,14 +28,6 @@ export const TestingContext = createContext();
 
 /** Site specific permissions */
 const permissions = new WLPermissionsConfig();
-
-/** Site AuthenticationManager */
-// const authenticationManager = new AuthenticationManager(firebaseConfig, permissions);
-// authenticationManager.initialize();
-
-/** Site AnalyticsManager */
-// const analyticsManager = new AnalyticsManager(firebaseConfig)
-// analyticsManager.initialize();
 
 const theme = createWLTheme();
 
@@ -83,6 +75,7 @@ export function App(props) {
               <Routes>
                 <Route path="*" element={<LandingPage />}/>
                 <Route path="/music" element={<Music />}/>
+                <Route path="/pay" element={<Payments />}/>
               </Routes>
             {/** Place Footer Here */}
           </div>
