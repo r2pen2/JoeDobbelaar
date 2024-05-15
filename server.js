@@ -42,6 +42,7 @@ app.get("/resume", (req, res) => {
     }
 })
 
+app.use(bodyParser.json());
 app.post("/ping", (req, res) => {
     console.log("Ping received");
     console.log(req.body)
