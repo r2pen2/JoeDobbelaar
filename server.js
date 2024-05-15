@@ -44,6 +44,7 @@ app.get("/resume", (req, res) => {
 
 app.post("/ping", (req, res) => {
     console.log("Ping received");
+    console.log(req)
     res.send("Pong!");
 })
 
