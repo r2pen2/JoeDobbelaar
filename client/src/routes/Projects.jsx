@@ -7,6 +7,7 @@ import nicole from "../assets/images/projects/web-legos/nicoleScreenshot.png";
 import ycd from "../assets/images/projects/web-legos/ycdScreenshot.png";
 import btb from "../assets/images/projects/web-legos/btbScreenshot.png";
 import dreams from "../assets/images/projects/web-legos/dreamsScreenshot.png";
+import andc from "../assets/images/projects/web-legos/andcScreenshot.png";
 
 // Arboles Images
 import arbolesLogin from "../assets/images/projects/arboles/arbolesLoginScreen.jpg";
@@ -176,7 +177,7 @@ export default function Projects() {
           imgOverride={
             <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
-                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="talk-about-dreams-screenshot" />
+                <img src={andc} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.anewdaycoaching.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="a-new-day-coaching-screenshot" />
                 <Spacer y={0.5} />
                 <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="you-can-do-it-gardening-screenshot" />
               </div>

@@ -10,7 +10,7 @@ export const songs = [
     title: "Field Sobriety Practice",
     artist: "The Callous Daoboys",
     duration: "5:56",
-    link: "https://www.youtube.com/watch?v=ZWYJ02iAm7A&ab_channel=JoeDobbelaar",
+    link: "https://www.youtube.com/watch?v=lL3ep9I_C90&ab_channel=JoeDobbelaar",
     artistHref: "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
     releaseDate: "Feb 2, 2024",
   },
