@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0810b161.css",
-    "main.js": "/static/js/main.2054e9e1.js",
+    "main.js": "/static/js/main.bbb48bc2.js",
     "static/media/citrusReact.png": "/static/media/citrusReact.23b577b75d01b9082b63.png",
     "static/media/green.png": "/static/media/green.05ef31f416f4ff0ea8e3.png",
     "static/media/star.png": "/static/media/star.1c176f5b622c820d65af.png",
@@ -26,8 +26,10 @@
     "static/media/citrus-transaction.jpg": "/static/media/citrus-transaction.86597383094f5dd51c53.jpg",
     "static/media/empowLogo.png": "/static/media/empowLogo.beecdf0b6769033fa521.png",
     "static/media/citrus-new.jpg": "/static/media/citrus-new.363300e5f6910eeaedb2.jpg",
+    "static/media/andcLogo.png": "/static/media/andcLogo.52f651449c8b89f7c0b9.png",
     "static/media/dreamsLogo.png": "/static/media/dreamsLogo.9c2c4ed55f3a4a1d0ce9.png",
     "static/media/arbolesMap.jpg": "/static/media/arbolesMap.74276c4a0b1049fba6c8.jpg",
+    "static/media/andcScreenshot.png": "/static/media/andcScreenshot.8dbe910308dea6cec5e4.png",
     "static/media/crmDashboard.png": "/static/media/crmDashboard.1a1bf6f0f5707d39f87a.png",
     "static/media/citrus-people.jpg": "/static/media/citrus-people.54cdb9b7d7708bc2dcd0.jpg",
     "static/media/crmGnatt.png": "/static/media/crmGnatt.ad481a05c546a6464568.png",
@@ -46,10 +48,10 @@
     "static/media/jd.svg": "/static/media/jd.9b277c0a2fd141819d72c20d609c8a09.svg",
     "index.html": "/index.html",
     "main.0810b161.css.map": "/static/css/main.0810b161.css.map",
-    "main.2054e9e1.js.map": "/static/js/main.2054e9e1.js.map"
+    "main.bbb48bc2.js.map": "/static/js/main.bbb48bc2.js.map"
   },
   "entrypoints": [
     "static/css/main.0810b161.css",
-    "static/js/main.2054e9e1.js"
+    "static/js/main.bbb48bc2.js"
   ]
 }

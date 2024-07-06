@@ -23,6 +23,7 @@ import ycdIcon from "../assets/images/projects/youCanDoItGardeningLogo.png"
 import btbIcon from "../assets/images/projects/btbLogo.png"
 
 import dreamsIcon from "../assets/images/projects/dreamsLogo.png"
+import andcIcon from "../assets/images/projects/andcLogo.png"
 import nicoleIcon from "../assets/images/projects/nicoleLevinLogo.png"
 
 import pupsysImg from "../assets/images/projects/pupsysLogo.png";
@@ -799,6 +800,16 @@ function SitesModal({open, setOpen}) {
 
 const sites = [
   {
+    title: "A New Day Coaching",
+    href: "https://www.anewdaycoaching.com/",
+    icon: <img src={andcIcon} alt="andc-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
+    title: "Nicole Levin",
+    href: "https://www.nicolelevin.org/",
+    icon: <img src={nicoleIcon} alt="nicole-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
     title: "Beyond The Bell Education",
     href: "https://www.beyondthebelleducation.com/",
     icon: <img src={btbIcon} alt="btb-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
@@ -807,16 +818,6 @@ const sites = [
     title: "You Can Do It Gardening",
     href: "https://www.youcandoitgardening.com/",
     icon: <img src={ycdIcon} alt="ycd-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
-  },
-  {
-    title: "Nicole Levin",
-    href: "https://www.nicolelevin.org/",
-    icon: <img src={nicoleIcon} alt="nicole-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
-  },
-  {
-    title: "Talk About Dreams",
-    href: "https://www.dreams.joed.dev/",
-    icon: <img src={dreamsIcon} alt="dreams-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
   },
 ]
 
