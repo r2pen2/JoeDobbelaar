@@ -295,7 +295,7 @@ function Project({projectData, textOverride, imgOverride, last, buttonOverride})
           {textOverride ? textOverride : projectData.previewText}
         </ProjectArticle.Text>
         <Spacer y={0.5} />
-        <div className="d-flex gap-3 flex-column flex-md-row align-items-center justify-content-center">
+        <div className="d-flex gap-3 flex-column flex-md-row  align-items-center justify-content-center">
           <ProjectArticle.VisitButton link={projectData.link} textOverride={buttonOverride} />
           {projectData.githubLink && <ProjectArticle.VisitButton link={projectData.githubLink} />}
         </div>
