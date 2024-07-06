@@ -54,7 +54,7 @@ const crmProject = {
   link: crmLink,
   img: crmDashboard,
   githubLink: "https://github.com/r2pen2/ANewDayCoachingCrm",
-  previewText: `My most comprehensive project to date, A New Day Coaching, is a web app that integrates all the tools necessary for executive functioning coaching. Coaches can manage student assignments, send invoices, assign forms, and more. Students can track assignments in a list or Gantt chart, pay invoices, access shared documents, and view assigned tools and strategies. Parents can link their accounts to monitor progress and pay invoices. The app is built using React, Express.js, and Firebase. Currently ANDC is exclusively used by the EF coach who commissioned the project. However, I'm exploring options to transition it to a software-as-a-service model`,
+  previewText: `My most comprehensive project to date, A New Day Coaching, is a web app that integrates all the tools necessary for executive functioning coaching. Coaches can manage student assignments, send invoices, assign forms, and more. Students can track assignments in a list or Gantt chart, pay invoices, access shared documents, and view assigned tools and strategies. Parents can link their accounts to monitor progress and pay invoices. The app is built using React, Express.js, and Firebase. Currently ANDC is exclusively used by the EF coach who commissioned the project. However, I'm exploring options to transition it to a software-as-a-service model.`,
   timespan: "2024",
   id: "crm",
   mirror: false
