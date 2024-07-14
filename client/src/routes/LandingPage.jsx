@@ -70,7 +70,7 @@ const experience = [
     terms: "Self-Employed",
     startDate: "May 2022",
     endDate: "April 2023",
-    description: "Started a company with some friends around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
+    description: "Started a company around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
     icon: citrusLogo,
   },
   {
