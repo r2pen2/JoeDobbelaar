@@ -5,6 +5,8 @@ import Sparkles from 'react-sparkle'
 
 import Confetti from "react-confetti";
 
+import fish from "../assets/images/fish.png"
+
 import { Link, Modal, Text, Tooltip } from "@nextui-org/react"
 
 import LaunchIcon from '@mui/icons-material/Launch';

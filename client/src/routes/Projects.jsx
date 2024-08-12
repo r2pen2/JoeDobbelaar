@@ -26,6 +26,12 @@ import dvlDashboard from "../assets/images/projects/dvl/dashboard.png";
 import dvlQ1 from "../assets/images/projects/dvl/q1.png";
 import dvlQ2 from "../assets/images/projects/dvl/q2.png";
 
+// PUPSyS Images
+import pupCalibration from "../assets/images/projects/pupsys/pupsysCalibration.jpg";
+import pupDetails from "../assets/images/projects/pupsys/pupsysDetails.jpg";
+import pupLocation from "../assets/images/projects/pupsys/pupsysLocation.jpg";
+import pupSensors from "../assets/images/projects/pupsys/pupsysSensors.jpg";
+
 // Small Pics
 import ssPreview from "../assets/images/projects/ssPreview.png";
 import medicalTrackingPreview from "../assets/images/projects/medicalTracking.png"
@@ -39,6 +45,7 @@ const cirtusNativeLink = "https://github.com/r2pen2/CitrusNative"
 const arbolesLink = "https://github.com/r2pen2/Arboles-Maui-Mirror";
 const webLegosLink = "https://github.com/r2pen2/web-legos";
 const dvlLink = "https://dvl-demo.joed.dev/";
+const pupsysLink = "https://github.com/pupsys/PUPSyS-Native"
 
 const dvlProject = {
   title: "Data Visualization Literacy App",
@@ -87,7 +94,16 @@ const arbolesProject = {
   previewText: `Árboles Magicos is a nonprofit organization aimed at promoting cultural appreciation for the beauty of nature through the use of flowering trees. During the first few months of 2023, I travelled with a team of students to San Jose, where we re-wrote their "Ojeadores" app.`,
   timespan: "2023",
   id: "arboles-magicos",
-  mirror: true
+  mirror: false
+}
+
+const pupsysProject = {
+  title: "PUPSyS",
+  link: pupsysLink,
+  previewText: "",
+  timespan: "2023",
+  id: "pupsys",
+  mirror: true,
 }
 
 
@@ -98,7 +114,7 @@ const citrusReactProject = {
   timespan: "2022",
   id: "citrus-v3",
   img: citrusV3Preview,
-  mirror: false
+  mirror: true
 }
 
 const medicalTrackerProject = {
@@ -108,7 +124,7 @@ const medicalTrackerProject = {
   timespan: "2022",
   id: "medical-tracking",
   img: medicalTrackingPreview,
-  mirror: true
+  mirror: false
 }
 
 export default function Projects() {
@@ -205,6 +221,40 @@ export default function Projects() {
               The <Link href="https://studentsuccesshandbook.wpi.edu/" target="_blank" isExternal>Student Success Handbook</Link> is a mobile-optimized website crafted for WPI's incoming freshmen. It's an essential guide to campus resources, tailored to support students from all walks of life. This platform ensures that every new student, regardless of their background, can easily navigate and utilize the wealth of resources available at WPI.
             </p>
           }  
+        />
+        <ProjectLine />
+        <Project 
+          projectData={pupsysProject}
+          imgOverride={[
+            <div key="arboles-images-1" className={"project-img d-flex d-md-none flex-row align-items-center justify-content-center " + (!pupsysProject.mirror ? "right" : "")}>
+              <div className="d-flex flex-column">
+              <img src={pupCalibration} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+                <Spacer y={0.5} />
+              <img src={pupDetails} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              </div>
+              <Spacer x={0.5} />
+              <div className="d-flex flex-column">
+              <img src={pupSensors} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+                <Spacer y={0.5} />
+              <img src={pupLocation} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+              </div>
+            </div>,
+            <div key="arboles-images-2" className={"project-img d-none d-md-flex flex-row " + (!pupsysProject.mirror ? "right" : "")}>
+              <img src={pupCalibration} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-login" />
+              <Spacer x={0.5} />
+              <img src={pupDetails} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-map" />
+              <Spacer x={0.5} />
+              <img src={pupSensors} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-tree" />
+              <Spacer x={0.5} />
+              <img src={pupLocation} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
+            </div>
+          ]
+          }
+          textOverride={
+            <p>
+              In the first few months of 2023, I traveled to Costa Rica with a team of students to collaborate with <Link href="https://www.arbolesmagicos.org/" target="_blank" isExternal>Árboles Magicos</Link>, a nonprofit promoting cultural appreciation of nature through flowering trees. We focused on redeveloping their <Link href="https://www.arbolesmagicos.org/ojeadores/" target="_blank" isExternal>Ojeadores</Link> app in DOTNet MAUI. The new version showcases a collaborative map feature, allowing users to identify trees and place public pins.
+            </p>
+          }
         />
         <ProjectLine />
         <Project 
