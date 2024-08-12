@@ -120,7 +120,7 @@ const arbolesProject = {
 const pupsysProject = {
   title: "PUPSyS",
   link: pupsysLink,
-  previewText: "",
+  previewText: "During the summer of 2023, I single-handedly built the HIPAA compliant computing infrastructure for UMass Chan's PUPSys: a system for preventing pressure ulcers in hospital patients. The first iteration of the app was completed, an expanded suite was planned, but the project lost momentum once the school year started.",
   timespan: "2023",
   id: "pupsys",
   mirror: true,
@@ -275,11 +275,6 @@ export default function Projects() {
               <img src={pupLocation} className="project-shadow arboles-img" onClick={() => window.open(pupsysProject.link, "_blank")} style={{maxHeight: 350, width: "auto"}} alt="arboles-detail" />
             </div>
           ]
-          }
-          textOverride={
-            <p>
-              In the first few months of 2023, I traveled to Costa Rica with a team of students to collaborate with <Link href="https://www.arbolesmagicos.org/" target="_blank" isExternal>Árboles Magicos</Link>, a nonprofit promoting cultural appreciation of nature through flowering trees. We focused on redeveloping their <Link href="https://www.arbolesmagicos.org/ojeadores/" target="_blank" isExternal>Ojeadores</Link> app in DOTNet MAUI. The new version showcases a collaborative map feature, allowing users to identify trees and place public pins.
-            </p>
           }
         />
         <ProjectLine />
