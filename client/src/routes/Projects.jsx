@@ -7,6 +7,7 @@ import nicole from "../assets/images/projects/web-legos/nicoleScreenshot.png";
 import ycd from "../assets/images/projects/web-legos/ycdScreenshot.png";
 import btb from "../assets/images/projects/web-legos/btbScreenshot.png";
 import dreams from "../assets/images/projects/web-legos/dreamsScreenshot.png";
+import andc from "../assets/images/projects/web-legos/andcScreenshot.png";
 
 // Arboles Images
 import arbolesLogin from "../assets/images/projects/arboles/arbolesLoginScreen.jpg";
@@ -32,6 +33,13 @@ import pupDetails from "../assets/images/projects/pupsys/pupsysDetails.jpg";
 import pupLocation from "../assets/images/projects/pupsys/pupsysLocation.jpg";
 import pupSensors from "../assets/images/projects/pupsys/pupsysSensors.jpg";
 
+// CRM Images
+import crmDashboard from "../assets/images/projects/crm/crmDashboard.png";
+import crmGnatt from "../assets/images/projects/crm/crmGnatt.png";
+import crmInvoiceManagement from "../assets/images/projects/crm/crmInvoiceManagement.png";
+import crmSettings from "../assets/images/projects/crm/crmSettings.png";
+import crmUserManagement from "../assets/images/projects/crm/crmUserManagement.png";
+
 // Small Pics
 import ssPreview from "../assets/images/projects/ssPreview.png";
 import medicalTrackingPreview from "../assets/images/projects/medicalTracking.png"
@@ -46,6 +54,18 @@ const arbolesLink = "https://github.com/r2pen2/Arboles-Maui-Mirror";
 const webLegosLink = "https://github.com/r2pen2/web-legos";
 const dvlLink = "https://dvl-demo.joed.dev/";
 const pupsysLink = "https://github.com/pupsys/PUPSyS-Native"
+const crmLink = "https://crm.joed.dev/";
+
+const crmProject = {
+  title: "Executive Functioning Coaching Suite",
+  link: crmLink,
+  img: crmDashboard,
+  githubLink: "https://github.com/r2pen2/ANewDayCoachingCrm",
+  previewText: `My most comprehensive project to date, A New Day Coaching, is a web app that integrates all the tools necessary for executive functioning coaching. Coaches can manage student assignments, send invoices, assign forms, and more. Students can track assignments in a list or Gantt chart, pay invoices, access shared documents, and view assigned tools and strategies. Parents can link their accounts to monitor progress and pay invoices. The app is built using React, Express.js, and Firebase. Currently ANDC is exclusively used by the EF coach who commissioned the project. However, I'm exploring options to transition it to a software-as-a-service model.`,
+  timespan: "2024",
+  id: "crm",
+  mirror: false
+}
 
 const dvlProject = {
   title: "Data Visualization Literacy App",
@@ -133,6 +153,12 @@ export default function Projects() {
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center w-100" style={{maxWidth: 1400}}>
 
         <Project 
+          projectData={crmProject}
+          buttonOverride={"Visit Project"}
+        />
+        <ProjectLine />
+
+        <Project 
           projectData={dvlProject}
           buttonOverride={"View Demo"}
           imgOverride={[
@@ -167,7 +193,7 @@ export default function Projects() {
           imgOverride={
             <div className={"project-img d-flex flex-row align-items-center justify-content-center " + (!webLegosProject.mirror ? "right" : "")}>
               <div className="d-flex flex-column">
-                <img src={dreams} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.dreams.joed.dev/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="talk-about-dreams-screenshot" />
+                <img src={andc} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.anewdaycoaching.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="a-new-day-coaching-screenshot" />
                 <Spacer y={0.5} />
                 <img src={ycd} className="wl-screenshot project-shadow" onClick={() => window.open("https://www.youcandoitgardening.com/", "_blank")} style={{maxHeight: 150, width: "auto"}} alt="you-can-do-it-gardening-screenshot" />
               </div>
@@ -320,7 +346,10 @@ function Project({projectData, textOverride, imgOverride, last, buttonOverride})
           {textOverride ? textOverride : projectData.previewText}
         </ProjectArticle.Text>
         <Spacer y={0.5} />
-        <ProjectArticle.VisitButton link={projectData.link} textOverride={buttonOverride} />
+        <div className="d-flex gap-3 flex-column flex-md-row  align-items-center justify-content-center">
+          <ProjectArticle.VisitButton link={projectData.link} textOverride={buttonOverride} />
+          {projectData.githubLink && <ProjectArticle.VisitButton link={projectData.githubLink} />}
+        </div>
       </div>
       {!projectData.mirror && <ProjectArticle.Image override={imgOverride} link={projectData.link} src={projectData.img} right={true} />}
     </ProjectArticle>

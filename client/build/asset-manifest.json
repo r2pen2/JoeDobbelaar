@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0810b161.css",
-    "main.js": "/static/js/main.0cdc150a.js",
+    "main.js": "/static/js/main.94579788.js",
     "static/media/citrusReact.png": "/static/media/citrusReact.23b577b75d01b9082b63.png",
     "static/media/green.png": "/static/media/green.05ef31f416f4ff0ea8e3.png",
     "static/media/star.png": "/static/media/star.1c176f5b622c820d65af.png",
@@ -21,15 +21,26 @@
     "static/media/login.png": "/static/media/login.fabee0b46e5eebfbd74a.png",
     "static/media/blueportLogo.png": "/static/media/blueportLogo.efbb01f06cfab47cdb12.png",
     "static/media/jd.png": "/static/media/jd.763a50f9a633d044a226.png",
+    "static/media/pupsysSensors.jpg": "/static/media/pupsysSensors.8ea119b753e41055490a.jpg",
     "static/media/citrus-group.jpg": "/static/media/citrus-group.473ead6bd950c5086603.jpg",
     "static/media/arbolesDetail.png": "/static/media/arbolesDetail.c2eb48f57432a2b450c1.png",
     "static/media/citrus-transaction.jpg": "/static/media/citrus-transaction.86597383094f5dd51c53.jpg",
+    "static/media/pupsysCalibration.jpg": "/static/media/pupsysCalibration.187f0027db3771559ae9.jpg",
     "static/media/empowLogo.png": "/static/media/empowLogo.beecdf0b6769033fa521.png",
     "static/media/citrus-new.jpg": "/static/media/citrus-new.363300e5f6910eeaedb2.jpg",
+    "static/media/andcLogo.png": "/static/media/andcLogo.52f651449c8b89f7c0b9.png",
     "static/media/dreamsLogo.png": "/static/media/dreamsLogo.9c2c4ed55f3a4a1d0ce9.png",
+    "static/media/pupsysLocation.jpg": "/static/media/pupsysLocation.2feea90a6414bc0ca643.jpg",
     "static/media/arbolesMap.jpg": "/static/media/arbolesMap.74276c4a0b1049fba6c8.jpg",
+    "static/media/andcScreenshot.png": "/static/media/andcScreenshot.8dbe910308dea6cec5e4.png",
+    "static/media/crmDashboard.png": "/static/media/crmDashboard.1a1bf6f0f5707d39f87a.png",
     "static/media/citrus-people.jpg": "/static/media/citrus-people.54cdb9b7d7708bc2dcd0.jpg",
+    "static/media/crmGnatt.png": "/static/media/crmGnatt.ad481a05c546a6464568.png",
+    "static/media/pupsysDetails.jpg": "/static/media/pupsysDetails.7183272e8ba34f911f68.jpg",
+    "static/media/crmSettings.png": "/static/media/crmSettings.fc3683b7c78b0c14ae5a.png",
     "static/media/youCanDoItGardeningLogo.png": "/static/media/youCanDoItGardeningLogo.ea403d4785551ef75409.png",
+    "static/media/crmUserManagement.png": "/static/media/crmUserManagement.57dc038f77036fa68b6e.png",
+    "static/media/crmInvoiceManagement.png": "/static/media/crmInvoiceManagement.e30adbd161bc703b46d3.png",
     "static/media/btbLogo.png": "/static/media/btbLogo.06cd7a4d322cc7672342.png",
     "static/media/arbolesTree.jpg": "/static/media/arbolesTree.90b1149d61beda20180a.jpg",
     "static/media/nicoleLevinLogo.png": "/static/media/nicoleLevinLogo.8f5da7f449598195fbf2.png",
@@ -41,10 +52,10 @@
     "static/media/jd.svg": "/static/media/jd.9b277c0a2fd141819d72c20d609c8a09.svg",
     "index.html": "/index.html",
     "main.0810b161.css.map": "/static/css/main.0810b161.css.map",
-    "main.0cdc150a.js.map": "/static/js/main.0cdc150a.js.map"
+    "main.94579788.js.map": "/static/js/main.94579788.js.map"
   },
   "entrypoints": [
     "static/css/main.0810b161.css",
-    "static/js/main.0cdc150a.js"
+    "static/js/main.94579788.js"
   ]
 }

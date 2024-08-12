@@ -25,6 +25,7 @@ import ycdIcon from "../assets/images/projects/youCanDoItGardeningLogo.png"
 import btbIcon from "../assets/images/projects/btbLogo.png"
 
 import dreamsIcon from "../assets/images/projects/dreamsLogo.png"
+import andcIcon from "../assets/images/projects/andcLogo.png"
 import nicoleIcon from "../assets/images/projects/nicoleLevinLogo.png"
 
 import pupsysImg from "../assets/images/projects/pupsysLogo.png";
@@ -71,7 +72,7 @@ const experience = [
     terms: "Self-Employed",
     startDate: "May 2022",
     endDate: "April 2023",
-    description: "Started a company with some friends around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
+    description: "Started a company around a mobile app aimed at simplifying how friends, couples, and roommates split shared expenses. Built the app alone in React Native with Google Firebase and Express.js as the backend. Spoke with possible investors but, ultimately, my partners graduated and their priorities shifted.",
     icon: citrusLogo,
   },
   {
@@ -313,6 +314,10 @@ const Skills = () => {
   const herokuIcon = <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Heroku</title><path d="M20.61 0H3.39C2.189 0 1.23.96 1.23 2.16v19.681c0 1.198.959 2.159 2.16 2.159h17.22c1.2 0 2.159-.961 2.159-2.159V2.16C22.77.96 21.811 0 20.61 0zm.96 21.841c0 .539-.421.96-.96.96H3.39c-.54 0-.96-.421-.96-.96V2.16c0-.54.42-.961.96-.961h17.22c.539 0 .96.421.96.961v19.681zM6.63 20.399L9.33 18l-2.7-2.4v4.799zm9.72-9.719c-.479-.48-1.379-1.08-2.879-1.08-1.621 0-3.301.421-4.5.84V3.6h-2.4v10.38l1.68-.78s2.76-1.26 5.16-1.26c1.2 0 1.5.66 1.5 1.26v7.2h2.4v-7.2c.059-.179.059-1.501-.961-2.52zM13.17 7.5h2.4c1.08-1.26 1.62-2.521 1.8-3.9h-2.399c-.241 1.379-.841 2.64-1.801 3.9z"/></svg>
   const nginxIcon = <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>NGINX</title><path d="M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm6 16.59c0 .705-.646 1.29-1.529 1.29-.631 0-1.351-.255-1.801-.81l-6-7.141v6.66c0 .721-.57 1.29-1.274 1.29H7.32c-.721 0-1.29-.6-1.29-1.29V7.41c0-.705.63-1.29 1.5-1.29.646 0 1.38.255 1.83.81l5.97 7.141V7.41c0-.721.6-1.29 1.29-1.29h.075c.72 0 1.29.6 1.29 1.29v9.18H18z"/></svg>
   const networkSolutionsIcon = <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="300.000000pt" viewBox="0 0 300.000000 300.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M375 2896 c-130 -41 -245 -134 -304 -246 -63 -118 -61 -68 -61 -1377 l0 -1193 1269 0 1268 0 79 26 c177 57 304 188 349 359 13 52 15 214 15 1257 l0 1198 -1272 -1 -1273 -1 -70 -22z m1900 -758 c80 -26 237 -106 250 -128 5 -9 -103 -200 -113 -200 -3 0 -47 20 -96 45 -145 71 -279 95 -346 60 -27 -14 -29 -13 -44 10 -28 43 -30 80 -6 129 12 25 33 55 47 66 45 35 19 31 -35 -6 -29 -19 -66 -53 -82 -76 -59 -81 -50 -156 28 -236 61 -62 116 -94 256 -147 290 -110 392 -193 416 -339 27 -164 -65 -338 -218 -415 -117 -58 -155 -66 -317 -66 -142 0 -155 2 -238 32 -119 42 -189 85 -272 169 -144 145 -208 287 -332 731 -8 28 -23 63 -33 76 -22 27 -99 67 -130 67 -34 0 -23 37 23 84 58 57 117 73 197 52 30 -8 56 -13 58 -12 1 2 -21 14 -50 27 -42 19 -70 24 -138 24 -74 0 -92 -4 -140 -29 -97 -50 -144 -109 -178 -221 -12 -40 -16 -141 -19 -522 l-5 -473 -134 0 -134 0 0 458 c0 372 3 468 15 515 37 143 112 236 239 296 110 53 170 65 280 58 76 -5 101 -11 163 -42 135 -67 195 -161 283 -450 64 -210 99 -295 159 -388 101 -154 264 -256 412 -257 46 0 51 -6 35 -39 -20 -38 -65 -80 -109 -103 -54 -27 -40 -33 29 -13 176 51 284 167 284 305 0 106 -48 150 -244 220 -219 78 -311 142 -367 255 -30 62 -31 68 -27 162 5 116 29 174 101 240 130 120 325 149 532 81z"/></g></svg>
+  const googleCalendarIcon = <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Calendar</title><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"/></svg>
+  const mantineIcon = <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Mantine</title><path d="M12 0C5.377 0 0 5.377 0 12s5.377 12 12 12 12-5.377 12-12S18.623 0 12 0zm-1.613 6.15a.91.91 0 0 1 .59.176c.43.317.825.68 1.177 1.082h2.588a.91.91 0 0 1 .912.906.909.909 0 0 1-.912.907h-1.43c.4.908.604 1.889.602 2.88a7.133 7.133 0 0 1-.601 2.883h1.427a.91.91 0 0 1 .914.907.91.91 0 0 1-.914.906h-2.588a7.399 7.399 0 0 1-1.175 1.082.919.919 0 0 1-1.28-.19.904.904 0 0 1 .191-1.268 5.322 5.322 0 0 0 2.2-4.32c0-1.715-.801-3.29-2.2-4.32a.906.906 0 0 1-.191-1.268H9.7a.916.916 0 0 1 .688-.363zm-.778 4.295a1.36 1.36 0 0 1 1.354 1.354v.033a1.36 1.36 0 0 1-1.354 1.32 1.36 1.36 0 0 1-1.353-1.32v-.033a1.36 1.36 0 0 1 1.353-1.354z"/></svg>
+  const MUIIcon = <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>MUI</title><path d="M20.229 15.793a.666.666 0 0 0 .244-.243.666.666 0 0 0 .09-.333l.012-3.858a.666.666 0 0 1 .09-.333.666.666 0 0 1 .245-.243L23 9.58a.667.667 0 0 1 .333-.088.667.667 0 0 1 .333.09.667.667 0 0 1 .244.243.666.666 0 0 1 .089.333v7.014a.667.667 0 0 1-.335.578l-7.893 4.534a.666.666 0 0 1-.662 0l-6.194-3.542a.667.667 0 0 1-.246-.244.667.667 0 0 1-.09-.335v-3.537c0-.004.004-.006.008-.004s.008 0 .008-.005v-.004c0-.003.002-.005.004-.007l5.102-2.93c.004-.003.002-.01-.003-.01a.005.005 0 0 1-.004-.002.005.005 0 0 1-.001-.004l.01-3.467a.667.667 0 0 0-.333-.58.667.667 0 0 0-.667 0L8.912 9.799a.667.667 0 0 1-.665 0l-3.804-2.19a.667.667 0 0 0-.999.577v6.267a.667.667 0 0 1-.332.577.666.666 0 0 1-.332.09.667.667 0 0 1-.333-.088L.336 13.825a.667.667 0 0 1-.246-.244.667.667 0 0 1-.09-.336L.019 2.292a.667.667 0 0 1 .998-.577l7.23 4.153a.667.667 0 0 0 .665 0l7.228-4.153a.666.666 0 0 1 .333-.088.666.666 0 0 1 .333.09.667.667 0 0 1 .244.244.667.667 0 0 1 .088.333V13.25c0 .117-.03.232-.089.334a.667.667 0 0 1-.245.244l-3.785 2.18a.667.667 0 0 0-.245.245.666.666 0 0 0-.089.334.667.667 0 0 0 .09.334.666.666 0 0 0 .247.244l2.088 1.189a.67.67 0 0 0 .33.087.667.667 0 0 0 .332-.089l4.457-2.56Zm.438-9.828a.666.666 0 0 0 .09.335.666.666 0 0 0 .248.244.667.667 0 0 0 .67-.008l2.001-1.2a.666.666 0 0 0 .237-.243.667.667 0 0 0 .087-.329V2.32a.667.667 0 0 0-.091-.335.667.667 0 0 0-.584-.33.667.667 0 0 0-.334.094l-2 1.2a.666.666 0 0 0-.238.243.668.668 0 0 0-.086.329v2.445Z"/></svg>
+
 
   const languages = [
     {
@@ -425,6 +430,14 @@ const Skills = () => {
     {
       title: "NGINX",
       icon: nginxIcon
+    },
+    {
+      title: "Mantine UI",
+      icon: mantineIcon
+    },
+    {
+      title: "MUI",
+      icon: MUIIcon,
     },
   ]
 
@@ -612,6 +625,10 @@ const Skills = () => {
       icon: googleMapsIcon,
     },
     {
+      title: "Google Calendar API",
+      icon: googleCalendarIcon,
+    },
+    {
       title: "Spotify API",
       icon: spotifyIcon,
     },
@@ -785,6 +802,16 @@ function SitesModal({open, setOpen}) {
 
 const sites = [
   {
+    title: "A New Day Coaching",
+    href: "https://www.anewdaycoaching.com/",
+    icon: <img src={andcIcon} alt="andc-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
+    title: "Nicole Levin",
+    href: "https://www.nicolelevin.org/",
+    icon: <img src={nicoleIcon} alt="nicole-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
+  },
+  {
     title: "Beyond The Bell Education",
     href: "https://www.beyondthebelleducation.com/",
     icon: <img src={btbIcon} alt="btb-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
@@ -793,16 +820,6 @@ const sites = [
     title: "You Can Do It Gardening",
     href: "https://www.youcandoitgardening.com/",
     icon: <img src={ycdIcon} alt="ycd-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
-  },
-  {
-    title: "Nicole Levin",
-    href: "https://www.nicolelevin.org/",
-    icon: <img src={nicoleIcon} alt="nicole-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
-  },
-  {
-    title: "Talk About Dreams",
-    href: "https://www.dreams.joed.dev/",
-    icon: <img src={dreamsIcon} alt="dreams-icon" style={{marginRight: "1rem", height: 50 , width: "auto"}} />
   },
 ]
 
