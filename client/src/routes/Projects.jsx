@@ -120,7 +120,7 @@ const arbolesProject = {
 const pupsysProject = {
   title: "PUPSyS",
   link: pupsysLink,
-  previewText: "During the summer of 2023, I single-handedly built the HIPAA compliant computing infrastructure for UMass Chan's PUPSys: a system for preventing pressure ulcers in hospital patients. The first iteration of the app was completed, an expanded suite was planned, but the project lost momentum once the school year started.",
+  previewText: "During the summer of 2023, I single-handedly built the HIPAA compliant computing infrastructure for UMass Chan's PUPSys: a system for preventing pressure ulcers in hospital patients. The first iteration of the app was completed, and an expanded suite was planned, but the project lost momentum once the school year started.",
   timespan: "2023",
   id: "pupsys",
   mirror: true,
